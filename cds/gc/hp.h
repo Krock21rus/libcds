@@ -616,7 +616,12 @@ namespace cds { namespace gc {
           static CDS_EXPORT_API thread_data*& getTLS();
         };
 
-        template<typename SMRManager = DefaultSMRManager>
+        class StrangeSMRManager {
+        public:
+          static CDS_EXPORT_API thread_data*& getTLS();
+        };
+
+        template<typename SMRManager = StrangeSMRManager>
         class smr : public basic_smr {
         public:
           /// Returns thread-local data for the current thread
