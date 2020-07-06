@@ -611,45 +611,47 @@ namespace cds { namespace gc {
         };
         //@endcond
 
-        class DefaultSMRManager {
+        class DefaultTLSManager {
         public:
-          static CDS_EXPORT_API thread_data*& getTLS();
+          static CDS_EXPORT_API thread_data* getTLS();
+          static CDS_EXPORT_API void setTLS(thread_data*);
         };
 
-        class StrangeSMRManager {
+        class StrangeTLSManager {
         public:
-          static CDS_EXPORT_API thread_data*& getTLS();
+          static CDS_EXPORT_API thread_data* getTLS();
+          static CDS_EXPORT_API void setTLS(thread_data*);
         };
 
-        class HeapSMRManager {
+        class HeapTLSManager {
         public:
-          static CDS_EXPORT_API thread_data*& getTLS();
+          static CDS_EXPORT_API thread_data* getTLS();
+          static CDS_EXPORT_API void setTLS(thread_data*);
         };
 
-        template<typename SMRManager = HeapSMRManager>
+        template<typename SMRManager = HeapTLSManager>
         class smr : public basic_smr {
         public:
           /// Returns thread-local data for the current thread
           static CDS_EXPORT_API thread_data* tls()
           {
-            thread_data*& data = SMRManager::getTLS();
+            thread_data* data = SMRManager::getTLS();
             assert( data != nullptr );
             return data;
           }
 
           static CDS_EXPORT_API void attach_thread()
           {
-            thread_data*& data = SMRManager::getTLS();
+            thread_data* data = SMRManager::getTLS();
             if ( !data )
-              data = reinterpret_cast<thread_data *>(instance().alloc_thread_data());
+              SMRManager::setTLS(reinterpret_cast<thread_data *>(instance().alloc_thread_data()));
           }
 
           static CDS_EXPORT_API void detach_thread()
           {
-            thread_data*& data = SMRManager::getTLS();
-            thread_data* rec = data;
+            thread_data* rec = SMRManager::getTLS();
             if ( rec ) {
-              data = nullptr;
+              SMRManager::setTLS(nullptr);
               instance().free_thread_data(reinterpret_cast<thread_record*>( rec ), true );
             }
           }
