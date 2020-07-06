@@ -14,7 +14,7 @@ namespace cds {
       thread_local std::pair<thread_data *, thread_data *> *tls2_ = new std::pair<thread_data *, thread_data *>(nullptr,
                                                                                                                 nullptr);
       static std::unordered_map<cds::OS::posix::ThreadId, thread_data *> heap_tls_ =
-              std::unordered_map<cds::OS::posix::ThreadId, thread_data *>(100);
+              std::unordered_map<cds::OS::posix::ThreadId, thread_data *>(1);
 
       /*static*/ CDS_EXPORT_API thread_data *DefaultTLSManager::getTLS() {
         return tls_;
