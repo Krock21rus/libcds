@@ -631,7 +631,7 @@ namespace cds { namespace gc {
           static CDS_EXPORT_API void setTLS(thread_data*);
         };
 
-        template<typename TLSManager = HeapTLSManager>
+        template<typename TLSManager = DefaultTLSManager>
         class smr : public basic_smr {
         public:
           /// Returns thread-local data for the current thread
@@ -681,7 +681,7 @@ namespace cds { namespace gc {
         by contructing \p %cds::gc::HP<> object in beginning of your \p main().
         See \ref cds_how_to_use "How to use" section for details how to apply SMR schema.
     */
-    template<typename TLSManager = hp::HeapTLSManager>
+    template<typename TLSManager = hp::DefaultTLSManager>
     class HP
     {
     public:

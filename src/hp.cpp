@@ -516,7 +516,7 @@ namespace cds { namespace gc { namespace hp {
 #   endif
     }
 
-      static cds::gc::hp::stat const& postmortem_statistics()
+      cds::gc::hp::stat const& postmortem_statistics()
       {
         return cds::gc::hp::s_postmortem_stat;
       }
