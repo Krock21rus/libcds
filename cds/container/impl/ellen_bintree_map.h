@@ -43,7 +43,7 @@ namespace cds { namespace container {
         the operation done. Such solution allows greatly simplify implementation of the tree.
 
         <b>Template arguments</b> :
-        - \p GC - safe memory reclamation (i.e. light-weight garbage collector) type, like \p cds::gc::HP, \p cds::gc::DHP
+        - \p GC - safe memory reclamation (i.e. light-weight garbage collector) type, like \p cds::gc::HP<>, \p cds::gc::DHP
         - \p Key - key type. Should be default-constructible
         - \p T - value type to be stored in tree's leaf nodes.
         - \p Traits - map traits, default is \p ellen_bintree::traits
@@ -52,7 +52,7 @@ namespace cds { namespace container {
 
         @note Do not include <tt><cds/container/impl/ellen_bintree_map.h></tt> header file directly.
         There are header file for each GC type:
-        - <tt><cds/container/ellen_bintree_map_hp.h></tt> - for Hazard Pointer GC cds::gc::HP
+        - <tt><cds/container/ellen_bintree_map_hp.h></tt> - for Hazard Pointer GC cds::gc::HP<>
         - <tt><cds/container/ellen_bintree_map_dhp.h></tt> - for Dynamic Hazard Pointer GC cds::gc::DHP
         - <tt><cds/container/ellen_bintree_map_rcu.h></tt> - for RCU GC
             (see \ref cds_container_EllenBinTreeMap_rcu "RCU-based EllenBinTreeMap")

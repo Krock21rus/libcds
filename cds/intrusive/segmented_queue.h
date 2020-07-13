@@ -190,7 +190,7 @@ namespace cds { namespace intrusive {
         quasi factor. This means that the consumer dequeues <i>any</i> item from the current first segment.
 
         Template parameters:
-        - \p GC - a garbage collector, possible types are cds::gc::HP, cds::gc::DHP
+        - \p GC - a garbage collector, possible types are cds::gc::HP<>, cds::gc::DHP
         - \p T - the type of values stored in the queue
         - \p Traits - queue type traits, default is \p segmented_queue::traits.
             \p segmented_queue::make_traits metafunction can be used to construct the
@@ -527,7 +527,7 @@ namespace cds { namespace intrusive {
                     delete p;
                 }
             };
-            cds::intrusive::SegmentedQueue< cds::gc::HP, foo > theQueue;
+            cds::intrusive::SegmentedQueue< cds::gc::HP<>, foo > theQueue;
             // ...
 
             // Dequeue an item
@@ -536,8 +536,8 @@ namespace cds { namespace intrusive {
             //...
 
             // pItem is not longer needed and can be deleted
-            // Do it via gc::HP::retire
-            cds::gc::HP::template retire< my_disposer >( pItem );
+            // Do it via gc::HP<>::retire
+            cds::gc::HP<>::template retire< my_disposer >( pItem );
             \endcode
         */
         value_type * dequeue()

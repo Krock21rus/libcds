@@ -83,7 +83,7 @@ namespace set {
                 >
             >::type
         {};
-        typedef SplitListSet< cds::gc::HP,  key_val, traits_SplitList_Michael_dyn_cmp > SplitList_Michael_HP_dyn_cmp;
+        typedef SplitListSet< cds::gc::HP<>,  key_val, traits_SplitList_Michael_dyn_cmp > SplitList_Michael_HP_dyn_cmp;
         typedef SplitListSet< cds::gc::DHP, key_val, traits_SplitList_Michael_dyn_cmp > SplitList_Michael_DHP_dyn_cmp;
         typedef SplitListSet< rcu_gpi, key_val, traits_SplitList_Michael_dyn_cmp > SplitList_Michael_RCU_GPI_dyn_cmp;
         typedef SplitListSet< rcu_gpb, key_val, traits_SplitList_Michael_dyn_cmp > SplitList_Michael_RCU_GPB_dyn_cmp;
@@ -96,7 +96,7 @@ namespace set {
         {
             typedef cds::algo::bit_reversal::swar bit_reversal;
         };
-        typedef SplitListSet< cds::gc::HP, key_val, traits_SplitList_Michael_dyn_cmp_swar > SplitList_Michael_HP_dyn_cmp_swar;
+        typedef SplitListSet< cds::gc::HP<>, key_val, traits_SplitList_Michael_dyn_cmp_swar > SplitList_Michael_HP_dyn_cmp_swar;
         typedef SplitListSet< cds::gc::DHP, key_val, traits_SplitList_Michael_dyn_cmp_swar > SplitList_Michael_DHP_dyn_cmp_swar;
         typedef SplitListSet< rcu_gpi, key_val, traits_SplitList_Michael_dyn_cmp_swar > SplitList_Michael_RCU_GPI_dyn_cmp_swar;
         typedef SplitListSet< rcu_gpb, key_val, traits_SplitList_Michael_dyn_cmp_swar > SplitList_Michael_RCU_GPB_dyn_cmp_swar;
@@ -119,7 +119,7 @@ namespace set {
                 >
             >::type
         {};
-        typedef SplitListSet< cds::gc::HP, key_val, traits_SplitList_Michael_dyn_cmp_stat > SplitList_Michael_HP_dyn_cmp_stat;
+        typedef SplitListSet< cds::gc::HP<>, key_val, traits_SplitList_Michael_dyn_cmp_stat > SplitList_Michael_HP_dyn_cmp_stat;
         typedef SplitListSet< cds::gc::DHP, key_val, traits_SplitList_Michael_dyn_cmp_stat > SplitList_Michael_DHP_dyn_cmp_stat;
         typedef SplitListSet< rcu_gpi, key_val, traits_SplitList_Michael_dyn_cmp_stat > SplitList_Michael_RCU_GPI_dyn_cmp_stat;
         typedef SplitListSet< rcu_gpb, key_val, traits_SplitList_Michael_dyn_cmp_stat > SplitList_Michael_RCU_GPB_dyn_cmp_stat;
@@ -142,7 +142,7 @@ namespace set {
                 >
             >::type
         {};
-        typedef SplitListSet< cds::gc::HP,  key_val, traits_SplitList_Michael_dyn_cmp_seqcst > SplitList_Michael_HP_dyn_cmp_seqcst;
+        typedef SplitListSet< cds::gc::HP<>,  key_val, traits_SplitList_Michael_dyn_cmp_seqcst > SplitList_Michael_HP_dyn_cmp_seqcst;
         typedef SplitListSet< cds::gc::DHP, key_val, traits_SplitList_Michael_dyn_cmp_seqcst > SplitList_Michael_DHP_dyn_cmp_seqcst;
         typedef SplitListSet< rcu_gpi, key_val, traits_SplitList_Michael_dyn_cmp_seqcst > SplitList_Michael_RCU_GPI_dyn_cmp_seqcst;
         typedef SplitListSet< rcu_gpb, key_val, traits_SplitList_Michael_dyn_cmp_seqcst > SplitList_Michael_RCU_GPB_dyn_cmp_seqcst;
@@ -164,7 +164,7 @@ namespace set {
                 >
             >::type
         {};
-        typedef SplitListSet< cds::gc::HP,  key_val, traits_SplitList_Michael_st_cmp > SplitList_Michael_HP_st_cmp;
+        typedef SplitListSet< cds::gc::HP<>,  key_val, traits_SplitList_Michael_st_cmp > SplitList_Michael_HP_st_cmp;
         typedef SplitListSet< cds::gc::DHP, key_val, traits_SplitList_Michael_st_cmp > SplitList_Michael_DHP_st_cmp;
         typedef SplitListSet< rcu_gpi, key_val, traits_SplitList_Michael_st_cmp > SplitList_Michael_RCU_GPI_st_cmp;
         typedef SplitListSet< rcu_gpb, key_val, traits_SplitList_Michael_st_cmp > SplitList_Michael_RCU_GPB_st_cmp;
@@ -186,7 +186,7 @@ namespace set {
                 >
             >::type
         {};
-        typedef SplitListSet< cds::gc::HP,  key_val, traits_SplitList_Michael_dyn_less > SplitList_Michael_HP_dyn_less;
+        typedef SplitListSet< cds::gc::HP<>,  key_val, traits_SplitList_Michael_dyn_less > SplitList_Michael_HP_dyn_less;
         typedef SplitListSet< cds::gc::DHP, key_val, traits_SplitList_Michael_dyn_less > SplitList_Michael_DHP_dyn_less;
         typedef SplitListSet< rcu_gpi, key_val, traits_SplitList_Michael_dyn_less > SplitList_Michael_RCU_GPI_dyn_less;
         typedef SplitListSet< rcu_gpb, key_val, traits_SplitList_Michael_dyn_less > SplitList_Michael_RCU_GPB_dyn_less;
@@ -208,7 +208,7 @@ namespace set {
                 >
             >::type
         {};
-        typedef SplitListSet< cds::gc::HP,  key_val, traits_SplitList_Michael_st_less > SplitList_Michael_HP_st_less;
+        typedef SplitListSet< cds::gc::HP<>,  key_val, traits_SplitList_Michael_st_less > SplitList_Michael_HP_st_less;
         typedef SplitListSet< cds::gc::DHP, key_val, traits_SplitList_Michael_st_less > SplitList_Michael_DHP_st_less;
         typedef SplitListSet< rcu_gpi, key_val, traits_SplitList_Michael_st_less > SplitList_Michael_RCU_GPI_st_less;
         typedef SplitListSet< rcu_gpb, key_val, traits_SplitList_Michael_st_less > SplitList_Michael_RCU_GPB_st_less;
@@ -232,7 +232,7 @@ namespace set {
                 >
             >::type
         {};
-        typedef SplitListSet< cds::gc::HP,  key_val, traits_SplitList_Michael_st_less_stat > SplitList_Michael_HP_st_less_stat;
+        typedef SplitListSet< cds::gc::HP<>,  key_val, traits_SplitList_Michael_st_less_stat > SplitList_Michael_HP_st_less_stat;
         typedef SplitListSet< cds::gc::DHP, key_val, traits_SplitList_Michael_st_less_stat > SplitList_Michael_DHP_st_less_stat;
         typedef SplitListSet< rcu_gpi, key_val, traits_SplitList_Michael_st_less_stat > SplitList_Michael_RCU_GPI_st_less_stat;
         typedef SplitListSet< rcu_gpb, key_val, traits_SplitList_Michael_st_less_stat > SplitList_Michael_RCU_GPB_st_less_stat;
@@ -256,7 +256,7 @@ namespace set {
                 >
             >::type
         {};
-        typedef SplitListSet< cds::gc::HP, key_val, traits_SplitList_Lazy_dyn_cmp > SplitList_Lazy_HP_dyn_cmp;
+        typedef SplitListSet< cds::gc::HP<>, key_val, traits_SplitList_Lazy_dyn_cmp > SplitList_Lazy_HP_dyn_cmp;
         typedef SplitListSet< cds::gc::DHP, key_val, traits_SplitList_Lazy_dyn_cmp > SplitList_Lazy_DHP_dyn_cmp;
         typedef SplitListSet< rcu_gpi, key_val, traits_SplitList_Lazy_dyn_cmp > SplitList_Lazy_RCU_GPI_dyn_cmp;
         typedef SplitListSet< rcu_gpb, key_val, traits_SplitList_Lazy_dyn_cmp > SplitList_Lazy_RCU_GPB_dyn_cmp;
@@ -273,7 +273,7 @@ namespace set {
                 , co::stat< cc::lazy_list::stat<>>
             >::type ordered_list_traits;
         };
-        typedef SplitListSet< cds::gc::HP, key_val, traits_SplitList_Lazy_dyn_cmp_stat > SplitList_Lazy_HP_dyn_cmp_stat;
+        typedef SplitListSet< cds::gc::HP<>, key_val, traits_SplitList_Lazy_dyn_cmp_stat > SplitList_Lazy_HP_dyn_cmp_stat;
         typedef SplitListSet< cds::gc::DHP, key_val, traits_SplitList_Lazy_dyn_cmp_stat > SplitList_Lazy_DHP_dyn_cmp_stat;
         typedef SplitListSet< rcu_gpi, key_val, traits_SplitList_Lazy_dyn_cmp_stat > SplitList_Lazy_RCU_GPI_dyn_cmp_stat;
         typedef SplitListSet< rcu_gpb, key_val, traits_SplitList_Lazy_dyn_cmp_stat > SplitList_Lazy_RCU_GPB_dyn_cmp_stat;
@@ -296,7 +296,7 @@ namespace set {
                 >
             >::type
         {};
-        typedef SplitListSet< cds::gc::HP, key_val, traits_SplitList_Lazy_dyn_cmp_seqcst > SplitList_Lazy_HP_dyn_cmp_seqcst;
+        typedef SplitListSet< cds::gc::HP<>, key_val, traits_SplitList_Lazy_dyn_cmp_seqcst > SplitList_Lazy_HP_dyn_cmp_seqcst;
         typedef SplitListSet< cds::gc::DHP, key_val, traits_SplitList_Lazy_dyn_cmp_seqcst > SplitList_Lazy_DHP_dyn_cmp_seqcst;
         typedef SplitListSet< rcu_gpi, key_val, traits_SplitList_Lazy_dyn_cmp_seqcst > SplitList_Lazy_RCU_GPI_dyn_cmp_seqcst;
         typedef SplitListSet< rcu_gpb, key_val, traits_SplitList_Lazy_dyn_cmp_seqcst > SplitList_Lazy_RCU_GPB_dyn_cmp_seqcst;
@@ -318,7 +318,7 @@ namespace set {
                 >
             >::type
         {};
-        typedef SplitListSet< cds::gc::HP, key_val, traits_SplitList_Lazy_st_cmp > SplitList_Lazy_HP_st_cmp;
+        typedef SplitListSet< cds::gc::HP<>, key_val, traits_SplitList_Lazy_st_cmp > SplitList_Lazy_HP_st_cmp;
         typedef SplitListSet< cds::gc::DHP, key_val, traits_SplitList_Lazy_st_cmp > SplitList_Lazy_DHP_st_cmp;
         typedef SplitListSet< rcu_gpi, key_val, traits_SplitList_Lazy_st_cmp > SplitList_Lazy_RCU_GPI_st_cmp;
         typedef SplitListSet< rcu_gpb, key_val, traits_SplitList_Lazy_st_cmp > SplitList_Lazy_RCU_GPB_st_cmp;
@@ -339,7 +339,7 @@ namespace set {
                 >
             >::type
         {};
-        typedef SplitListSet< cds::gc::HP, key_val, traits_SplitList_Lazy_dyn_less > SplitList_Lazy_HP_dyn_less;
+        typedef SplitListSet< cds::gc::HP<>, key_val, traits_SplitList_Lazy_dyn_less > SplitList_Lazy_HP_dyn_less;
         typedef SplitListSet< cds::gc::DHP, key_val, traits_SplitList_Lazy_dyn_less > SplitList_Lazy_DHP_dyn_less;
         typedef SplitListSet< rcu_gpi, key_val, traits_SplitList_Lazy_dyn_less > SplitList_Lazy_RCU_GPI_dyn_less;
         typedef SplitListSet< rcu_gpb, key_val, traits_SplitList_Lazy_dyn_less > SplitList_Lazy_RCU_GPB_dyn_less;
@@ -361,7 +361,7 @@ namespace set {
                 >
             >::type
         {};
-        typedef SplitListSet< cds::gc::HP, key_val, traits_SplitList_Lazy_st_less > SplitList_Lazy_HP_st_less;
+        typedef SplitListSet< cds::gc::HP<>, key_val, traits_SplitList_Lazy_st_less > SplitList_Lazy_HP_st_less;
         typedef SplitListSet< cds::gc::DHP, key_val, traits_SplitList_Lazy_st_less > SplitList_Lazy_DHP_st_less;
         typedef SplitListSet< rcu_gpi, key_val, traits_SplitList_Lazy_st_less > SplitList_Lazy_RCU_GPI_st_less;
         typedef SplitListSet< rcu_gpb, key_val, traits_SplitList_Lazy_st_less > SplitList_Lazy_RCU_GPB_st_less;
@@ -378,7 +378,7 @@ namespace set {
                 , co::stat< cc::lazy_list::stat<>>
             >::type ordered_list_traits;
         };
-        typedef SplitListSet< cds::gc::HP, key_val, traits_SplitList_Lazy_st_less_stat > SplitList_Lazy_HP_st_less_stat;
+        typedef SplitListSet< cds::gc::HP<>, key_val, traits_SplitList_Lazy_st_less_stat > SplitList_Lazy_HP_st_less_stat;
         typedef SplitListSet< cds::gc::DHP, key_val, traits_SplitList_Lazy_st_less_stat > SplitList_Lazy_DHP_st_less_stat;
         typedef SplitListSet< rcu_gpi, key_val, traits_SplitList_Lazy_st_less_stat > SplitList_Lazy_RCU_GPI_st_less_stat;
         typedef SplitListSet< rcu_gpb, key_val, traits_SplitList_Lazy_st_less_stat > SplitList_Lazy_RCU_GPB_st_less_stat;
@@ -402,7 +402,7 @@ namespace set {
                 >
             >::type
         {};
-        typedef SplitListSet< cds::gc::HP,  key_val, traits_SplitList_Iterable_dyn_cmp > SplitList_Iterable_HP_dyn_cmp;
+        typedef SplitListSet< cds::gc::HP<>,  key_val, traits_SplitList_Iterable_dyn_cmp > SplitList_Iterable_HP_dyn_cmp;
         typedef SplitListSet< cds::gc::DHP, key_val, traits_SplitList_Iterable_dyn_cmp > SplitList_Iterable_DHP_dyn_cmp;
 
         struct traits_SplitList_Iterable_dyn_cmp_stat:
@@ -419,7 +419,7 @@ namespace set {
                 >
             >::type
         {};
-        typedef SplitListSet< cds::gc::HP, key_val, traits_SplitList_Iterable_dyn_cmp_stat > SplitList_Iterable_HP_dyn_cmp_stat;
+        typedef SplitListSet< cds::gc::HP<>, key_val, traits_SplitList_Iterable_dyn_cmp_stat > SplitList_Iterable_HP_dyn_cmp_stat;
         typedef SplitListSet< cds::gc::DHP, key_val, traits_SplitList_Iterable_dyn_cmp_stat > SplitList_Iterable_DHP_dyn_cmp_stat;
 
         struct traits_SplitList_Iterable_dyn_cmp_seqcst :
@@ -436,7 +436,7 @@ namespace set {
                 >
             >::type
         {};
-        typedef SplitListSet< cds::gc::HP,  key_val, traits_SplitList_Iterable_dyn_cmp_seqcst > SplitList_Iterable_HP_dyn_cmp_seqcst;
+        typedef SplitListSet< cds::gc::HP<>,  key_val, traits_SplitList_Iterable_dyn_cmp_seqcst > SplitList_Iterable_HP_dyn_cmp_seqcst;
         typedef SplitListSet< cds::gc::DHP, key_val, traits_SplitList_Iterable_dyn_cmp_seqcst > SplitList_Iterable_DHP_dyn_cmp_seqcst;
 
         struct traits_SplitList_Iterable_st_cmp :
@@ -452,7 +452,7 @@ namespace set {
                 >
             >::type
         {};
-        typedef SplitListSet< cds::gc::HP,  key_val, traits_SplitList_Iterable_st_cmp > SplitList_Iterable_HP_st_cmp;
+        typedef SplitListSet< cds::gc::HP<>,  key_val, traits_SplitList_Iterable_st_cmp > SplitList_Iterable_HP_st_cmp;
         typedef SplitListSet< cds::gc::DHP, key_val, traits_SplitList_Iterable_st_cmp > SplitList_Iterable_DHP_st_cmp;
 
         //HP + less
@@ -468,7 +468,7 @@ namespace set {
                 >
             >::type
         {};
-        typedef SplitListSet< cds::gc::HP,  key_val, traits_SplitList_Iterable_dyn_less > SplitList_Iterable_HP_dyn_less;
+        typedef SplitListSet< cds::gc::HP<>,  key_val, traits_SplitList_Iterable_dyn_less > SplitList_Iterable_HP_dyn_less;
         typedef SplitListSet< cds::gc::DHP, key_val, traits_SplitList_Iterable_dyn_less > SplitList_Iterable_DHP_dyn_less;
 
         struct traits_SplitList_Iterable_st_less :
@@ -484,7 +484,7 @@ namespace set {
                 >
             >::type
         {};
-        typedef SplitListSet< cds::gc::HP,  key_val, traits_SplitList_Iterable_st_less > SplitList_Iterable_HP_st_less;
+        typedef SplitListSet< cds::gc::HP<>,  key_val, traits_SplitList_Iterable_st_less > SplitList_Iterable_HP_st_less;
         typedef SplitListSet< cds::gc::DHP, key_val, traits_SplitList_Iterable_st_less > SplitList_Iterable_DHP_st_less;
 
         struct traits_SplitList_Iterable_st_less_stat :
@@ -502,7 +502,7 @@ namespace set {
                 >
             >::type
         {};
-        typedef SplitListSet< cds::gc::HP,  key_val, traits_SplitList_Iterable_st_less_stat > SplitList_Iterable_HP_st_less_stat;
+        typedef SplitListSet< cds::gc::HP<>,  key_val, traits_SplitList_Iterable_st_less_stat > SplitList_Iterable_HP_st_less_stat;
         typedef SplitListSet< cds::gc::DHP, key_val, traits_SplitList_Iterable_st_less_stat > SplitList_Iterable_DHP_st_less_stat;
 
     };

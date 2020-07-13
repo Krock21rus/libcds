@@ -11,7 +11,7 @@
 
 namespace {
     namespace cc = cds::container;
-    typedef cds::gc::HP gc_type;
+    typedef cds::gc::HP<> gc_type;
 
     class SplitListIterableSet_HP : public cds_test::split_iterable_set_hp
     {

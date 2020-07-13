@@ -13,8 +13,8 @@ namespace cds {
       thread_local thread_data *tls_ = nullptr;
       thread_local std::pair<thread_data *, thread_data *> *tls2_ = new std::pair<thread_data *, thread_data *>(nullptr,
                                                                                                                 nullptr);
-      static std::unordered_map<cds::OS::posix::ThreadId, thread_data *> heap_tls_ =
-              std::unordered_map<cds::OS::posix::ThreadId, thread_data *>(1);
+      const size_t MAXIMUM_THREAD_ID = 100000;
+      static thread_data* heap_tls_[MAXIMUM_THREAD_ID];
 
       /*static*/ CDS_EXPORT_API thread_data *DefaultTLSManager::getTLS() {
         return tls_;
@@ -42,12 +42,18 @@ namespace cds {
 
       /*static*/ CDS_EXPORT_API thread_data *HeapTLSManager::getTLS() {
         cds::OS::posix::ThreadId thread_id = cds::OS::get_current_thread_id();
-        return heap_tls_[thread_id]; // unsafe if many threads are trying to use getTLS and setTLS
+        if(thread_id < 0 || thread_id >= MAXIMUM_THREAD_ID) {
+          throw std::runtime_error("HeapTLSManager too big thread_id");
+        }
+        return heap_tls_[thread_id];
       }
 
       /*static*/ CDS_EXPORT_API void HeapTLSManager::setTLS(thread_data *new_tls) {
         cds::OS::posix::ThreadId thread_id = cds::OS::get_current_thread_id();
-        heap_tls_[thread_id] = new_tls; // unsafe if many threads are trying to use setTLS
+        if(thread_id < 0 || thread_id >= MAXIMUM_THREAD_ID) {
+          throw std::runtime_error("HeapTLSManager too big thread_id");
+        }
+        heap_tls_[thread_id] = new_tls;
       }
     }
   }

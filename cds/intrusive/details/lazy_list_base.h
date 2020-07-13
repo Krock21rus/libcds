@@ -361,7 +361,7 @@ namespace cds { namespace intrusive {
         /**
             Supported \p Options are:
             - \p opt::hook - hook used. Possible values are: \p lazy_list::base_hook, \p lazy_list::member_hook, \p lazy_list::traits_hook.
-                If the option is not specified, \p %lazy_list::base_hook and \p gc::HP is used.
+                If the option is not specified, \p %lazy_list::base_hook and \p gc::HP<> is used.
             - \p opt::compare - key comparison functor. No default functor is provided.
                 If the option is not specified, the \p opt::less is used.
             - \p opt::less - specifies binary predicate used for key comparison. Default is \p std::less<T>.

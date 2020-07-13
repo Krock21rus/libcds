@@ -123,7 +123,7 @@ namespace stack {
     struct Types {
 
     // TreiberStack
-        typedef cds::container::TreiberStack< cds::gc::HP,  T > Treiber_HP;
+        typedef cds::container::TreiberStack< cds::gc::HP<>,  T > Treiber_HP;
         typedef cds::container::TreiberStack< cds::gc::DHP, T > Treiber_DHP;
 
         struct traits_Treiber_seqcst: public
@@ -131,7 +131,7 @@ namespace stack {
                 cds::opt::memory_model<cds::opt::v::sequential_consistent>
             >::type
         {};
-        typedef cds::container::TreiberStack< cds::gc::HP,  T, traits_Treiber_seqcst > Treiber_HP_seqcst;
+        typedef cds::container::TreiberStack< cds::gc::HP<>,  T, traits_Treiber_seqcst > Treiber_HP_seqcst;
         typedef cds::container::TreiberStack< cds::gc::DHP, T, traits_Treiber_seqcst > Treiber_DHP_seqcst;
 
         struct traits_Treiber_stat: public
@@ -139,7 +139,7 @@ namespace stack {
                 cds::opt::stat<cds::intrusive::treiber_stack::stat<> >
             >::type
         {};
-        typedef cds::container::TreiberStack< cds::gc::HP, T, traits_Treiber_stat > Treiber_HP_stat;
+        typedef cds::container::TreiberStack< cds::gc::HP<>, T, traits_Treiber_stat > Treiber_HP_stat;
         typedef cds::container::TreiberStack< cds::gc::DHP, T, traits_Treiber_stat > Treiber_DHP_stat;
 
         struct traits_Treiber_yield: public
@@ -148,7 +148,7 @@ namespace stack {
                 , cds::opt::memory_model<cds::opt::v::relaxed_ordering>
             >::type
         {};
-        typedef cds::container::TreiberStack< cds::gc::HP,  T, traits_Treiber_yield > Treiber_HP_yield;
+        typedef cds::container::TreiberStack< cds::gc::HP<>,  T, traits_Treiber_yield > Treiber_HP_yield;
         typedef cds::container::TreiberStack< cds::gc::DHP, T, traits_Treiber_yield > Treiber_DHP_yield;
 
         struct traits_Treiber_pause: public
@@ -156,7 +156,7 @@ namespace stack {
                 cds::opt::back_off<cds::backoff::pause>
             >::type
         {};
-        typedef cds::container::TreiberStack< cds::gc::HP,  T, traits_Treiber_pause > Treiber_HP_pause;
+        typedef cds::container::TreiberStack< cds::gc::HP<>,  T, traits_Treiber_pause > Treiber_HP_pause;
         typedef cds::container::TreiberStack< cds::gc::DHP, T, traits_Treiber_pause > Treiber_DHP_pause;
 
         struct traits_Treiber_exp: public
@@ -166,7 +166,7 @@ namespace stack {
                 >
             >::type
         {};
-        typedef cds::container::TreiberStack< cds::gc::HP,  T, traits_Treiber_exp > Treiber_HP_exp;
+        typedef cds::container::TreiberStack< cds::gc::HP<>,  T, traits_Treiber_exp > Treiber_HP_exp;
         typedef cds::container::TreiberStack< cds::gc::DHP, T, traits_Treiber_exp > Treiber_DHP_exp;
 
 
@@ -176,7 +176,7 @@ namespace stack {
                 cds::opt::enable_elimination<true>
             > ::type
         {};
-        typedef cds::container::TreiberStack< cds::gc::HP,  T, traits_Elimination_on > Elimination_HP;
+        typedef cds::container::TreiberStack< cds::gc::HP<>,  T, traits_Elimination_on > Elimination_HP;
         typedef cds::container::TreiberStack< cds::gc::DHP, T, traits_Elimination_on > Elimination_DHP;
 
         struct traits_Elimination_stat : public
@@ -185,7 +185,7 @@ namespace stack {
                 ,cds::opt::stat<cds::intrusive::treiber_stack::stat<> >
             > ::type
         {};
-        typedef cds::container::TreiberStack< cds::gc::HP,  T, traits_Elimination_stat > Elimination_HP_stat;
+        typedef cds::container::TreiberStack< cds::gc::HP<>,  T, traits_Elimination_stat > Elimination_HP_stat;
         typedef cds::container::TreiberStack< cds::gc::DHP, T, traits_Elimination_stat > Elimination_DHP_stat;
 
         struct traits_Elimination_2ms: public
@@ -194,7 +194,7 @@ namespace stack {
                 ,cds::opt::elimination_backoff< cds::backoff::delay_of<2> >
             > ::type
         {};
-        typedef cds::container::TreiberStack< cds::gc::HP,  T, traits_Elimination_2ms >  Elimination_HP_2ms;
+        typedef cds::container::TreiberStack< cds::gc::HP<>,  T, traits_Elimination_2ms >  Elimination_HP_2ms;
         typedef cds::container::TreiberStack< cds::gc::DHP, T, traits_Elimination_2ms >  Elimination_DHP_2ms;
 
         struct traits_Elimination_2ms_stat : public
@@ -204,7 +204,7 @@ namespace stack {
                 , cds::opt::stat<cds::intrusive::treiber_stack::stat<> >
             > ::type
         {};
-        typedef cds::container::TreiberStack< cds::gc::HP,  T, traits_Elimination_2ms_stat > Elimination_HP_2ms_stat;
+        typedef cds::container::TreiberStack< cds::gc::HP<>,  T, traits_Elimination_2ms_stat > Elimination_HP_2ms_stat;
         typedef cds::container::TreiberStack< cds::gc::DHP, T, traits_Elimination_2ms_stat > Elimination_DHP_2ms_stat;
 
         struct traits_Elimination_5ms : public
@@ -213,7 +213,7 @@ namespace stack {
                 , cds::opt::elimination_backoff< cds::backoff::delay_of<5> >
             > ::type
         {};
-        typedef cds::container::TreiberStack< cds::gc::HP,  T, traits_Elimination_5ms > Elimination_HP_5ms;
+        typedef cds::container::TreiberStack< cds::gc::HP<>,  T, traits_Elimination_5ms > Elimination_HP_5ms;
         typedef cds::container::TreiberStack< cds::gc::DHP, T, traits_Elimination_5ms > Elimination_DHP_5ms;
 
         struct traits_Elimination_5ms_stat : public
@@ -223,7 +223,7 @@ namespace stack {
                 , cds::opt::stat<cds::intrusive::treiber_stack::stat<> >
             > ::type
         {};
-        typedef cds::container::TreiberStack< cds::gc::HP,  T, traits_Elimination_5ms_stat > Elimination_HP_5ms_stat;
+        typedef cds::container::TreiberStack< cds::gc::HP<>,  T, traits_Elimination_5ms_stat > Elimination_HP_5ms_stat;
         typedef cds::container::TreiberStack< cds::gc::DHP, T, traits_Elimination_5ms_stat > Elimination_DHP_5ms_stat;
 
         struct traits_Elimination_10ms : public
@@ -232,7 +232,7 @@ namespace stack {
                 , cds::opt::elimination_backoff< cds::backoff::delay_of<10> >
             > ::type
         {};
-        typedef cds::container::TreiberStack< cds::gc::HP,  T, traits_Elimination_10ms > Elimination_HP_10ms;
+        typedef cds::container::TreiberStack< cds::gc::HP<>,  T, traits_Elimination_10ms > Elimination_HP_10ms;
         typedef cds::container::TreiberStack< cds::gc::DHP, T, traits_Elimination_10ms > Elimination_DHP_10ms;
 
         struct traits_Elimination_10ms_stat : public
@@ -242,7 +242,7 @@ namespace stack {
                 , cds::opt::stat<cds::intrusive::treiber_stack::stat<> >
             > ::type
         {};
-        typedef cds::container::TreiberStack< cds::gc::HP,  T, traits_Elimination_10ms_stat > Elimination_HP_10ms_stat;
+        typedef cds::container::TreiberStack< cds::gc::HP<>,  T, traits_Elimination_10ms_stat > Elimination_HP_10ms_stat;
         typedef cds::container::TreiberStack< cds::gc::DHP, T, traits_Elimination_10ms_stat > Elimination_DHP_10ms_stat;
 
         struct traits_Elimination_dyn: public
@@ -251,7 +251,7 @@ namespace stack {
                 , cds::opt::buffer< cds::opt::v::initialized_dynamic_buffer<int> >
             > ::type
         {};
-        typedef cds::container::TreiberStack< cds::gc::HP,  T, traits_Elimination_dyn > Elimination_HP_dyn;
+        typedef cds::container::TreiberStack< cds::gc::HP<>,  T, traits_Elimination_dyn > Elimination_HP_dyn;
         typedef cds::container::TreiberStack< cds::gc::DHP, T, traits_Elimination_dyn > Elimination_DHP_dyn;
 
         struct traits_Elimination_seqcst: public
@@ -260,7 +260,7 @@ namespace stack {
                 , cds::opt::memory_model<cds::opt::v::sequential_consistent>
             > ::type
         {};
-        typedef cds::container::TreiberStack< cds::gc::HP,  T, traits_Elimination_seqcst > Elimination_HP_seqcst;
+        typedef cds::container::TreiberStack< cds::gc::HP<>,  T, traits_Elimination_seqcst > Elimination_HP_seqcst;
         typedef cds::container::TreiberStack< cds::gc::DHP, T, traits_Elimination_seqcst > Elimination_DHP_seqcst;
 
         struct traits_Elimination_dyn_stat: public
@@ -270,7 +270,7 @@ namespace stack {
                 , cds::opt::buffer< cds::opt::v::initialized_dynamic_buffer<int> >
             > ::type
         {};
-        typedef cds::container::TreiberStack< cds::gc::HP,  T, traits_Elimination_dyn_stat > Elimination_HP_dyn_stat;
+        typedef cds::container::TreiberStack< cds::gc::HP<>,  T, traits_Elimination_dyn_stat > Elimination_HP_dyn_stat;
         typedef cds::container::TreiberStack< cds::gc::DHP, T, traits_Elimination_dyn_stat > Elimination_DHP_dyn_stat;
 
         struct traits_Elimination_yield: public
@@ -280,7 +280,7 @@ namespace stack {
                 , cds::opt::memory_model<cds::opt::v::relaxed_ordering>
             > ::type
         {};
-        typedef cds::container::TreiberStack< cds::gc::HP,  T, traits_Elimination_yield > Elimination_HP_yield;
+        typedef cds::container::TreiberStack< cds::gc::HP<>,  T, traits_Elimination_yield > Elimination_HP_yield;
         typedef cds::container::TreiberStack< cds::gc::DHP, T, traits_Elimination_yield > Elimination_DHP_yield;
 
         struct traits_Elimination_pause: public
@@ -289,7 +289,7 @@ namespace stack {
                 , cds::opt::back_off<cds::backoff::pause>
             > ::type
         {};
-        typedef cds::container::TreiberStack< cds::gc::HP,  T, traits_Elimination_pause > Elimination_HP_pause;
+        typedef cds::container::TreiberStack< cds::gc::HP<>,  T, traits_Elimination_pause > Elimination_HP_pause;
         typedef cds::container::TreiberStack< cds::gc::DHP, T, traits_Elimination_pause > Elimination_DHP_pause;
 
         struct traits_Elimination_exp: public
@@ -300,7 +300,7 @@ namespace stack {
                 >
             > ::type
         {};
-        typedef cds::container::TreiberStack< cds::gc::HP,  T, traits_Elimination_exp > Elimination_HP_exp;
+        typedef cds::container::TreiberStack< cds::gc::HP<>,  T, traits_Elimination_exp > Elimination_HP_exp;
         typedef cds::container::TreiberStack< cds::gc::DHP, T, traits_Elimination_exp > Elimination_DHP_exp;
 
 

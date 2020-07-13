@@ -33,11 +33,11 @@ namespace cds { namespace intrusive {
             or it must have a member of type lazy_list::node (for lazy_list::member_hook).
         - \p Traits - type traits. See lazy_list::traits for explanation.
             It is possible to declare option-based list with cds::intrusive::lazy_list::make_traits metafunction instead of \p Traits template
-            argument. For example, the following traits-based declaration of \p gc::HP lazy list
+            argument. For example, the following traits-based declaration of \p gc::HP<> lazy list
             \code
             #include <cds/intrusive/lazy_list_hp.h>
             // Declare item stored in your list
-            struct item: public cds::intrusive::lazy_list::node< cds::gc::HP >
+            struct item: public cds::intrusive::lazy_list::node< cds::gc::HP<> >
             { ... };
 
             // Declare comparator for the item
@@ -46,12 +46,12 @@ namespace cds { namespace intrusive {
             // Declare traits
             struct my_traits: public cds::intrusive::lazy_list::traits
             {
-                typedef cds::intrusive::lazy_list::base_hook< cds::opt::gc< cds::gc::HP > >   hook;
+                typedef cds::intrusive::lazy_list::base_hook< cds::opt::gc< cds::gc::HP<> > >   hook;
                 typedef my_compare compare;
             };
 
             // Declare traits-based list
-            typedef cds::intrusive::LazyList< cds::gc::HP, item, my_traits >     traits_based_list;
+            typedef cds::intrusive::LazyList< cds::gc::HP<>, item, my_traits >     traits_based_list;
             \endcode
             is equivalent for the following option-based list
             \code
@@ -60,9 +60,9 @@ namespace cds { namespace intrusive {
             // item struct and my_compare are the same
 
             // Declare option-based list
-            typedef cds::intrusive::LazyList< cds::gc::HP, item,
+            typedef cds::intrusive::LazyList< cds::gc::HP<>, item,
                 typename cds::intrusive::lazy_list::make_traits<
-                    cds::intrusive::opt::hook< cds::intrusive::lazy_list::base_hook< cds::opt::gc< cds::gc::HP > > >    // hook option
+                    cds::intrusive::opt::hook< cds::intrusive::lazy_list::base_hook< cds::opt::gc< cds::gc::HP<> > > >    // hook option
                     ,cds::intrusive::opt::compare< my_compare >     // item comparator option
                 >::type
             >     option_based_list;
@@ -71,7 +71,7 @@ namespace cds { namespace intrusive {
         \par Usage
         There are different specializations of this template for each garbage collecting schema used.
         You should select GC needed and include appropriate .h-file:
-        - for gc::HP: \code #include <cds/intrusive/lazy_list_hp.h> \endcode
+        - for gc::HP<>: \code #include <cds/intrusive/lazy_list_hp.h> \endcode
         - for gc::DHP: \code #include <cds/intrusive/lazy_list_dhp.h> \endcode
         - for gc::nogc: \code #include <cds/intrusive/lazy_list_nogc.h> \endcode
         - for \ref cds_urcu_type "RCU" - see \ref cds_intrusive_LazyList_rcu "LazyList RCU specialization"
@@ -398,7 +398,7 @@ namespace cds { namespace intrusive {
             The forward iterator for lazy list has some features:
             - it has no post-increment operator
             - to protect the value, the iterator contains a GC-specific guard + another guard is required locally for increment operator.
-              For some GC (\p gc::HP), a guard is limited resource per thread, so an exception (or assertion) "no free guard"
+              For some GC (\p gc::HP<>), a guard is limited resource per thread, so an exception (or assertion) "no free guard"
               may be thrown if a limit of guard count per thread is exceeded.
             - The iterator cannot be moved across thread boundary since it contains GC's guard that is thread-private GC data.
             - Iterator ensures thread-safety even if you delete the item that iterator points to. However, in case of concurrent
@@ -681,7 +681,7 @@ namespace cds { namespace intrusive {
 
             Usage:
             \code
-            typedef cds::intrusive::LazyList< cds::gc::HP, foo, my_traits >  ord_list;
+            typedef cds::intrusive::LazyList< cds::gc::HP<>, foo, my_traits >  ord_list;
             ord_list theList;
             // ...
             {
@@ -819,7 +819,7 @@ namespace cds { namespace intrusive {
 
             Usage:
             \code
-            typedef cds::intrusive::LazyList< cds::gc::HP, foo, my_traits >  ord_list;
+            typedef cds::intrusive::LazyList< cds::gc::HP<>, foo, my_traits >  ord_list;
             ord_list theList;
             // ...
             {

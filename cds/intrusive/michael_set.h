@@ -37,7 +37,7 @@ namespace cds { namespace intrusive {
         There are several specializations of \p %MichaelHashSet for each GC. You should include:
         - <tt><cds/intrusive/michael_set_rcu.h></tt> for \ref cds_intrusive_MichaelHashSet_rcu "RCU type"
         - <tt><cds/intrusive/michael_set_nogc.h></tt> for \ref cds_intrusive_MichaelHashSet_nogc for append-only set
-        - <tt><cds/intrusive/michael_set.h></tt> for \p gc::HP, \p gc::DHP
+        - <tt><cds/intrusive/michael_set.h></tt> for \p gc::HP<>, \p gc::DHP
 
         <b>Hash functor</b>
 
@@ -70,14 +70,14 @@ namespace cds { namespace intrusive {
 
         First, you should define ordered list type to use in your hash set:
         \code
-        // For gc::HP-based MichaelList implementation
+        // For gc::HP<>-based MichaelList implementation
         #include <cds/intrusive/michael_list_hp.h>
 
         // cds::intrusive::MichaelHashSet declaration
         #include <cds/intrusive/michael_set.h>
 
         // Type of hash-set items
-        struct Foo: public cds::intrusive::michael_list::node< cds::gc::HP >
+        struct Foo: public cds::intrusive::michael_list::node< cds::gc::HP<> >
         {
             std::string     key_    ;   // key field
             unsigned        val_    ;   // value field
@@ -95,10 +95,10 @@ namespace cds { namespace intrusive {
 
         // Declare bucket type for Michael's hash set
         // The bucket type is any ordered list type like MichaelList, LazyList
-        typedef cds::intrusive::MichaelList< cds::gc::HP, Foo,
+        typedef cds::intrusive::MichaelList< cds::gc::HP<>, Foo,
             typename cds::intrusive::michael_list::make_traits<
                 // hook option
-                cds::intrusive::opt::hook< cds::intrusive::michael_list::base_hook< cds::opt::gc< cds::gc::HP > > >
+                cds::intrusive::opt::hook< cds::intrusive::michael_list::base_hook< cds::opt::gc< cds::gc::HP<> > > >
                 // item comparator option
                 ,cds::opt::compare< FooCmp >
             >::type
@@ -123,7 +123,7 @@ namespace cds { namespace intrusive {
 
         // Michael's set typedef
         typedef cds::intrusive::MichaelHashSet<
-            cds::gc::HP
+            cds::gc::HP<>
             ,Foo_bucket
             ,typename cds::intrusive::michael_set::make_traits<
                 cds::opt::hash< FooHash >
@@ -143,10 +143,10 @@ namespace cds { namespace intrusive {
         struct tag_key2_idx;
 
         // Your two-key data
-        // The first key is maintained by gc::HP, second key is maintained by gc::DHP garbage collectors
+        // The first key is maintained by gc::HP<>, second key is maintained by gc::DHP garbage collectors
         // (I don't know what is needed for, but it is correct)
         struct Foo
-            : public cds::intrusive::michael_list::node< cds::gc::HP, tag_key1_idx >
+            : public cds::intrusive::michael_list::node< cds::gc::HP<>, tag_key1_idx >
             , public cds::intrusive::michael_list::node< cds::gc::DHP, tag_key2_idx >
         {
             std::string     key1_   ;   // first key field
@@ -165,11 +165,11 @@ namespace cds { namespace intrusive {
             bool operator()( const Foo& f1, const Foo& f2 ) const { return f1.key2_ < f2.key1_ ; }
         };
 
-        // Declare bucket type for Michael's hash set indexed by key1_ field and maintained by gc::HP
-        typedef cds::intrusive::MichaelList< cds::gc::HP, Foo,
+        // Declare bucket type for Michael's hash set indexed by key1_ field and maintained by gc::HP<>
+        typedef cds::intrusive::MichaelList< cds::gc::HP<>, Foo,
             typename cds::intrusive::michael_list::make_traits<
                 // hook option
-                cds::intrusive::opt::hook< cds::intrusive::michael_list::base_hook< cds::opt::gc< cds::gc::HP >, tag_key1_idx > >
+                cds::intrusive::opt::hook< cds::intrusive::michael_list::base_hook< cds::opt::gc< cds::gc::HP<> >, tag_key1_idx > >
                 // item comparator option
                 ,cds::opt::compare< Key1Cmp >
             >::type
@@ -194,7 +194,7 @@ namespace cds { namespace intrusive {
 
         // Michael's set indexed by key1_ field
         typedef cds::intrusive::MichaelHashSet<
-            cds::gc::HP
+            cds::gc::HP<>
             ,Key1_bucket
             ,typename cds::intrusive::michael_set::make_traits<
                 cds::opt::hash< Key1Hash >

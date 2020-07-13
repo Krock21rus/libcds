@@ -26,14 +26,14 @@ namespace map {
                 co::compare< compare >
             >::type
         {};
-        typedef cc::IterableKVList< cds::gc::HP,  Key, Value, traits_IterableList_cmp > IterableList_HP_cmp;
+        typedef cc::IterableKVList< cds::gc::HP<>,  Key, Value, traits_IterableList_cmp > IterableList_HP_cmp;
         typedef cc::IterableKVList< cds::gc::DHP, Key, Value, traits_IterableList_cmp > IterableList_DHP_cmp;
 
         struct traits_IterableList_cmp_stat: public traits_IterableList_cmp
         {
             typedef cc::iterable_list::stat<> stat;
         };
-        typedef cc::IterableKVList< cds::gc::HP, Key, Value, traits_IterableList_cmp_stat > IterableList_HP_cmp_stat;
+        typedef cc::IterableKVList< cds::gc::HP<>, Key, Value, traits_IterableList_cmp_stat > IterableList_HP_cmp_stat;
         typedef cc::IterableKVList< cds::gc::DHP, Key, Value, traits_IterableList_cmp_stat > IterableList_DHP_cmp_stat;
 
         struct traits_IterableList_cmp_seqcst :
@@ -42,7 +42,7 @@ namespace map {
                 ,co::memory_model< co::v::sequential_consistent >
             >::type
         {};
-        typedef cc::IterableKVList< cds::gc::HP,  Key, Value, traits_IterableList_cmp_seqcst > IterableList_HP_cmp_seqcst;
+        typedef cc::IterableKVList< cds::gc::HP<>,  Key, Value, traits_IterableList_cmp_seqcst > IterableList_HP_cmp_seqcst;
         typedef cc::IterableKVList< cds::gc::DHP, Key, Value, traits_IterableList_cmp_seqcst > IterableList_DHP_cmp_seqcst;
 
 
@@ -51,14 +51,14 @@ namespace map {
                 co::less< less >
             >::type
         {};
-        typedef cc::IterableKVList< cds::gc::HP,  Key, Value, traits_IterableList_less > IterableList_HP_less;
+        typedef cc::IterableKVList< cds::gc::HP<>,  Key, Value, traits_IterableList_less > IterableList_HP_less;
         typedef cc::IterableKVList< cds::gc::DHP, Key, Value, traits_IterableList_less > IterableList_DHP_less;
 
         struct traits_IterableList_less_stat: public traits_IterableList_less
         {
             typedef cc::iterable_list::stat<> stat;
         };
-        typedef cc::IterableKVList< cds::gc::HP, Key, Value, traits_IterableList_less_stat > IterableList_HP_less_stat;
+        typedef cc::IterableKVList< cds::gc::HP<>, Key, Value, traits_IterableList_less_stat > IterableList_HP_less_stat;
         typedef cc::IterableKVList< cds::gc::DHP, Key, Value, traits_IterableList_less_stat > IterableList_DHP_less_stat;
 
         struct traits_IterableList_less_seqcst :
@@ -67,7 +67,7 @@ namespace map {
                 ,co::memory_model< co::v::sequential_consistent >
             >::type
         {};
-        typedef cc::IterableKVList< cds::gc::HP,  Key, Value, traits_IterableList_less_seqcst > IterableList_HP_less_seqcst;
+        typedef cc::IterableKVList< cds::gc::HP<>,  Key, Value, traits_IterableList_less_seqcst > IterableList_HP_less_seqcst;
         typedef cc::IterableKVList< cds::gc::DHP, Key, Value, traits_IterableList_less_seqcst > IterableList_DHP_less_seqcst;
 
     };

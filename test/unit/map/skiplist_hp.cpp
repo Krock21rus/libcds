@@ -9,7 +9,7 @@
 
 namespace {
     namespace cc = cds::container;
-    typedef cds::gc::HP gc_type;
+    typedef cds::gc::HP<> gc_type;
 
     class SkipListMap_HP : public cds_test::skiplist_map_hp
     {

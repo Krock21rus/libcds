@@ -10,7 +10,7 @@
 
 namespace {
     namespace cc = cds::container;
-    typedef cds::gc::HP gc_type;
+    typedef cds::gc::HP<> gc_type;
 
     class EllenBinTreeMap_HP : public cds_test::container_tree_map_hp
     {

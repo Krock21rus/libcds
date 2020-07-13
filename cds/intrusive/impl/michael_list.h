@@ -27,11 +27,11 @@ namespace cds { namespace intrusive {
             or it must have a member of type \p michael_list::node (for \p michael_list::member_hook).
         - \p Traits - type traits, default is \p michael_list::traits. It is possible to declare option-based
              list with \p cds::intrusive::michael_list::make_traits metafunction:
-            For example, the following traits-based declaration of \p gc::HP Michael's list
+            For example, the following traits-based declaration of \p gc::HP<> Michael's list
             \code
             #include <cds/intrusive/michael_list_hp.h>
             // Declare item stored in your list
-            struct item: public cds::intrusive::michael_list::node< cds::gc::HP >
+            struct item: public cds::intrusive::michael_list::node< cds::gc::HP<> >
             {
                 int nKey;
                 // .... other data
@@ -48,12 +48,12 @@ namespace cds { namespace intrusive {
             // Declare traits
             struct my_traits: public cds::intrusive::michael_list::traits
             {
-                typedef cds::intrusive::michael_list::base_hook< cds::opt::gc< cds::gc::HP > >   hook;
+                typedef cds::intrusive::michael_list::base_hook< cds::opt::gc< cds::gc::HP<> > >   hook;
                 typedef my_compare compare;
             };
 
             // Declare traits-based list
-            typedef cds::intrusive::MichaelList< cds::gc::HP, item, my_traits >     traits_based_list;
+            typedef cds::intrusive::MichaelList< cds::gc::HP<>, item, my_traits >     traits_based_list;
             \endcode
             is equivalent for the following option-based list
             \code
@@ -62,9 +62,9 @@ namespace cds { namespace intrusive {
             // item struct and my_compare are the same
 
             // Declare option-based list
-            typedef cds::intrusive::MichaelList< cds::gc::HP, item,
+            typedef cds::intrusive::MichaelList< cds::gc::HP<>, item,
                 typename cds::intrusive::michael_list::make_traits<
-                    cds::intrusive::opt::hook< cds::intrusive::michael_list::base_hook< cds::opt::gc< cds::gc::HP > > >    // hook option
+                    cds::intrusive::opt::hook< cds::intrusive::michael_list::base_hook< cds::opt::gc< cds::gc::HP<> > > >    // hook option
                     ,cds::intrusive::opt::compare< my_compare >     // item comparator option
                 >::type
             >     option_based_list;
@@ -73,7 +73,7 @@ namespace cds { namespace intrusive {
         \par Usage
         There are different specializations of this template for each garbage collecting schema.
         You should select GC needed and include appropriate .h-file:
-        - for \p gc::HP: <tt> <cds/intrusive/michael_list_hp.h> </tt>
+        - for \p gc::HP<>: <tt> <cds/intrusive/michael_list_hp.h> </tt>
         - for \p gc::DHP: <tt> <cds/intrusive/michael_list_dhp.h> </tt>
         - for \ref cds_urcu_gc "RCU type" - see \ref cds_intrusive_MichaelList_rcu "RCU-based MichaelList"
         - for \p gc::nogc: <tt> <cds/intrusive/michael_list_nogc.h> </tt>
@@ -400,7 +400,7 @@ namespace cds { namespace intrusive {
             The forward iterator for Michael's list has some features:
             - it has no post-increment operator
             - to protect the value, the iterator contains a GC-specific guard + another guard is required locally for increment operator.
-              For some GC (like as \p gc::HP), a guard is a limited resource per thread, so an exception (or assertion) "no free guard"
+              For some GC (like as \p gc::HP<>), a guard is a limited resource per thread, so an exception (or assertion) "no free guard"
               may be thrown if the limit of guard count per thread is exceeded.
             - The iterator cannot be moved across thread boundary since it contains thread-private GC's guard.
             - Iterator ensures thread-safety even if you delete the item the iterator points to. However, in case of concurrent
@@ -691,7 +691,7 @@ namespace cds { namespace intrusive {
 
             Usage:
             \code
-            typedef cds::intrusive::MichaelList< cds::gc::HP, foo, my_traits >  ord_list;
+            typedef cds::intrusive::MichaelList< cds::gc::HP<>, foo, my_traits >  ord_list;
             ord_list theList;
             // ...
             {
@@ -835,7 +835,7 @@ namespace cds { namespace intrusive {
 
             Usage:
             \code
-            typedef cds::intrusive::MichaelList< cds::gc::HP, foo, my_traits >  ord_list;
+            typedef cds::intrusive::MichaelList< cds::gc::HP<>, foo, my_traits >  ord_list;
             ord_list theList;
             // ...
             {

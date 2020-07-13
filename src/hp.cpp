@@ -516,10 +516,9 @@ namespace cds { namespace gc { namespace hp {
 #   endif
     }
 
+      static cds::gc::hp::stat const& postmortem_statistics()
+      {
+        return cds::gc::hp::s_postmortem_stat;
+      }
+
 }}} // namespace cds::gc::hp
-
-CDS_EXPORT_API /*static*/ cds::gc::HP::stat const& cds::gc::HP::postmortem_statistics()
-{
-    return cds::gc::hp::s_postmortem_stat;
-}
-

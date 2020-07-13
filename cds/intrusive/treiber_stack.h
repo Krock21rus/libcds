@@ -238,7 +238,7 @@ namespace cds { namespace intrusive {
 
             Example: declare \p %TreiberStack with elimination enabled and internal statistics
             \code
-            typedef cds::intrusive::TreiberStack< cds::gc::HP, Foo,
+            typedef cds::intrusive::TreiberStack< cds::gc::HP<>, Foo,
                 typename cds::intrusive::treiber_stack::make_traits<
                     cds::opt::enable_elimination< true >,
                     cds::opt::stat< cds::intrusive::treiber_stack::stat<> >
@@ -469,7 +469,7 @@ namespace cds { namespace intrusive {
         This approach demonstrates sufficient performance under high load.
 
         Template arguments:
-        - \p GC - garbage collector type: \p gc::HP, \p gc::DHP.
+        - \p GC - garbage collector type: \p gc::HP<>, \p gc::DHP.
             Garbage collecting schema must be the same as \p treiber_stack::node GC.
         - \p T - a type the stack contains. A value of type \p T must be derived
             from \p treiber_stack::node for \p treiber_stack::base_hook,
@@ -481,10 +481,10 @@ namespace cds { namespace intrusive {
             struct myTraits: public cds::intrusive::treiber_stack::traits {
                 typedef cds::intrusive::treiber_stack::stat<> stat;
             };
-            typedef cds::intrusive::TreiberStack< cds::gc::HP, Foo, myTraits > myStack;
+            typedef cds::intrusive::TreiberStack< cds::gc::HP<>, Foo, myTraits > myStack;
 
             // Equivalent make_traits example:
-            typedef cds::intrusive::TreiberStack< cds::gc::HP, Foo,
+            typedef cds::intrusive::TreiberStack< cds::gc::HP<>, Foo,
                 typename cds::intrusive::treiber_stack::make_traits<
                     cds::opt::stat< cds::intrusive::treiber_stack::stat<> >
                 >::type
@@ -503,7 +503,7 @@ namespace cds { namespace intrusive {
         #include <cds/gc/hp.h>
 
         namespace ci = cds::intrusive;
-        typedef cds::gc::HP gc;
+        typedef cds::gc::HP<> gc;
 
         struct myData: public ci::treiber_stack::node< gc >
         {
@@ -534,7 +534,7 @@ namespace cds { namespace intrusive {
         #include <cds/gc/hp.h>
 
         namespace ci = cds::intrusive;
-        typedef cds::gc::HP gc;
+        typedef cds::gc::HP<> gc;
 
         // It is not necessary to declare complete type for tags
         struct tag1;
@@ -589,7 +589,7 @@ namespace cds { namespace intrusive {
         #include <cds/gc/hp.h>
 
         namespace ci = cds::intrusive;
-        typedef cds::gc::HP gc;
+        typedef cds::gc::HP<> gc;
 
         struct myData
         {

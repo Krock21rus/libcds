@@ -197,7 +197,7 @@ namespace cds { namespace container {
             The forward iterator for Michael's set has some features:
             - it has no post-increment operator
             - to protect the value, the iterator contains a GC-specific guard + another guard is required locally for increment operator.
-              For some GC (like as \p gc::HP), a guard is a limited resource per thread, so an exception (or assertion) "no free guard"
+              For some GC (like as \p gc::HP<>), a guard is a limited resource per thread, so an exception (or assertion) "no free guard"
               may be thrown if the limit of guard count per thread is exceeded.
             - The iterator cannot be moved across thread boundary because it contains thread-private GC's guard.
 

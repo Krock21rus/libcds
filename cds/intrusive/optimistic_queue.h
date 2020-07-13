@@ -296,9 +296,9 @@ namespace cds { namespace intrusive {
 
             Example: declare \p %OptimisticQueue with item counting and internal statistics
             \code
-            typedef cds::intrusive::OptimisticQueue< cds::gc::HP, Foo,
+            typedef cds::intrusive::OptimisticQueue< cds::gc::HP<>, Foo,
                 typename cds::intrusive::optimistic_queue::make_traits<
-                    cds::intrusive::opt:hook< cds::intrusive::optimistic_queue::base_hook< cds::opt::gc<cds:gc::HP> >>,
+                    cds::intrusive::opt:hook< cds::intrusive::optimistic_queue::base_hook< cds::opt::gc<cds:gc::HP<>> >>,
                     cds::opt::item_counte< cds::atomicity::item_counter >,
                     cds::opt::stat< cds::intrusive::optimistic_queue::stat<> >
                 >::type
@@ -324,7 +324,7 @@ namespace cds { namespace intrusive {
             [2008] Edya Ladan-Mozes, Nir Shavit "An Optimistic Approach to Lock-Free FIFO Queues"
 
         Template arguments:
-        - \p GC - garbage collector type: \p gc::HP, \p gc::DHP
+        - \p GC - garbage collector type: \p gc::HP<>, \p gc::DHP
         - \p T - type of value to be stored in the queue. A value of type \p T must be derived from \p optimistic_queue::node for \p optimistic_queue::base_hook,
             or it should have a member of type \p %optimistic_queue::node for \p optimistic_queue::member_hook,
             or it should be convertible to \p %optimistic_queue::node for \p optimistic_queue::traits_hook.
@@ -335,10 +335,10 @@ namespace cds { namespace intrusive {
                 typedef cds::intrusive::optimistic_queue::stat<> stat;
                 typedef cds::atomicity::item_counter    item_counter;
             };
-            typedef cds::intrusive::OptimisticQueue< cds::gc::HP, Foo, myTraits > myQueue;
+            typedef cds::intrusive::OptimisticQueue< cds::gc::HP<>, Foo, myTraits > myQueue;
 
             // Equivalent make_traits example:
-            typedef cds::intrusive::OptimisticQueue< cds::gc::HP, Foo,
+            typedef cds::intrusive::OptimisticQueue< cds::gc::HP<>, Foo,
                 typename cds::intrusive::optimistic_queue::make_traits<
                     cds::opt::stat< cds::intrusive::optimistic_queue::stat<> >,
                     cds::opt::item_counter< cds::atomicity::item_counter >
@@ -358,7 +358,7 @@ namespace cds { namespace intrusive {
         #include <cds/intrusive/optimistic_queue.h>
 
         namespace ci = cds::inrtusive;
-        typedef cds::gc::HP hp_gc;
+        typedef cds::gc::HP<> hp_gc;
 
         // Optimistic queue with Hazard Pointer garbage collector, base hook + item counter:
         struct Foo: public ci::optimistic_queue::node< hp_gc >

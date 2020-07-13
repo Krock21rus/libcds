@@ -405,7 +405,7 @@ namespace pqueue {
                 ,co::stat< cc::ellen_bintree::stat<> >
             >::type
         {};
-        typedef details::EllenBinTreePQueue< cds::gc::HP, typename Value::key_type, Value, traits_EllenBinTree_max > EllenBinTree_HP_max;
+        typedef details::EllenBinTreePQueue< cds::gc::HP<>, typename Value::key_type, Value, traits_EllenBinTree_max > EllenBinTree_HP_max;
         typedef details::EllenBinTreePQueue< cds::gc::DHP, typename Value::key_type, Value, traits_EllenBinTree_max > EllenBinTree_DHP_max;
         typedef details::EllenBinTreePQueue< rcu_gpi, typename Value::key_type, Value, traits_EllenBinTree_max > EllenBinTree_RCU_gpi_max;
         typedef details::EllenBinTreePQueue< rcu_gpb, typename Value::key_type, Value, traits_EllenBinTree_max > EllenBinTree_RCU_gpb_max;
@@ -421,7 +421,7 @@ namespace pqueue {
                 ,co::stat< cc::ellen_bintree::stat<> >
             >::type
         {};
-        typedef details::EllenBinTreePQueue< cds::gc::HP, typename Value::key_type, Value, traits_EllenBinTree_max_stat > EllenBinTree_HP_max_stat;
+        typedef details::EllenBinTreePQueue< cds::gc::HP<>, typename Value::key_type, Value, traits_EllenBinTree_max_stat > EllenBinTree_HP_max_stat;
         typedef details::EllenBinTreePQueue< cds::gc::DHP, typename Value::key_type, Value, traits_EllenBinTree_max_stat > EllenBinTree_DHP_max_stat;
         typedef details::EllenBinTreePQueue< rcu_gpi, typename Value::key_type, Value, traits_EllenBinTree_max_stat > EllenBinTree_RCU_gpi_max_stat;
         typedef details::EllenBinTreePQueue< rcu_gpb, typename Value::key_type, Value, traits_EllenBinTree_max_stat > EllenBinTree_RCU_gpb_max_stat;
@@ -436,7 +436,7 @@ namespace pqueue {
                 ,cc::opt::less< std::greater<Value> >
             >::type
         {};
-        typedef details::EllenBinTreePQueue< cds::gc::HP, typename Value::key_type, Value, traits_EllenBinTree_min, false > EllenBinTree_HP_min;
+        typedef details::EllenBinTreePQueue< cds::gc::HP<>, typename Value::key_type, Value, traits_EllenBinTree_min, false > EllenBinTree_HP_min;
         typedef details::EllenBinTreePQueue< cds::gc::DHP, typename Value::key_type, Value, traits_EllenBinTree_min, false > EllenBinTree_DHP_min;
         typedef details::EllenBinTreePQueue< rcu_gpi, typename Value::key_type, Value, traits_EllenBinTree_min, false > EllenBinTree_RCU_gpi_min;
         typedef details::EllenBinTreePQueue< rcu_gpb, typename Value::key_type, Value, traits_EllenBinTree_min, false > EllenBinTree_RCU_gpb_min;
@@ -452,7 +452,7 @@ namespace pqueue {
                 ,co::stat< cc::ellen_bintree::stat<> >
             >::type
         {};
-        typedef details::EllenBinTreePQueue< cds::gc::HP, typename Value::key_type, Value, traits_EllenBinTree_min_stat, false > EllenBinTree_HP_min_stat;
+        typedef details::EllenBinTreePQueue< cds::gc::HP<>, typename Value::key_type, Value, traits_EllenBinTree_min_stat, false > EllenBinTree_HP_min_stat;
         typedef details::EllenBinTreePQueue< cds::gc::DHP, typename Value::key_type, Value, traits_EllenBinTree_min_stat, false > EllenBinTree_DHP_min_stat;
         typedef details::EllenBinTreePQueue< rcu_gpi, typename Value::key_type, Value, traits_EllenBinTree_min_stat, false > EllenBinTree_RCU_gpi_min_stat;
         typedef details::EllenBinTreePQueue< rcu_gpb, typename Value::key_type, Value, traits_EllenBinTree_min_stat, false > EllenBinTree_RCU_gpb_min_stat;
@@ -467,7 +467,7 @@ namespace pqueue {
                 cc::opt::less < std::less<Value> >
             > ::type
         {};
-        typedef details::SkipListPQueue< cds::gc::HP, Value, traits_SkipList_max > SkipList32_HP_max;
+        typedef details::SkipListPQueue< cds::gc::HP<>, Value, traits_SkipList_max > SkipList32_HP_max;
         typedef details::SkipListPQueue< cds::gc::DHP, Value, traits_SkipList_max > SkipList32_DHP_max;
         typedef details::SkipListPQueue< rcu_gpi, Value, traits_SkipList_max > SkipList32_RCU_gpi_max;
         typedef details::SkipListPQueue< rcu_gpb, Value, traits_SkipList_max > SkipList32_RCU_gpb_max;
@@ -480,7 +480,7 @@ namespace pqueue {
         {
             typedef cc::skip_list::turbo24 random_level_generator;
         };
-        typedef details::SkipListPQueue< cds::gc::HP, Value, traits_SkipList24_max > SkipList24_HP_max;
+        typedef details::SkipListPQueue< cds::gc::HP<>, Value, traits_SkipList24_max > SkipList24_HP_max;
         typedef details::SkipListPQueue< cds::gc::DHP, Value, traits_SkipList24_max > SkipList24_DHP_max;
         typedef details::SkipListPQueue< rcu_gpi, Value, traits_SkipList24_max > SkipList24_RCU_gpi_max;
         typedef details::SkipListPQueue< rcu_gpb, Value, traits_SkipList24_max > SkipList24_RCU_gpb_max;
@@ -493,7 +493,7 @@ namespace pqueue {
         {
             typedef cc::skip_list::turbo16 random_level_generator;
         };
-        typedef details::SkipListPQueue< cds::gc::HP, Value, traits_SkipList16_max > SkipList16_HP_max;
+        typedef details::SkipListPQueue< cds::gc::HP<>, Value, traits_SkipList16_max > SkipList16_HP_max;
         typedef details::SkipListPQueue< cds::gc::DHP, Value, traits_SkipList16_max > SkipList16_DHP_max;
         typedef details::SkipListPQueue< rcu_gpi, Value, traits_SkipList16_max > SkipList16_RCU_gpi_max;
         typedef details::SkipListPQueue< rcu_gpb, Value, traits_SkipList16_max > SkipList16_RCU_gpb_max;
@@ -508,7 +508,7 @@ namespace pqueue {
                 ,co::stat< cc::skip_list::stat<> >
             >::type
         {};
-        typedef details::SkipListPQueue< cds::gc::HP, Value, traits_SkipList_max_stat > SkipList32_HP_max_stat;
+        typedef details::SkipListPQueue< cds::gc::HP<>, Value, traits_SkipList_max_stat > SkipList32_HP_max_stat;
         typedef details::SkipListPQueue< cds::gc::DHP, Value, traits_SkipList_max_stat > SkipList32_DHP_max_stat;
         typedef details::SkipListPQueue< rcu_gpi, Value, traits_SkipList_max_stat > SkipList32_RCU_gpi_max_stat;
         typedef details::SkipListPQueue< rcu_gpb, Value, traits_SkipList_max_stat > SkipList32_RCU_gpb_max_stat;
@@ -521,7 +521,7 @@ namespace pqueue {
         {
             typedef cc::skip_list::turbo24 random_level_generator;
         };
-        typedef details::SkipListPQueue< cds::gc::HP, Value, traits_SkipList24_max_stat > SkipList24_HP_max_stat;
+        typedef details::SkipListPQueue< cds::gc::HP<>, Value, traits_SkipList24_max_stat > SkipList24_HP_max_stat;
         typedef details::SkipListPQueue< cds::gc::DHP, Value, traits_SkipList24_max_stat > SkipList24_DHP_max_stat;
         typedef details::SkipListPQueue< rcu_gpi, Value, traits_SkipList24_max_stat > SkipList24_RCU_gpi_max_stat;
         typedef details::SkipListPQueue< rcu_gpb, Value, traits_SkipList24_max_stat > SkipList24_RCU_gpb_max_stat;
@@ -534,7 +534,7 @@ namespace pqueue {
         {
             typedef cc::skip_list::turbo16 random_level_generator;
         };
-        typedef details::SkipListPQueue< cds::gc::HP, Value, traits_SkipList16_max_stat > SkipList16_HP_max_stat;
+        typedef details::SkipListPQueue< cds::gc::HP<>, Value, traits_SkipList16_max_stat > SkipList16_HP_max_stat;
         typedef details::SkipListPQueue< cds::gc::DHP, Value, traits_SkipList16_max_stat > SkipList16_DHP_max_stat;
         typedef details::SkipListPQueue< rcu_gpi, Value, traits_SkipList16_max_stat > SkipList16_RCU_gpi_max_stat;
         typedef details::SkipListPQueue< rcu_gpb, Value, traits_SkipList16_max_stat > SkipList16_RCU_gpb_max_stat;
@@ -548,7 +548,7 @@ namespace pqueue {
                 cc::opt::less< std::greater<Value> >
             >::type
         {};
-        typedef details::SkipListPQueue< cds::gc::HP, Value, traits_SkipList_min, false > SkipList32_HP_min;
+        typedef details::SkipListPQueue< cds::gc::HP<>, Value, traits_SkipList_min, false > SkipList32_HP_min;
         typedef details::SkipListPQueue< cds::gc::DHP, Value, traits_SkipList_min, false > SkipList32_DHP_min;
         typedef details::SkipListPQueue< rcu_gpi, Value, traits_SkipList_min, false > SkipList32_RCU_gpi_min;
         typedef details::SkipListPQueue< rcu_gpb, Value, traits_SkipList_min, false > SkipList32_RCU_gpb_min;
@@ -561,7 +561,7 @@ namespace pqueue {
         {
             typedef cc::skip_list::turbo24 random_level_generator;
         };
-        typedef details::SkipListPQueue< cds::gc::HP, Value, traits_SkipList24_min > SkipList24_HP_min;
+        typedef details::SkipListPQueue< cds::gc::HP<>, Value, traits_SkipList24_min > SkipList24_HP_min;
         typedef details::SkipListPQueue< cds::gc::DHP, Value, traits_SkipList24_min > SkipList24_DHP_min;
         typedef details::SkipListPQueue< rcu_gpi, Value, traits_SkipList24_min > SkipList24_RCU_gpi_min;
         typedef details::SkipListPQueue< rcu_gpb, Value, traits_SkipList24_min > SkipList24_RCU_gpb_min;
@@ -574,7 +574,7 @@ namespace pqueue {
         {
             typedef cc::skip_list::turbo16 random_level_generator;
         };
-        typedef details::SkipListPQueue< cds::gc::HP, Value, traits_SkipList16_min > SkipList16_HP_min;
+        typedef details::SkipListPQueue< cds::gc::HP<>, Value, traits_SkipList16_min > SkipList16_HP_min;
         typedef details::SkipListPQueue< cds::gc::DHP, Value, traits_SkipList16_min > SkipList16_DHP_min;
         typedef details::SkipListPQueue< rcu_gpi, Value, traits_SkipList16_min > SkipList16_RCU_gpi_min;
         typedef details::SkipListPQueue< rcu_gpb, Value, traits_SkipList16_min > SkipList16_RCU_gpb_min;
@@ -589,7 +589,7 @@ namespace pqueue {
                 ,co::stat< cc::skip_list::stat<> >
             >::type
         {};
-        typedef details::SkipListPQueue< cds::gc::HP, Value, traits_SkipList_min_stat, false > SkipList32_HP_min_stat;
+        typedef details::SkipListPQueue< cds::gc::HP<>, Value, traits_SkipList_min_stat, false > SkipList32_HP_min_stat;
         typedef details::SkipListPQueue< cds::gc::DHP, Value, traits_SkipList_min_stat, false > SkipList32_DHP_min_stat;
         typedef details::SkipListPQueue< rcu_gpi, Value, traits_SkipList_min_stat, false > SkipList32_RCU_gpi_min_stat;
         typedef details::SkipListPQueue< rcu_gpb, Value, traits_SkipList_min_stat, false > SkipList32_RCU_gpb_min_stat;
@@ -602,7 +602,7 @@ namespace pqueue {
         {
             typedef cc::skip_list::turbo24 random_level_generator;
         };
-        typedef details::SkipListPQueue< cds::gc::HP, Value, traits_SkipList24_min_stat > SkipList24_HP_min_stat;
+        typedef details::SkipListPQueue< cds::gc::HP<>, Value, traits_SkipList24_min_stat > SkipList24_HP_min_stat;
         typedef details::SkipListPQueue< cds::gc::DHP, Value, traits_SkipList24_min_stat > SkipList24_DHP_min_stat;
         typedef details::SkipListPQueue< rcu_gpi, Value, traits_SkipList24_min_stat > SkipList24_RCU_gpi_min_stat;
         typedef details::SkipListPQueue< rcu_gpb, Value, traits_SkipList24_min_stat > SkipList24_RCU_gpb_min_stat;
@@ -615,7 +615,7 @@ namespace pqueue {
         {
             typedef cc::skip_list::turbo16 random_level_generator;
         };
-        typedef details::SkipListPQueue< cds::gc::HP, Value, traits_SkipList16_min_stat > SkipList16_HP_min_stat;
+        typedef details::SkipListPQueue< cds::gc::HP<>, Value, traits_SkipList16_min_stat > SkipList16_HP_min_stat;
         typedef details::SkipListPQueue< cds::gc::DHP, Value, traits_SkipList16_min_stat > SkipList16_DHP_min_stat;
         typedef details::SkipListPQueue< rcu_gpi, Value, traits_SkipList16_min_stat > SkipList16_RCU_gpi_min_stat;
         typedef details::SkipListPQueue< rcu_gpb, Value, traits_SkipList16_min_stat > SkipList16_RCU_gpb_min_stat;

@@ -68,7 +68,7 @@ namespace map {
         // MichaelHashMap based on MichaelKVList
         typedef michael_list_type< Key, Value > ml;
 
-        typedef MichaelHashMap< cds::gc::HP,  typename ml::MichaelList_HP_cmp,  traits_MichaelMap_hash > MichaelMap_HP_cmp;
+        typedef MichaelHashMap< cds::gc::HP<>,  typename ml::MichaelList_HP_cmp,  traits_MichaelMap_hash > MichaelMap_HP_cmp;
         typedef MichaelHashMap< cds::gc::DHP, typename ml::MichaelList_DHP_cmp, traits_MichaelMap_hash > MichaelMap_DHP_cmp;
         typedef MichaelHashMap< cds::gc::nogc, typename ml::MichaelList_NOGC_cmp, traits_MichaelMap_hash > MichaelMap_NOGC_cmp;
         typedef MichaelHashMap< rcu_gpi, typename ml::MichaelList_RCU_GPI_cmp, traits_MichaelMap_hash > MichaelMap_RCU_GPI_cmp;
@@ -78,7 +78,7 @@ namespace map {
         typedef MichaelHashMap< rcu_shb, typename ml::MichaelList_RCU_SHB_cmp, traits_MichaelMap_hash > MichaelMap_RCU_SHB_cmp;
 #endif
 
-        typedef MichaelHashMap< cds::gc::HP, typename ml::MichaelList_HP_cmp_stat, traits_MichaelMap_hash > MichaelMap_HP_cmp_stat;
+        typedef MichaelHashMap< cds::gc::HP<>, typename ml::MichaelList_HP_cmp_stat, traits_MichaelMap_hash > MichaelMap_HP_cmp_stat;
         typedef MichaelHashMap< cds::gc::DHP, typename ml::MichaelList_DHP_cmp_stat, traits_MichaelMap_hash > MichaelMap_DHP_cmp_stat;
         typedef MichaelHashMap< cds::gc::nogc, typename ml::MichaelList_NOGC_cmp_stat, traits_MichaelMap_hash > MichaelMap_NOGC_cmp_stat;
         typedef MichaelHashMap< rcu_gpi, typename ml::MichaelList_RCU_GPI_cmp_stat, traits_MichaelMap_hash > MichaelMap_RCU_GPI_cmp_stat;
@@ -88,7 +88,7 @@ namespace map {
         typedef MichaelHashMap< rcu_shb, typename ml::MichaelList_RCU_SHB_cmp_stat, traits_MichaelMap_hash > MichaelMap_RCU_SHB_cmp_stat;
 #endif
 
-        typedef MichaelHashMap< cds::gc::HP, typename ml::MichaelList_HP_less, traits_MichaelMap_hash > MichaelMap_HP_less;
+        typedef MichaelHashMap< cds::gc::HP<>, typename ml::MichaelList_HP_less, traits_MichaelMap_hash > MichaelMap_HP_less;
         typedef MichaelHashMap< cds::gc::DHP, typename ml::MichaelList_DHP_less, traits_MichaelMap_hash > MichaelMap_DHP_less;
         typedef MichaelHashMap< cds::gc::nogc, typename ml::MichaelList_NOGC_less, traits_MichaelMap_hash > MichaelMap_NOGC_less;
         typedef MichaelHashMap< rcu_gpi, typename ml::MichaelList_RCU_GPI_less, traits_MichaelMap_hash > MichaelMap_RCU_GPI_less;
@@ -98,7 +98,7 @@ namespace map {
         typedef MichaelHashMap< rcu_shb, typename ml::MichaelList_RCU_SHB_less, traits_MichaelMap_hash > MichaelMap_RCU_SHB_less;
 #endif
 
-        typedef MichaelHashMap< cds::gc::HP, typename ml::MichaelList_HP_less_stat, traits_MichaelMap_hash > MichaelMap_HP_less_stat;
+        typedef MichaelHashMap< cds::gc::HP<>, typename ml::MichaelList_HP_less_stat, traits_MichaelMap_hash > MichaelMap_HP_less_stat;
         typedef MichaelHashMap< cds::gc::DHP, typename ml::MichaelList_DHP_less_stat, traits_MichaelMap_hash > MichaelMap_DHP_less_stat;
         typedef MichaelHashMap< cds::gc::nogc, typename ml::MichaelList_NOGC_less_stat, traits_MichaelMap_hash > MichaelMap_NOGC_less_stat;
         typedef MichaelHashMap< rcu_gpi, typename ml::MichaelList_RCU_GPI_less_stat, traits_MichaelMap_hash > MichaelMap_RCU_GPI_less_stat;
@@ -108,7 +108,7 @@ namespace map {
         typedef MichaelHashMap< rcu_shb, typename ml::MichaelList_RCU_SHB_less_stat, traits_MichaelMap_hash > MichaelMap_RCU_SHB_less_stat;
 #endif
 
-        typedef MichaelHashMap< cds::gc::HP, typename ml::MichaelList_HP_cmp_seqcst, traits_MichaelMap_hash > MichaelMap_HP_cmp_seqcst;
+        typedef MichaelHashMap< cds::gc::HP<>, typename ml::MichaelList_HP_cmp_seqcst, traits_MichaelMap_hash > MichaelMap_HP_cmp_seqcst;
         typedef MichaelHashMap< cds::gc::DHP, typename ml::MichaelList_DHP_cmp_seqcst, traits_MichaelMap_hash > MichaelMap_DHP_cmp_seqcst;
         typedef MichaelHashMap< cds::gc::nogc, typename ml::MichaelList_NOGC_cmp_seqcst, traits_MichaelMap_hash > MichaelMap_NOGC_cmp_seqcst;
         typedef MichaelHashMap< rcu_gpi, typename ml::MichaelList_RCU_GPI_cmp_seqcst, traits_MichaelMap_hash > MichaelMap_RCU_GPI_cmp_seqcst;
@@ -118,7 +118,7 @@ namespace map {
         typedef MichaelHashMap< rcu_shb, typename ml::MichaelList_RCU_SHB_cmp_seqcst, traits_MichaelMap_hash > MichaelMap_RCU_SHB_cmp_seqcst;
 #endif
 
-        typedef MichaelHashMap< cds::gc::HP, typename ml::MichaelList_HP_less_seqcst, traits_MichaelMap_hash > MichaelMap_HP_less_seqcst;
+        typedef MichaelHashMap< cds::gc::HP<>, typename ml::MichaelList_HP_less_seqcst, traits_MichaelMap_hash > MichaelMap_HP_less_seqcst;
         typedef MichaelHashMap< cds::gc::DHP, typename ml::MichaelList_DHP_less_seqcst, traits_MichaelMap_hash > MichaelMap_DHP_less_seqcst;
         typedef MichaelHashMap< cds::gc::nogc, typename ml::MichaelList_NOGC_less_seqcst, traits_MichaelMap_hash > MichaelMap_NOGC_less_seqcst;
         typedef MichaelHashMap< rcu_gpi, typename ml::MichaelList_RCU_GPI_less_seqcst, traits_MichaelMap_hash > MichaelMap_RCU_GPI_less_seqcst;
@@ -133,7 +133,7 @@ namespace map {
         // MichaelHashMap based on LazyKVList
         typedef lazy_list_type< Key, Value > ll;
 
-        typedef MichaelHashMap< cds::gc::HP, typename ll::LazyList_HP_cmp, traits_MichaelMap_hash > MichaelMap_Lazy_HP_cmp;
+        typedef MichaelHashMap< cds::gc::HP<>, typename ll::LazyList_HP_cmp, traits_MichaelMap_hash > MichaelMap_Lazy_HP_cmp;
         typedef MichaelHashMap< cds::gc::DHP, typename ll::LazyList_DHP_cmp, traits_MichaelMap_hash > MichaelMap_Lazy_DHP_cmp;
         typedef MichaelHashMap< cds::gc::nogc, typename ll::LazyList_NOGC_cmp, traits_MichaelMap_hash > MichaelMap_Lazy_NOGC_cmp;
         typedef MichaelHashMap< rcu_gpi, typename ll::LazyList_RCU_GPI_cmp, traits_MichaelMap_hash > MichaelMap_Lazy_RCU_GPI_cmp;
@@ -143,7 +143,7 @@ namespace map {
         typedef MichaelHashMap< rcu_shb, typename ll::LazyList_RCU_SHB_cmp, traits_MichaelMap_hash > MichaelMap_Lazy_RCU_SHB_cmp;
 #endif
 
-        typedef MichaelHashMap< cds::gc::HP, typename ll::LazyList_HP_cmp_stat, traits_MichaelMap_hash > MichaelMap_Lazy_HP_cmp_stat;
+        typedef MichaelHashMap< cds::gc::HP<>, typename ll::LazyList_HP_cmp_stat, traits_MichaelMap_hash > MichaelMap_Lazy_HP_cmp_stat;
         typedef MichaelHashMap< cds::gc::DHP, typename ll::LazyList_DHP_cmp_stat, traits_MichaelMap_hash > MichaelMap_Lazy_DHP_cmp_stat;
         typedef MichaelHashMap< cds::gc::nogc, typename ll::LazyList_NOGC_cmp_stat, traits_MichaelMap_hash > MichaelMap_Lazy_NOGC_cmp_stat;
         typedef MichaelHashMap< rcu_gpi, typename ll::LazyList_RCU_GPI_cmp_stat, traits_MichaelMap_hash > MichaelMap_Lazy_RCU_GPI_cmp_stat;
@@ -155,7 +155,7 @@ namespace map {
 
         typedef MichaelHashMap< cds::gc::nogc, typename ll::LazyList_NOGC_unord, traits_MichaelMap_hash > MichaelMap_Lazy_NOGC_unord;
 
-        typedef MichaelHashMap< cds::gc::HP, typename ll::LazyList_HP_less, traits_MichaelMap_hash > MichaelMap_Lazy_HP_less;
+        typedef MichaelHashMap< cds::gc::HP<>, typename ll::LazyList_HP_less, traits_MichaelMap_hash > MichaelMap_Lazy_HP_less;
         typedef MichaelHashMap< cds::gc::DHP, typename ll::LazyList_DHP_less, traits_MichaelMap_hash > MichaelMap_Lazy_DHP_less;
         typedef MichaelHashMap< cds::gc::nogc, typename ll::LazyList_NOGC_less, traits_MichaelMap_hash > MichaelMap_Lazy_NOGC_less;
         typedef MichaelHashMap< rcu_gpi, typename ll::LazyList_RCU_GPI_less, traits_MichaelMap_hash > MichaelMap_Lazy_RCU_GPI_less;
@@ -165,7 +165,7 @@ namespace map {
         typedef MichaelHashMap< rcu_shb, typename ll::LazyList_RCU_SHB_less, traits_MichaelMap_hash > MichaelMap_Lazy_RCU_SHB_less;
 #endif
 
-        typedef MichaelHashMap< cds::gc::HP, typename ll::LazyList_HP_less_stat, traits_MichaelMap_hash > MichaelMap_Lazy_HP_less_stat;
+        typedef MichaelHashMap< cds::gc::HP<>, typename ll::LazyList_HP_less_stat, traits_MichaelMap_hash > MichaelMap_Lazy_HP_less_stat;
         typedef MichaelHashMap< cds::gc::DHP, typename ll::LazyList_DHP_less_stat, traits_MichaelMap_hash > MichaelMap_Lazy_DHP_less_stat;
         typedef MichaelHashMap< cds::gc::nogc, typename ll::LazyList_NOGC_less_stat, traits_MichaelMap_hash > MichaelMap_Lazy_NOGC_less_stat;
         typedef MichaelHashMap< rcu_gpi, typename ll::LazyList_RCU_GPI_less_stat, traits_MichaelMap_hash > MichaelMap_Lazy_RCU_GPI_less_stat;
@@ -175,7 +175,7 @@ namespace map {
         typedef MichaelHashMap< rcu_shb, typename ll::LazyList_RCU_SHB_less_stat, traits_MichaelMap_hash > MichaelMap_Lazy_RCU_SHB_less_stat;
 #endif
 
-        typedef MichaelHashMap< cds::gc::HP, typename ll::LazyList_HP_cmp_seqcst, traits_MichaelMap_hash > MichaelMap_Lazy_HP_cmp_seqcst;
+        typedef MichaelHashMap< cds::gc::HP<>, typename ll::LazyList_HP_cmp_seqcst, traits_MichaelMap_hash > MichaelMap_Lazy_HP_cmp_seqcst;
         typedef MichaelHashMap< cds::gc::DHP, typename ll::LazyList_DHP_cmp_seqcst, traits_MichaelMap_hash > MichaelMap_Lazy_DHP_cmp_seqcst;
         typedef MichaelHashMap< cds::gc::nogc, typename ll::LazyList_NOGC_cmp_seqcst, traits_MichaelMap_hash > MichaelMap_Lazy_NOGC_cmp_seqcst;
         typedef MichaelHashMap< rcu_gpi, typename ll::LazyList_RCU_GPI_cmp_seqcst, traits_MichaelMap_hash > MichaelMap_Lazy_RCU_GPI_cmp_seqcst;
@@ -185,7 +185,7 @@ namespace map {
         typedef MichaelHashMap< rcu_shb, typename ll::LazyList_RCU_SHB_cmp_seqcst, traits_MichaelMap_hash > MichaelMap_Lazy_RCU_SHB_cmp_seqcst;
 #endif
 
-        typedef MichaelHashMap< cds::gc::HP, typename ll::LazyList_HP_less_seqcst, traits_MichaelMap_hash > MichaelMap_Lazy_HP_less_seqcst;
+        typedef MichaelHashMap< cds::gc::HP<>, typename ll::LazyList_HP_less_seqcst, traits_MichaelMap_hash > MichaelMap_Lazy_HP_less_seqcst;
         typedef MichaelHashMap< cds::gc::DHP, typename ll::LazyList_DHP_less_seqcst, traits_MichaelMap_hash > MichaelMap_Lazy_DHP_less_seqcst;
         typedef MichaelHashMap< cds::gc::nogc, typename ll::LazyList_NOGC_less_seqcst, traits_MichaelMap_hash > MichaelMap_Lazy_NOGC_less_seqcst;
         typedef MichaelHashMap< rcu_gpi, typename ll::LazyList_RCU_GPI_less_seqcst, traits_MichaelMap_hash > MichaelMap_Lazy_RCU_GPI_less_seqcst;
@@ -200,19 +200,19 @@ namespace map {
         // MichaelHashMap based on IterableKVList
         typedef iterable_list_type< Key, Value > il;
 
-        typedef MichaelHashMap< cds::gc::HP,  typename il::IterableList_HP_cmp,  traits_MichaelMap_hash > MichaelMap_Iterable_HP_cmp;
+        typedef MichaelHashMap< cds::gc::HP<>,  typename il::IterableList_HP_cmp,  traits_MichaelMap_hash > MichaelMap_Iterable_HP_cmp;
         typedef MichaelHashMap< cds::gc::DHP, typename il::IterableList_DHP_cmp, traits_MichaelMap_hash > MichaelMap_Iterable_DHP_cmp;
 
-        typedef MichaelHashMap< cds::gc::HP, typename il::IterableList_HP_cmp_stat, traits_MichaelMap_hash > MichaelMap_Iterable_HP_cmp_stat;
+        typedef MichaelHashMap< cds::gc::HP<>, typename il::IterableList_HP_cmp_stat, traits_MichaelMap_hash > MichaelMap_Iterable_HP_cmp_stat;
         typedef MichaelHashMap< cds::gc::DHP, typename il::IterableList_DHP_cmp_stat, traits_MichaelMap_hash > MichaelMap_Iterable_DHP_cmp_stat;
 
-        typedef MichaelHashMap< cds::gc::HP, typename il::IterableList_HP_less, traits_MichaelMap_hash > MichaelMap_Iterable_HP_less;
+        typedef MichaelHashMap< cds::gc::HP<>, typename il::IterableList_HP_less, traits_MichaelMap_hash > MichaelMap_Iterable_HP_less;
         typedef MichaelHashMap< cds::gc::DHP, typename il::IterableList_DHP_less, traits_MichaelMap_hash > MichaelMap_Iterable_DHP_less;
 
-        typedef MichaelHashMap< cds::gc::HP, typename il::IterableList_HP_less_stat, traits_MichaelMap_hash > MichaelMap_Iterable_HP_less_stat;
+        typedef MichaelHashMap< cds::gc::HP<>, typename il::IterableList_HP_less_stat, traits_MichaelMap_hash > MichaelMap_Iterable_HP_less_stat;
         typedef MichaelHashMap< cds::gc::DHP, typename il::IterableList_DHP_less_stat, traits_MichaelMap_hash > MichaelMap_Iterable_DHP_less_stat;
 
-        typedef MichaelHashMap< cds::gc::HP, typename il::IterableList_HP_cmp_seqcst, traits_MichaelMap_hash > MichaelMap_Iterable_HP_cmp_seqcst;
+        typedef MichaelHashMap< cds::gc::HP<>, typename il::IterableList_HP_cmp_seqcst, traits_MichaelMap_hash > MichaelMap_Iterable_HP_cmp_seqcst;
         typedef MichaelHashMap< cds::gc::DHP, typename il::IterableList_DHP_cmp_seqcst, traits_MichaelMap_hash > MichaelMap_Iterable_DHP_cmp_seqcst;
 
     };

@@ -64,11 +64,11 @@ namespace cds {
             static bool isThreadAttached();
 
             // This method must be called in beginning of thread execution
-            // (called by ctor of GC thread object, for example, by ctor of cds::gc::HP::thread_gc)
+            // (called by ctor of GC thread object, for example, by ctor of cds::gc::HP<>::thread_gc)
             static void attachThread();
 
             // This method must be called in end of thread execution
-            // (called by dtor of GC thread object, for example, by dtor of cds::gc::HP::thread_gc)
+            // (called by dtor of GC thread object, for example, by dtor of cds::gc::HP<>::thread_gc)
             static void detachThread();
 
             // Get cds::gc::DHP thread GC implementation for current thread;

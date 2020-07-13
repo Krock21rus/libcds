@@ -9,7 +9,7 @@
 
 namespace {
     namespace cc = cds::container;
-    typedef cds::gc::HP gc_type;
+    typedef cds::gc::HP<> gc_type;
 
     class FeldmanHashMap_HP : public cds_test::feldman_hashmap_hp
     {

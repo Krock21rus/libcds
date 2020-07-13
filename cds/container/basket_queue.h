@@ -70,7 +70,7 @@ namespace cds { namespace container {
 
             Example: declare \p %BasketQueue with item counting and internal statistics
             \code
-            typedef cds::container::BasketQueue< cds::gc::HP, Foo,
+            typedef cds::container::BasketQueue< cds::gc::HP<>, Foo,
                 typename cds::container::basket_queue::make_traits<
                     cds::opt::item_counte< cds::atomicity::item_counter >,
                     cds::opt::stat< cds::intrusive::basket_queue::stat<> >
@@ -184,7 +184,7 @@ namespace cds { namespace container {
 
 
         Template arguments:
-        - \p GC - garbage collector type: \p gc::HP, \p gc::DHP
+        - \p GC - garbage collector type: \p gc::HP<>, \p gc::DHP
         - \p T - type of value to be stored in the queue
         - \p Traits - queue traits, default is \p basket_queue::traits. You can use \p basket_queue::make_traits
             metafunction to make your traits or just derive your traits from \p %basket_queue::traits:
@@ -193,10 +193,10 @@ namespace cds { namespace container {
                 typedef cds::intrusive::basket_queue::stat<> stat;
                 typedef cds::atomicity::item_counter    item_counter;
             };
-            typedef cds::container::BasketQueue< cds::gc::HP, Foo, myTraits > myQueue;
+            typedef cds::container::BasketQueue< cds::gc::HP<>, Foo, myTraits > myQueue;
 
             // Equivalent make_traits example:
-            typedef cds::container::BasketQueue< cds::gc::HP, Foo,
+            typedef cds::container::BasketQueue< cds::gc::HP<>, Foo,
                 typename cds::container::basket_queue::make_traits<
                     cds::opt::stat< cds::container::basket_queue::stat<> >,
                     cds::opt::item_counter< cds::atomicity::item_counter >
@@ -316,7 +316,7 @@ namespace cds { namespace container {
             \p Func is a functor called to create node.
             The functor \p f takes one argument - a reference to a new node of type \ref value_type :
             \code
-            cds::container::BasketQueue< cds::gc::HP, Foo > myQueue;
+            cds::container::BasketQueue< cds::gc::HP<>, Foo > myQueue;
             Bar bar;
             myQueue.enqueue_with( [&bar]( Foo& dest ) { dest = bar; } );
             \endcode
@@ -386,7 +386,7 @@ namespace cds { namespace container {
             \p Func is a functor called to copy dequeued value.
             The functor takes one argument - a reference to removed node:
             \code
-            cds:container::BasketQueue< cds::gc::HP, Foo > myQueue;
+            cds:container::BasketQueue< cds::gc::HP<>, Foo > myQueue;
             Bar bar;
             myQueue.dequeue_with( [&bar]( Foo& src ) { bar = std::move( src );});
             \endcode

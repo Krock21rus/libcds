@@ -10,7 +10,7 @@
 
 namespace {
     namespace ci = cds::intrusive;
-    typedef cds::gc::HP gc_type;
+    typedef cds::gc::HP<> gc_type;
 
     class IntrusiveMichaelIterableSet_HP : public cds_test::intrusive_set_hp
     {

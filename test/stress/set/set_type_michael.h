@@ -71,7 +71,7 @@ namespace set {
                 ,co::item_counter< cds::atomicity::cache_friendly_item_counter >
             >::type
         {};
-        typedef MichaelHashSet< cds::gc::HP,  typename ml::MichaelList_HP_cmp,  traits_MichaelSet > MichaelSet_HP_cmp;
+        typedef MichaelHashSet< cds::gc::HP<>,  typename ml::MichaelList_HP_cmp,  traits_MichaelSet > MichaelSet_HP_cmp;
         typedef MichaelHashSet< cds::gc::DHP, typename ml::MichaelList_DHP_cmp, traits_MichaelSet > MichaelSet_DHP_cmp;
         typedef MichaelHashSet< rcu_gpi, typename ml::MichaelList_RCU_GPI_cmp, traits_MichaelSet > MichaelSet_RCU_GPI_cmp;
         typedef MichaelHashSet< rcu_gpb, typename ml::MichaelList_RCU_GPB_cmp, traits_MichaelSet > MichaelSet_RCU_GPB_cmp;
@@ -80,7 +80,7 @@ namespace set {
         typedef MichaelHashSet< rcu_shb, typename ml::MichaelList_RCU_SHB_cmp, traits_MichaelSet > MichaelSet_RCU_SHB_cmp;
 #endif
 
-        typedef MichaelHashSet< cds::gc::HP, typename ml::MichaelList_HP_cmp_stat, traits_MichaelSet > MichaelSet_HP_cmp_stat;
+        typedef MichaelHashSet< cds::gc::HP<>, typename ml::MichaelList_HP_cmp_stat, traits_MichaelSet > MichaelSet_HP_cmp_stat;
         typedef MichaelHashSet< cds::gc::DHP, typename ml::MichaelList_DHP_cmp_stat, traits_MichaelSet > MichaelSet_DHP_cmp_stat;
         typedef MichaelHashSet< rcu_gpi, typename ml::MichaelList_RCU_GPI_cmp_stat, traits_MichaelSet > MichaelSet_RCU_GPI_cmp_stat;
         typedef MichaelHashSet< rcu_gpb, typename ml::MichaelList_RCU_GPB_cmp_stat, traits_MichaelSet > MichaelSet_RCU_GPB_cmp_stat;
@@ -89,7 +89,7 @@ namespace set {
         typedef MichaelHashSet< rcu_shb, typename ml::MichaelList_RCU_SHB_cmp_stat, traits_MichaelSet > MichaelSet_RCU_SHB_cmp_stat;
 #endif
 
-        typedef MichaelHashSet< cds::gc::HP, typename ml::MichaelList_HP_less, traits_MichaelSet > MichaelSet_HP_less;
+        typedef MichaelHashSet< cds::gc::HP<>, typename ml::MichaelList_HP_less, traits_MichaelSet > MichaelSet_HP_less;
         typedef MichaelHashSet< cds::gc::DHP, typename ml::MichaelList_DHP_less, traits_MichaelSet > MichaelSet_DHP_less;
         typedef MichaelHashSet< rcu_gpi, typename ml::MichaelList_RCU_GPI_less, traits_MichaelSet > MichaelSet_RCU_GPI_less;
         typedef MichaelHashSet< rcu_gpb, typename ml::MichaelList_RCU_GPB_less, traits_MichaelSet > MichaelSet_RCU_GPB_less;
@@ -98,7 +98,7 @@ namespace set {
         typedef MichaelHashSet< rcu_shb, typename ml::MichaelList_RCU_SHB_less, traits_MichaelSet > MichaelSet_RCU_SHB_less;
 #endif
 
-        typedef MichaelHashSet< cds::gc::HP, typename ml::MichaelList_HP_less_stat, traits_MichaelSet > MichaelSet_HP_less_stat;
+        typedef MichaelHashSet< cds::gc::HP<>, typename ml::MichaelList_HP_less_stat, traits_MichaelSet > MichaelSet_HP_less_stat;
         typedef MichaelHashSet< cds::gc::DHP, typename ml::MichaelList_DHP_less_stat, traits_MichaelSet > MichaelSet_DHP_less_stat;
         typedef MichaelHashSet< rcu_gpi, typename ml::MichaelList_RCU_GPI_less_stat, traits_MichaelSet > MichaelSet_RCU_GPI_less_stat;
         typedef MichaelHashSet< rcu_gpb, typename ml::MichaelList_RCU_GPB_less_stat, traits_MichaelSet > MichaelSet_RCU_GPB_less_stat;
@@ -107,7 +107,7 @@ namespace set {
         typedef MichaelHashSet< rcu_shb, typename ml::MichaelList_RCU_SHB_less_stat, traits_MichaelSet > MichaelSet_RCU_SHB_less_stat;
 #endif
 
-        typedef MichaelHashSet< cds::gc::HP, typename ml::MichaelList_HP_less_seqcst, traits_MichaelSet > MichaelSet_HP_less_seqcst;
+        typedef MichaelHashSet< cds::gc::HP<>, typename ml::MichaelList_HP_less_seqcst, traits_MichaelSet > MichaelSet_HP_less_seqcst;
         typedef MichaelHashSet< cds::gc::DHP, typename ml::MichaelList_DHP_less_seqcst, traits_MichaelSet > MichaelSet_DHP_less_seqcst;
         typedef MichaelHashSet< rcu_gpi, typename ml::MichaelList_RCU_GPI_less_seqcst, traits_MichaelSet > MichaelSet_RCU_GPI_less_seqcst;
         typedef MichaelHashSet< rcu_gpb, typename ml::MichaelList_RCU_GPB_less_seqcst, traits_MichaelSet > MichaelSet_RCU_GPB_less_seqcst;
@@ -122,7 +122,7 @@ namespace set {
 
         typedef lazy_list_type< Key, Val > ll;
 
-        typedef MichaelHashSet< cds::gc::HP, typename ll::LazyList_HP_cmp, traits_MichaelSet > MichaelSet_Lazy_HP_cmp;
+        typedef MichaelHashSet< cds::gc::HP<>, typename ll::LazyList_HP_cmp, traits_MichaelSet > MichaelSet_Lazy_HP_cmp;
         typedef MichaelHashSet< cds::gc::DHP, typename ll::LazyList_DHP_cmp, traits_MichaelSet > MichaelSet_Lazy_DHP_cmp;
         typedef MichaelHashSet< rcu_gpi, typename ll::LazyList_RCU_GPI_cmp, traits_MichaelSet > MichaelSet_Lazy_RCU_GPI_cmp;
         typedef MichaelHashSet< rcu_gpb, typename ll::LazyList_RCU_GPB_cmp, traits_MichaelSet > MichaelSet_Lazy_RCU_GPB_cmp;
@@ -131,7 +131,7 @@ namespace set {
         typedef MichaelHashSet< rcu_shb, typename ll::LazyList_RCU_SHB_cmp, traits_MichaelSet > MichaelSet_Lazy_RCU_SHB_cmp;
 #endif
 
-        typedef MichaelHashSet< cds::gc::HP, typename ll::LazyList_HP_cmp_stat, traits_MichaelSet > MichaelSet_Lazy_HP_cmp_stat;
+        typedef MichaelHashSet< cds::gc::HP<>, typename ll::LazyList_HP_cmp_stat, traits_MichaelSet > MichaelSet_Lazy_HP_cmp_stat;
         typedef MichaelHashSet< cds::gc::DHP, typename ll::LazyList_DHP_cmp_stat, traits_MichaelSet > MichaelSet_Lazy_DHP_cmp_stat;
         typedef MichaelHashSet< rcu_gpi, typename ll::LazyList_RCU_GPI_cmp_stat, traits_MichaelSet > MichaelSet_Lazy_RCU_GPI_cmp_stat;
         typedef MichaelHashSet< rcu_gpb, typename ll::LazyList_RCU_GPB_cmp_stat, traits_MichaelSet > MichaelSet_Lazy_RCU_GPB_cmp_stat;
@@ -140,7 +140,7 @@ namespace set {
         typedef MichaelHashSet< rcu_shb, typename ll::LazyList_RCU_SHB_cmp_stat, traits_MichaelSet > MichaelSet_Lazy_RCU_SHB_cmp_stat;
 #endif
 
-        typedef MichaelHashSet< cds::gc::HP, typename ll::LazyList_HP_less, traits_MichaelSet > MichaelSet_Lazy_HP_less;
+        typedef MichaelHashSet< cds::gc::HP<>, typename ll::LazyList_HP_less, traits_MichaelSet > MichaelSet_Lazy_HP_less;
         typedef MichaelHashSet< cds::gc::DHP, typename ll::LazyList_DHP_less, traits_MichaelSet > MichaelSet_Lazy_DHP_less;
         typedef MichaelHashSet< rcu_gpi, typename ll::LazyList_RCU_GPI_less, traits_MichaelSet > MichaelSet_Lazy_RCU_GPI_less;
         typedef MichaelHashSet< rcu_gpb, typename ll::LazyList_RCU_GPB_less, traits_MichaelSet > MichaelSet_Lazy_RCU_GPB_less;
@@ -149,7 +149,7 @@ namespace set {
         typedef MichaelHashSet< rcu_shb, typename ll::LazyList_RCU_SHB_less, traits_MichaelSet > MichaelSet_Lazy_RCU_SHB_less;
 #endif
 
-        typedef MichaelHashSet< cds::gc::HP, typename ll::LazyList_HP_less_stat, traits_MichaelSet > MichaelSet_Lazy_HP_less_stat;
+        typedef MichaelHashSet< cds::gc::HP<>, typename ll::LazyList_HP_less_stat, traits_MichaelSet > MichaelSet_Lazy_HP_less_stat;
         typedef MichaelHashSet< cds::gc::DHP, typename ll::LazyList_DHP_less_stat, traits_MichaelSet > MichaelSet_Lazy_DHP_less_stat;
         typedef MichaelHashSet< rcu_gpi, typename ll::LazyList_RCU_GPI_less_stat, traits_MichaelSet > MichaelSet_Lazy_RCU_GPI_less_stat;
         typedef MichaelHashSet< rcu_gpb, typename ll::LazyList_RCU_GPB_less_stat, traits_MichaelSet > MichaelSet_Lazy_RCU_GPB_less_stat;
@@ -158,7 +158,7 @@ namespace set {
         typedef MichaelHashSet< rcu_shb, typename ll::LazyList_RCU_SHB_less_stat, traits_MichaelSet > MichaelSet_Lazy_RCU_SHB_less_stat;
 #endif
 
-        typedef MichaelHashSet< cds::gc::HP, typename ll::LazyList_HP_less_seqcst, traits_MichaelSet > MichaelSet_Lazy_HP_less_seqcst;
+        typedef MichaelHashSet< cds::gc::HP<>, typename ll::LazyList_HP_less_seqcst, traits_MichaelSet > MichaelSet_Lazy_HP_less_seqcst;
         typedef MichaelHashSet< cds::gc::DHP, typename ll::LazyList_DHP_less_seqcst, traits_MichaelSet > MichaelSet_Lazy_DHP_less_seqcst;
         typedef MichaelHashSet< rcu_gpi, typename ll::LazyList_RCU_GPI_less_seqcst, traits_MichaelSet > MichaelSet_Lazy_RCU_GPI_less_seqcst;
         typedef MichaelHashSet< rcu_gpb, typename ll::LazyList_RCU_GPB_less_seqcst, traits_MichaelSet > MichaelSet_Lazy_RCU_GPB_less_seqcst;
@@ -173,19 +173,19 @@ namespace set {
 
         typedef iterable_list_type< Key, Val > il;
 
-        typedef MichaelHashSet< cds::gc::HP, typename il::IterableList_HP_cmp, traits_MichaelSet > MichaelSet_Iterable_HP_cmp;
+        typedef MichaelHashSet< cds::gc::HP<>, typename il::IterableList_HP_cmp, traits_MichaelSet > MichaelSet_Iterable_HP_cmp;
         typedef MichaelHashSet< cds::gc::DHP, typename il::IterableList_DHP_cmp, traits_MichaelSet > MichaelSet_Iterable_DHP_cmp;
 
-        typedef MichaelHashSet< cds::gc::HP, typename il::IterableList_HP_cmp_stat, traits_MichaelSet > MichaelSet_Iterable_HP_cmp_stat;
+        typedef MichaelHashSet< cds::gc::HP<>, typename il::IterableList_HP_cmp_stat, traits_MichaelSet > MichaelSet_Iterable_HP_cmp_stat;
         typedef MichaelHashSet< cds::gc::DHP, typename il::IterableList_DHP_cmp_stat, traits_MichaelSet > MichaelSet_Iterable_DHP_cmp_stat;
 
-        typedef MichaelHashSet< cds::gc::HP, typename il::IterableList_HP_less, traits_MichaelSet > MichaelSet_Iterable_HP_less;
+        typedef MichaelHashSet< cds::gc::HP<>, typename il::IterableList_HP_less, traits_MichaelSet > MichaelSet_Iterable_HP_less;
         typedef MichaelHashSet< cds::gc::DHP, typename il::IterableList_DHP_less, traits_MichaelSet > MichaelSet_Iterable_DHP_less;
 
-        typedef MichaelHashSet< cds::gc::HP, typename il::IterableList_HP_less_stat, traits_MichaelSet > MichaelSet_Iterable_HP_less_stat;
+        typedef MichaelHashSet< cds::gc::HP<>, typename il::IterableList_HP_less_stat, traits_MichaelSet > MichaelSet_Iterable_HP_less_stat;
         typedef MichaelHashSet< cds::gc::DHP, typename il::IterableList_DHP_less_stat, traits_MichaelSet > MichaelSet_Iterable_DHP_less_stat;
 
-        typedef MichaelHashSet< cds::gc::HP, typename il::IterableList_HP_less_seqcst, traits_MichaelSet > MichaelSet_Iterable_HP_less_seqcst;
+        typedef MichaelHashSet< cds::gc::HP<>, typename il::IterableList_HP_less_seqcst, traits_MichaelSet > MichaelSet_Iterable_HP_less_seqcst;
         typedef MichaelHashSet< cds::gc::DHP, typename il::IterableList_DHP_less_seqcst, traits_MichaelSet > MichaelSet_Iterable_DHP_less_seqcst;
 
     };

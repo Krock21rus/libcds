@@ -129,7 +129,7 @@ namespace map {
                 >
             >::type
         {};
-        typedef SplitListMap< cds::gc::HP, Key, Value, traits_SplitList_Michael_dyn_cmp > SplitList_Michael_HP_dyn_cmp;
+        typedef SplitListMap< cds::gc::HP<>, Key, Value, traits_SplitList_Michael_dyn_cmp > SplitList_Michael_HP_dyn_cmp;
         typedef SplitListMap< cds::gc::DHP, Key, Value, traits_SplitList_Michael_dyn_cmp > SplitList_Michael_DHP_dyn_cmp;
         typedef SplitListMap< cds::gc::nogc, Key, Value, traits_SplitList_Michael_dyn_cmp > SplitList_Michael_NOGC_dyn_cmp;
         typedef SplitListMap< rcu_gpi, Key, Value, traits_SplitList_Michael_dyn_cmp > SplitList_Michael_RCU_GPI_dyn_cmp;
@@ -143,7 +143,7 @@ namespace map {
         {
             typedef cds::algo::bit_reversal::swar bit_reversal;
         };
-        typedef SplitListMap< cds::gc::HP, Key, Value, traits_SplitList_Michael_dyn_cmp_swar > SplitList_Michael_HP_dyn_cmp_swar;
+        typedef SplitListMap< cds::gc::HP<>, Key, Value, traits_SplitList_Michael_dyn_cmp_swar > SplitList_Michael_HP_dyn_cmp_swar;
         typedef SplitListMap< cds::gc::DHP, Key, Value, traits_SplitList_Michael_dyn_cmp_swar > SplitList_Michael_DHP_dyn_cmp_swar;
         typedef SplitListMap< cds::gc::nogc, Key, Value, traits_SplitList_Michael_dyn_cmp_swar > SplitList_Michael_NOGC_dyn_cmp_swar;
         typedef SplitListMap< rcu_gpi, Key, Value, traits_SplitList_Michael_dyn_cmp_swar > SplitList_Michael_RCU_GPI_dyn_cmp_swar;
@@ -161,7 +161,7 @@ namespace map {
                 ,co::stat< cc::michael_list::stat<> >
             >::type ordered_list_traits;
         };
-        typedef SplitListMap< cds::gc::HP, Key, Value, traits_SplitList_Michael_dyn_cmp_stat > SplitList_Michael_HP_dyn_cmp_stat;
+        typedef SplitListMap< cds::gc::HP<>, Key, Value, traits_SplitList_Michael_dyn_cmp_stat > SplitList_Michael_HP_dyn_cmp_stat;
         typedef SplitListMap< cds::gc::DHP, Key, Value, traits_SplitList_Michael_dyn_cmp_stat > SplitList_Michael_DHP_dyn_cmp_stat;
         typedef SplitListMap< cds::gc::nogc, Key, Value, traits_SplitList_Michael_dyn_cmp_stat> SplitList_Michael_NOGC_dyn_cmp_stat;
         typedef SplitListMap< rcu_gpi, Key, Value, traits_SplitList_Michael_dyn_cmp_stat > SplitList_Michael_RCU_GPI_dyn_cmp_stat;
@@ -184,7 +184,7 @@ namespace map {
                 >
             >::type
         {};
-        typedef SplitListMap< cds::gc::HP, Key, Value, traits_SplitList_Michael_dyn_cmp_seqcst > SplitList_Michael_HP_dyn_cmp_seqcst;
+        typedef SplitListMap< cds::gc::HP<>, Key, Value, traits_SplitList_Michael_dyn_cmp_seqcst > SplitList_Michael_HP_dyn_cmp_seqcst;
         typedef SplitListMap< cds::gc::DHP, Key, Value, traits_SplitList_Michael_dyn_cmp_seqcst > SplitList_Michael_DHP_dyn_cmp_seqcst;
         typedef SplitListMap< cds::gc::nogc, Key, Value, traits_SplitList_Michael_dyn_cmp_seqcst> SplitList_Michael_NOGC_dyn_cmp_seqcst;
         typedef SplitListMap< rcu_gpi, Key, Value, traits_SplitList_Michael_dyn_cmp_seqcst > SplitList_Michael_RCU_GPI_dyn_cmp_seqcst;
@@ -206,7 +206,7 @@ namespace map {
                 >
             >::type
         {};
-        typedef SplitListMap< cds::gc::HP, Key, Value, traits_SplitList_Michael_st_cmp > SplitList_Michael_HP_st_cmp;
+        typedef SplitListMap< cds::gc::HP<>, Key, Value, traits_SplitList_Michael_st_cmp > SplitList_Michael_HP_st_cmp;
         typedef SplitListMap< cds::gc::DHP, Key, Value, traits_SplitList_Michael_st_cmp > SplitList_Michael_DHP_st_cmp;
         typedef SplitListMap< cds::gc::nogc, Key, Value, traits_SplitList_Michael_st_cmp> SplitList_Michael_NOGC_st_cmp;
         typedef SplitListMap< rcu_gpi, Key, Value, traits_SplitList_Michael_st_cmp > SplitList_Michael_RCU_GPI_st_cmp;
@@ -228,7 +228,7 @@ namespace map {
                 >
             >::type
         {};
-        typedef SplitListMap< cds::gc::HP, Key, Value, traits_SplitList_Michael_dyn_less > SplitList_Michael_HP_dyn_less;
+        typedef SplitListMap< cds::gc::HP<>, Key, Value, traits_SplitList_Michael_dyn_less > SplitList_Michael_HP_dyn_less;
         typedef SplitListMap< cds::gc::DHP, Key, Value, traits_SplitList_Michael_dyn_less > SplitList_Michael_DHP_dyn_less;
         typedef SplitListMap< cds::gc::nogc, Key, Value, traits_SplitList_Michael_dyn_less> SplitList_Michael_NOGC_dyn_less;
         typedef SplitListMap< rcu_gpi, Key, Value, traits_SplitList_Michael_dyn_less > SplitList_Michael_RCU_GPI_dyn_less;
@@ -251,7 +251,7 @@ namespace map {
                 >
             >::type
         {};
-        typedef SplitListMap< cds::gc::HP, Key, Value, traits_SplitList_Michael_st_less > SplitList_Michael_HP_st_less;
+        typedef SplitListMap< cds::gc::HP<>, Key, Value, traits_SplitList_Michael_st_less > SplitList_Michael_HP_st_less;
         typedef SplitListMap< cds::gc::DHP, Key, Value, traits_SplitList_Michael_st_less > SplitList_Michael_DHP_st_less;
         typedef SplitListMap< cds::gc::nogc, Key, Value, traits_SplitList_Michael_st_less> SplitList_Michael_NOGC_st_less;
         typedef SplitListMap< rcu_gpi, Key, Value, traits_SplitList_Michael_st_less > SplitList_Michael_RCU_GPI_st_less;
@@ -270,7 +270,7 @@ namespace map {
             >::type ordered_list_traits;
 
         };
-        typedef SplitListMap< cds::gc::HP, Key, Value, traits_SplitList_Michael_st_less_stat > SplitList_Michael_HP_st_less_stat;
+        typedef SplitListMap< cds::gc::HP<>, Key, Value, traits_SplitList_Michael_st_less_stat > SplitList_Michael_HP_st_less_stat;
         typedef SplitListMap< cds::gc::DHP, Key, Value, traits_SplitList_Michael_st_less_stat > SplitList_Michael_DHP_st_less_stat;
         typedef SplitListMap< cds::gc::nogc, Key, Value, traits_SplitList_Michael_st_less_stat> SplitList_Michael_NOGC_st_less_stat;
         typedef SplitListMap< rcu_gpi, Key, Value, traits_SplitList_Michael_st_less_stat > SplitList_Michael_RCU_GPI_st_less_stat;
@@ -296,7 +296,7 @@ namespace map {
                 >
             >::type
         {};
-        typedef SplitListMap< cds::gc::HP, Key, Value, SplitList_Lazy_dyn_cmp > SplitList_Lazy_HP_dyn_cmp;
+        typedef SplitListMap< cds::gc::HP<>, Key, Value, SplitList_Lazy_dyn_cmp > SplitList_Lazy_HP_dyn_cmp;
         typedef SplitListMap< cds::gc::DHP, Key, Value, SplitList_Lazy_dyn_cmp > SplitList_Lazy_DHP_dyn_cmp;
         typedef SplitListMap< cds::gc::nogc, Key, Value, SplitList_Lazy_dyn_cmp> SplitList_Lazy_NOGC_dyn_cmp;
         typedef SplitListMap< rcu_gpi, Key, Value, SplitList_Lazy_dyn_cmp > SplitList_Lazy_RCU_GPI_dyn_cmp;
@@ -314,7 +314,7 @@ namespace map {
                 , co::stat< cc::lazy_list::stat<>>
             >::type ordered_list_traits;
         };
-        typedef SplitListMap< cds::gc::HP, Key, Value, SplitList_Lazy_dyn_cmp_stat > SplitList_Lazy_HP_dyn_cmp_stat;
+        typedef SplitListMap< cds::gc::HP<>, Key, Value, SplitList_Lazy_dyn_cmp_stat > SplitList_Lazy_HP_dyn_cmp_stat;
         typedef SplitListMap< cds::gc::DHP, Key, Value, SplitList_Lazy_dyn_cmp_stat > SplitList_Lazy_DHP_dyn_cmp_stat;
         typedef SplitListMap< cds::gc::nogc, Key, Value, SplitList_Lazy_dyn_cmp_stat> SplitList_Lazy_NOGC_dyn_cmp_stat;
         typedef SplitListMap< rcu_gpi, Key, Value, SplitList_Lazy_dyn_cmp_stat > SplitList_Lazy_RCU_GPI_dyn_cmp_stat;
@@ -338,7 +338,7 @@ namespace map {
                 >
             >::type
         {};
-        typedef SplitListMap< cds::gc::HP, Key, Value, SplitList_Lazy_dyn_cmp_seqcst > SplitList_Lazy_HP_dyn_cmp_seqcst;
+        typedef SplitListMap< cds::gc::HP<>, Key, Value, SplitList_Lazy_dyn_cmp_seqcst > SplitList_Lazy_HP_dyn_cmp_seqcst;
         typedef SplitListMap< cds::gc::DHP, Key, Value, SplitList_Lazy_dyn_cmp_seqcst > SplitList_Lazy_DHP_dyn_cmp_seqcst;
         typedef SplitListMap< cds::gc::nogc, Key, Value, SplitList_Lazy_dyn_cmp_seqcst> SplitList_Lazy_NOGC_dyn_cmp_seqcst;
         typedef SplitListMap< rcu_gpi, Key, Value, SplitList_Lazy_dyn_cmp_seqcst > SplitList_Lazy_RCU_GPI_dyn_cmp_seqcst;
@@ -361,7 +361,7 @@ namespace map {
                 >
             >::type
         {};
-        typedef SplitListMap< cds::gc::HP, Key, Value, SplitList_Lazy_st_cmp > SplitList_Lazy_HP_st_cmp;
+        typedef SplitListMap< cds::gc::HP<>, Key, Value, SplitList_Lazy_st_cmp > SplitList_Lazy_HP_st_cmp;
         typedef SplitListMap< cds::gc::DHP, Key, Value, SplitList_Lazy_st_cmp > SplitList_Lazy_DHP_st_cmp;
         typedef SplitListMap< cds::gc::nogc, Key, Value, SplitList_Lazy_st_cmp> SplitList_Lazy_NOGC_st_cmp;
         typedef SplitListMap< rcu_gpi, Key, Value, SplitList_Lazy_st_cmp > SplitList_Lazy_RCU_GPI_st_cmp;
@@ -384,7 +384,7 @@ namespace map {
                 >
             >::type
         {};
-        typedef SplitListMap< cds::gc::HP, Key, Value, SplitList_Lazy_dyn_less > SplitList_Lazy_HP_dyn_less;
+        typedef SplitListMap< cds::gc::HP<>, Key, Value, SplitList_Lazy_dyn_less > SplitList_Lazy_HP_dyn_less;
         typedef SplitListMap< cds::gc::DHP, Key, Value, SplitList_Lazy_dyn_less > SplitList_Lazy_DHP_dyn_less;
         typedef SplitListMap< cds::gc::nogc, Key, Value, SplitList_Lazy_dyn_less> SplitList_Lazy_NOGC_dyn_less;
         typedef SplitListMap< rcu_gpi, Key, Value, SplitList_Lazy_dyn_less > SplitList_Lazy_RCU_GPI_dyn_less;
@@ -407,7 +407,7 @@ namespace map {
                 >
             >::type
         {};
-        typedef SplitListMap< cds::gc::HP, Key, Value, SplitList_Lazy_st_less > SplitList_Lazy_HP_st_less;
+        typedef SplitListMap< cds::gc::HP<>, Key, Value, SplitList_Lazy_st_less > SplitList_Lazy_HP_st_less;
         typedef SplitListMap< cds::gc::DHP, Key, Value, SplitList_Lazy_st_less > SplitList_Lazy_DHP_st_less;
         typedef SplitListMap< cds::gc::nogc, Key, Value, SplitList_Lazy_st_less> SplitList_Lazy_NOGC_st_less;
         typedef SplitListMap< rcu_gpi, Key, Value, SplitList_Lazy_st_less > SplitList_Lazy_RCU_GPI_st_less;
@@ -425,7 +425,7 @@ namespace map {
                 , co::stat< cc::lazy_list::stat<>>
             >::type ordered_list_traits;
         };
-        typedef SplitListMap< cds::gc::HP, Key, Value, SplitList_Lazy_st_less_stat > SplitList_Lazy_HP_st_less_stat;
+        typedef SplitListMap< cds::gc::HP<>, Key, Value, SplitList_Lazy_st_less_stat > SplitList_Lazy_HP_st_less_stat;
         typedef SplitListMap< cds::gc::DHP, Key, Value, SplitList_Lazy_st_less_stat > SplitList_Lazy_DHP_st_less_stat;
         typedef SplitListMap< cds::gc::nogc, Key, Value, SplitList_Lazy_st_less_stat> SplitList_Lazy_NOGC_st_less_stat;
         typedef SplitListMap< rcu_gpi, Key, Value, SplitList_Lazy_st_less_stat > SplitList_Lazy_RCU_GPI_st_less_stat;
@@ -449,7 +449,7 @@ namespace map {
                 >
             >::type
         {};
-        typedef SplitListMap< cds::gc::HP, Key, Value, traits_SplitList_Iterable_dyn_cmp > SplitList_Iterable_HP_dyn_cmp;
+        typedef SplitListMap< cds::gc::HP<>, Key, Value, traits_SplitList_Iterable_dyn_cmp > SplitList_Iterable_HP_dyn_cmp;
         typedef SplitListMap< cds::gc::DHP, Key, Value, traits_SplitList_Iterable_dyn_cmp > SplitList_Iterable_DHP_dyn_cmp;
 
         struct traits_SplitList_Iterable_dyn_cmp_stat : public traits_SplitList_Iterable_dyn_cmp
@@ -460,7 +460,7 @@ namespace map {
                 , co::stat< cc::iterable_list::stat<>>
             >::type ordered_list_traits;
         };
-        typedef SplitListMap< cds::gc::HP, Key, Value, traits_SplitList_Iterable_dyn_cmp_stat > SplitList_Iterable_HP_dyn_cmp_stat;
+        typedef SplitListMap< cds::gc::HP<>, Key, Value, traits_SplitList_Iterable_dyn_cmp_stat > SplitList_Iterable_HP_dyn_cmp_stat;
         typedef SplitListMap< cds::gc::DHP, Key, Value, traits_SplitList_Iterable_dyn_cmp_stat > SplitList_Iterable_DHP_dyn_cmp_stat;
 
         struct traits_SplitList_Iterable_dyn_cmp_seqcst: public cc::split_list::make_traits<
@@ -476,7 +476,7 @@ namespace map {
                 >
             >::type
         {};
-        typedef SplitListMap< cds::gc::HP, Key, Value, traits_SplitList_Iterable_dyn_cmp_seqcst > SplitList_Iterable_HP_dyn_cmp_seqcst;
+        typedef SplitListMap< cds::gc::HP<>, Key, Value, traits_SplitList_Iterable_dyn_cmp_seqcst > SplitList_Iterable_HP_dyn_cmp_seqcst;
         typedef SplitListMap< cds::gc::DHP, Key, Value, traits_SplitList_Iterable_dyn_cmp_seqcst > SplitList_Iterable_DHP_dyn_cmp_seqcst;
 
         struct traits_SplitList_Iterable_st_cmp: public cc::split_list::make_traits<
@@ -491,7 +491,7 @@ namespace map {
                 >
             >::type
         {};
-        typedef SplitListMap< cds::gc::HP, Key, Value, traits_SplitList_Iterable_st_cmp > SplitList_Iterable_HP_st_cmp;
+        typedef SplitListMap< cds::gc::HP<>, Key, Value, traits_SplitList_Iterable_st_cmp > SplitList_Iterable_HP_st_cmp;
         typedef SplitListMap< cds::gc::DHP, Key, Value, traits_SplitList_Iterable_st_cmp > SplitList_Iterable_DHP_st_cmp;
 
         //HP + less
@@ -506,7 +506,7 @@ namespace map {
                 >
             >::type
         {};
-        typedef SplitListMap< cds::gc::HP, Key, Value, traits_SplitList_Iterable_dyn_less > SplitList_Iterable_HP_dyn_less;
+        typedef SplitListMap< cds::gc::HP<>, Key, Value, traits_SplitList_Iterable_dyn_less > SplitList_Iterable_HP_dyn_less;
         typedef SplitListMap< cds::gc::DHP, Key, Value, traits_SplitList_Iterable_dyn_less > SplitList_Iterable_DHP_dyn_less;
 
         struct traits_SplitList_Iterable_st_less: public cc::split_list::make_traits<
@@ -521,7 +521,7 @@ namespace map {
                 >
             >::type
         {};
-        typedef SplitListMap< cds::gc::HP, Key, Value, traits_SplitList_Iterable_st_less > SplitList_Iterable_HP_st_less;
+        typedef SplitListMap< cds::gc::HP<>, Key, Value, traits_SplitList_Iterable_st_less > SplitList_Iterable_HP_st_less;
         typedef SplitListMap< cds::gc::DHP, Key, Value, traits_SplitList_Iterable_st_less > SplitList_Iterable_DHP_st_less;
 
         struct traits_SplitList_Iterable_st_less_stat : traits_SplitList_Iterable_st_less
@@ -532,7 +532,7 @@ namespace map {
                 , co::stat< cc::iterable_list::stat<>>
             >::type ordered_list_traits;
         };
-        typedef SplitListMap< cds::gc::HP, Key, Value, traits_SplitList_Iterable_st_less_stat > SplitList_Iterable_HP_st_less_stat;
+        typedef SplitListMap< cds::gc::HP<>, Key, Value, traits_SplitList_Iterable_st_less_stat > SplitList_Iterable_HP_st_less_stat;
         typedef SplitListMap< cds::gc::DHP, Key, Value, traits_SplitList_Iterable_st_less_stat > SplitList_Iterable_DHP_st_less_stat;
     };
 

@@ -188,12 +188,12 @@ namespace cds { namespace intrusive {
                 template argument.
 
         @warning The skip-list requires up to 67 hazard pointers that may be critical for some GCs for which
-            the guard count is limited (like as \p gc::HP). Those GCs should be explicitly initialized with
-            hazard pointer enough: \code cds::gc::HP myhp( 67 ) \endcode. Otherwise an run-time exception may be raised
+            the guard count is limited (like as \p gc::HP<>). Those GCs should be explicitly initialized with
+            hazard pointer enough: \code cds::gc::HP<> myhp( 67 ) \endcode. Otherwise an run-time exception may be raised
             when you try to create skip-list object.
 
         There are several specializations of \p %SkipListSet for each \p GC. You should include:
-        - <tt><cds/intrusive/skip_list_hp.h></tt> for \p gc::HP garbage collector
+        - <tt><cds/intrusive/skip_list_hp.h></tt> for \p gc::HP<> garbage collector
         - <tt><cds/intrusive/skip_list_dhp.h></tt> for \p gc::DHP garbage collector
         - <tt><cds/intrusive/skip_list_nogc.h></tt> for \ref cds_intrusive_SkipListSet_nogc for append-only set
         - <tt><cds/intrusive/skip_list_rcu.h></tt> for \ref cds_intrusive_SkipListSet_rcu "RCU type"
@@ -212,7 +212,7 @@ namespace cds { namespace intrusive {
         before end of the set. Therefore, such iteration is more suitable for debugging purpose only
 
         Remember, each iterator object requires 2 additional hazard pointers, that may be
-        a limited resource for \p GC like as \p gc::HP (for \p gc::DHP the count of
+        a limited resource for \p GC like as \p gc::HP<> (for \p gc::DHP the count of
         guards is unlimited).
 
         The iterator class supports the following minimalistic interface:
@@ -245,13 +245,13 @@ namespace cds { namespace intrusive {
         appropriate \p skip_list::traits::hook in your \p Traits template parameters. Usually, for \p Traits you
         define a struct based on \p skip_list::traits.
 
-        Example for \p gc::HP and base hook:
+        Example for \p gc::HP<> and base hook:
         \code
         // Include GC-related skip-list specialization
         #include <cds/intrusive/skip_list_hp.h>
 
         // Data stored in skip list
-        struct my_data: public cds::intrusive::skip_list::node< cds::gc::HP >
+        struct my_data: public cds::intrusive::skip_list::node< cds::gc::HP<> >
         {
             // key field
             std::string     strKey;
@@ -282,12 +282,12 @@ namespace cds { namespace intrusive {
         // Declare your traits
         struct my_traits: public cds::intrusive::skip_list::traits
         {
-            typedef cds::intrusive::skip_list::base_hook< cds::opt::gc< cds::gc::HP > >   hook;
+            typedef cds::intrusive::skip_list::base_hook< cds::opt::gc< cds::gc::HP<> > >   hook;
             typedef my_data_cmp compare;
         };
 
         // Declare skip-list set type
-        typedef cds::intrusive::SkipListSet< cds::gc::HP, my_data, my_traits >     traits_based_set;
+        typedef cds::intrusive::SkipListSet< cds::gc::HP<>, my_data, my_traits >     traits_based_set;
         \endcode
 
         Equivalent option-based code:
@@ -303,10 +303,10 @@ namespace cds { namespace intrusive {
         };
 
         // Declare option-based skip-list set
-        typedef cds::intrusive::SkipListSet< cds::gc::HP
+        typedef cds::intrusive::SkipListSet< cds::gc::HP<>
             ,my_data
             , typename cds::intrusive::skip_list::make_traits<
-                cds::intrusive::opt::hook< cds::intrusive::skip_list::base_hook< cds::opt::gc< cds::gc::HP > > >
+                cds::intrusive::opt::hook< cds::intrusive::skip_list::base_hook< cds::opt::gc< cds::gc::HP<> > > >
                 ,cds::intrusive::opt::compare< my_data_cmp >
             >::type
         > option_based_set;
@@ -429,7 +429,7 @@ namespace cds { namespace intrusive {
             The forward iterator has some features:
             - it has no post-increment operator
             - to protect the value, the iterator contains a GC-specific guard + another guard is required locally for increment operator.
-              For some GC (like as \p gc::HP), a guard is a limited resource per thread, so an exception (or assertion) "no free guard"
+              For some GC (like as \p gc::HP<>), a guard is a limited resource per thread, so an exception (or assertion) "no free guard"
               may be thrown if the limit of guard count per thread is exceeded.
             - The iterator cannot be moved across thread boundary because it contains thread-private GC's guard.
             - Iterator ensures thread-safety even if you delete the item the iterator points to. However, in case of concurrent
@@ -723,7 +723,7 @@ namespace cds { namespace intrusive {
 
             Usage:
             \code
-            typedef cds::intrusive::SkipListSet< cds::gc::HP, foo, my_traits >  skip_list;
+            typedef cds::intrusive::SkipListSet< cds::gc::HP<>, foo, my_traits >  skip_list;
             skip_list theList;
             // ...
             {
@@ -775,7 +775,7 @@ namespace cds { namespace intrusive {
 
             Usage:
             \code
-            typedef cds::intrusive::SkipListSet< cds::gc::HP, foo, my_traits >  skip_list;
+            typedef cds::intrusive::SkipListSet< cds::gc::HP<>, foo, my_traits >  skip_list;
             skip_list theList;
             // ...
             {
@@ -811,7 +811,7 @@ namespace cds { namespace intrusive {
 
             Usage:
             \code
-            typedef cds::intrusive::SkipListSet< cds::gc::HP, foo, my_traits > skip_list;
+            typedef cds::intrusive::SkipListSet< cds::gc::HP<>, foo, my_traits > skip_list;
             skip_list theList;
             // ...
             {
@@ -1010,7 +1010,7 @@ namespace cds { namespace intrusive {
 
             Usage:
             \code
-            typedef cds::intrusive::SkipListSet< cds::gc::HP, foo, my_traits >  skip_list;
+            typedef cds::intrusive::SkipListSet< cds::gc::HP<>, foo, my_traits >  skip_list;
             skip_list theList;
             // ...
             {

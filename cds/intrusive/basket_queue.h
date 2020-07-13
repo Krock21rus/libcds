@@ -257,9 +257,9 @@ namespace cds { namespace intrusive {
 
             Example: declare \p %BasketQueue with item counting and internal statistics
             \code
-            typedef cds::intrusive::BasketQueue< cds::gc::HP, Foo,
+            typedef cds::intrusive::BasketQueue< cds::gc::HP<>, Foo,
                 typename cds::intrusive::basket_queue::make_traits<
-                    cds::intrusive::opt:hook< cds::intrusive::basket_queue::base_hook< cds::opt::gc<cds:gc::HP> >>,
+                    cds::intrusive::opt:hook< cds::intrusive::basket_queue::base_hook< cds::opt::gc<cds:gc::HP<>> >>,
                     cds::opt::item_counte< cds::atomicity::item_counter >,
                     cds::opt::stat< cds::intrusive::basket_queue::stat<> >
                 >::type
@@ -325,7 +325,7 @@ namespace cds { namespace intrusive {
         oldest basket. It may then dequeue any node in the oldest basket.
 
         <b>Template arguments:</b>
-        - \p GC - garbage collector type: \p gc::HP, \p gc::DHP
+        - \p GC - garbage collector type: \p gc::HP<>, \p gc::DHP
         - \p T - type of value to be stored in the queue
         - \p Traits - queue traits, default is \p basket_queue::traits. You can use \p basket_queue::make_traits
             metafunction to make your traits or just derive your traits from \p %basket_queue::traits:
@@ -334,10 +334,10 @@ namespace cds { namespace intrusive {
                 typedef cds::intrusive::basket_queue::stat<> stat;
                 typedef cds::atomicity::item_counter    item_counter;
             };
-            typedef cds::intrusive::BasketQueue< cds::gc::HP, Foo, myTraits > myQueue;
+            typedef cds::intrusive::BasketQueue< cds::gc::HP<>, Foo, myTraits > myQueue;
 
             // Equivalent make_traits example:
-            typedef cds::intrusive::BasketQueue< cds::gc::HP, Foo,
+            typedef cds::intrusive::BasketQueue< cds::gc::HP<>, Foo,
                 typename cds::intrusive::basket_queue::make_traits<
                     cds::opt::stat< cds::intrusive::basket_queue::stat<> >,
                     cds::opt::item_counter< cds::atomicity::item_counter >
@@ -357,7 +357,7 @@ namespace cds { namespace intrusive {
         #include <cds/gc/hp.h>
 
         namespace ci = cds::inrtusive;
-        typedef cds::gc::HP hp_gc;
+        typedef cds::gc::HP<> hp_gc;
 
         // Basket queue with Hazard Pointer garbage collector, base hook + item disposer:
         struct Foo: public ci::basket_queue::node< hp_gc >

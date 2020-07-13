@@ -54,7 +54,7 @@ namespace cds { namespace container {
         Suppose, you want to make \p int to \p int map for Hazard Pointer garbage collector. You should
         choose suitable ordered list class that will be used as a bucket for the map; it may be \p MichaelKVList.
         \code
-        #include <cds/container/michael_kvlist_hp.h>    // MichaelKVList for gc::HP
+        #include <cds/container/michael_kvlist_hp.h>    // MichaelKVList for gc::HP<>
         #include <cds/container/michael_map.h>          // MichaelHashMap
 
         // List traits based on std::less predicate
@@ -64,7 +64,7 @@ namespace cds { namespace container {
         };
 
         // Ordered list
-        typedef cds::container::MichaelKVList< cds::gc::HP, int, int, list_traits> int2int_list;
+        typedef cds::container::MichaelKVList< cds::gc::HP<>, int, int, list_traits> int2int_list;
 
         // Map traits
         struct map_traits: public cds::container::michael_map::traits
@@ -78,7 +78,7 @@ namespace cds { namespace container {
         };
 
         // Your map
-        typedef cds::container::MichaelHashMap< cds::gc::HP, int2int_list, map_traits > int2int_map;
+        typedef cds::container::MichaelHashMap< cds::gc::HP<>, int2int_list, map_traits > int2int_map;
 
         // Now you can use int2int_map class
 
@@ -93,18 +93,18 @@ namespace cds { namespace container {
 
         You may use option-based declaration:
         \code
-        #include <cds/container/michael_kvlist_hp.h>    // MichaelKVList for gc::HP
+        #include <cds/container/michael_kvlist_hp.h>    // MichaelKVList for gc::HP<>
         #include <cds/container/michael_map.h>          // MichaelHashMap
 
         // Ordered list
-        typedef cds::container::MichaelKVList< cds::gc::HP, int, int,
+        typedef cds::container::MichaelKVList< cds::gc::HP<>, int, int,
             typename cds::container::michael_list::make_traits<
                 cds::container::opt::less< std::less<int> >     // item comparator option
             >::type
         >  int2int_list;
 
         // Map
-        typedef cds::container::MichaelHashMap< cds::gc::HP, int2int_list,
+        typedef cds::container::MichaelHashMap< cds::gc::HP<>, int2int_list,
             cds::container::michael_map::make_traits<
                 cc::opt::hash< cds::opt::v::hash<int> >
             >
@@ -270,7 +270,7 @@ namespace cds { namespace container {
             The forward iterator for Michael's map has some features:
             - it has no post-increment operator
             - to protect the value, the iterator contains a GC-specific guard + another guard is required locally for increment operator.
-              For some GC (like as \p gc::HP), a guard is a limited resource per thread, so an exception (or assertion) "no free guard"
+              For some GC (like as \p gc::HP<>), a guard is a limited resource per thread, so an exception (or assertion) "no free guard"
               may be thrown if the limit of guard count per thread is exceeded.
             - The iterator cannot be moved across thread boundary because it contains thread-private GC's guard.
 

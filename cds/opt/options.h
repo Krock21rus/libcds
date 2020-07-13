@@ -211,7 +211,7 @@ namespace opt {
     /// [type-option] Option setter for garbage collecting schema used
     /**
         Possible values of \p GC template parameter are:
-        - cds::gc::HP - Hazard Pointer garbage collector
+        - cds::gc::HP<> - Hazard Pointer garbage collector
         - cds::gc::DHP - Dynamic Hazard Pointer garbage collector
         - cds::gc::none::GC - No garbage collector (not supported for some containers)
     */
@@ -1117,7 +1117,7 @@ namespace cds { namespace opt {
         // Find option co::tag.
 
         // res1 is co::tag< tag_a >
-        typedef co::find_option< co::tag< default_tag >, co::gc< cds::gc::HP >, co::tag< tag_a > >::type res1;
+        typedef co::find_option< co::tag< default_tag >, co::gc< cds::gc::HP<> >, co::tag< tag_a > >::type res1;
 
         // res2 is default co::tag< default_tag >
         typedef co::find_option< co::tag< default_tag >, co::less< x >, co::hash< H > >::type res2;

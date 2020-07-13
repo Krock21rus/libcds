@@ -37,7 +37,7 @@ namespace cds { namespace intrusive {
         - \p T - type to be stored in the list.
         - \p Traits - type traits, default is \p iterable_list::traits. It is possible to declare option-based
              list with \p cds::intrusive::iterable_list::make_traits metafunction:
-            For example, the following traits-based declaration of \p gc::HP iterable list
+            For example, the following traits-based declaration of \p gc::HP<> iterable list
             \code
             #include <cds/intrusive/iterable_list_hp.h>
             // Declare item stored in your list
@@ -62,7 +62,7 @@ namespace cds { namespace intrusive {
             };
 
             // Declare list
-            typedef cds::intrusive::IterableList< cds::gc::HP, foo, my_traits > list_type;
+            typedef cds::intrusive::IterableList< cds::gc::HP<>, foo, my_traits > list_type;
             \endcode
             is equivalent for the following option-based list
             \code
@@ -71,7 +71,7 @@ namespace cds { namespace intrusive {
             // foo struct and my_compare are the same
 
             // Declare option-based list
-            typedef cds::intrusive::IterableList< cds::gc::HP, foo,
+            typedef cds::intrusive::IterableList< cds::gc::HP<>, foo,
                 typename cds::intrusive::iterable_list::make_traits<
                     cds::intrusive::opt::compare< my_compare >     // item comparator option
                 >::type
@@ -81,7 +81,7 @@ namespace cds { namespace intrusive {
         \par Usage
         There are different specializations of this template for each garbage collecting schema.
         You should select GC you want and include appropriate .h-file:
-        - for \p gc::HP: <tt> <cds/intrusive/iterable_list_hp.h> </tt>
+        - for \p gc::HP<>: <tt> <cds/intrusive/iterable_list_hp.h> </tt>
         - for \p gc::DHP: <tt> <cds/intrusive/iterable_list_dhp.h> </tt>
     */
     template <
@@ -276,7 +276,7 @@ namespace cds { namespace intrusive {
             The forward iterator for iterable list has some features:
             - it has no post-increment operator
             - to protect the value, the iterator contains a GC-specific guard.
-              For some GC (like as \p gc::HP), a guard is a limited resource per thread, so an exception (or assertion) "no free guard"
+              For some GC (like as \p gc::HP<>), a guard is a limited resource per thread, so an exception (or assertion) "no free guard"
               may be thrown if the limit of guard count per thread is exceeded.
             - The iterator cannot be moved across thread boundary since it contains thread-private GC's guard.
             - Iterator is thread-safe: even if the element the iterator points to is removed, the iterator stays valid because
@@ -598,7 +598,7 @@ namespace cds { namespace intrusive {
 
             Usage:
             \code
-            typedef cds::intrusive::IterableList< cds::gc::HP, foo, my_traits >  ord_list;
+            typedef cds::intrusive::IterableList< cds::gc::HP<>, foo, my_traits >  ord_list;
             ord_list theList;
             // ...
             {
@@ -748,7 +748,7 @@ namespace cds { namespace intrusive {
 
             Usage:
             \code
-            typedef cds::intrusive::IterableList< cds::gc::HP, foo, my_traits >  ord_list;
+            typedef cds::intrusive::IterableList< cds::gc::HP<>, foo, my_traits >  ord_list;
             ord_list theList;
             // ...
             {

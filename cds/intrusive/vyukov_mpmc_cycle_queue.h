@@ -79,7 +79,7 @@ namespace cds { namespace intrusive {
             typedef cds::intrusive::VyukovMPMCCycleQueue< Foo, myTraits > myQueue;
 
             // Equivalent make_traits example:
-            typedef cds::intrusive::VyukovMPMCCycleQueue< cds::gc::HP, Foo,
+            typedef cds::intrusive::VyukovMPMCCycleQueue< cds::gc::HP<>, Foo,
                 typename cds::intrusive::vyukov_queue::make_traits<
                     cds::opt::item_counter< cds::atomicity::item_counter >
                 >::type

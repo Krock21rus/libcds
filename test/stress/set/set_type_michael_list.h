@@ -26,7 +26,7 @@ namespace set {
                 co::compare< compare >
             >::type
         {};
-        typedef cc::MichaelList< cds::gc::HP,  key_val, traits_MichaelList_cmp > MichaelList_HP_cmp;
+        typedef cc::MichaelList< cds::gc::HP<>,  key_val, traits_MichaelList_cmp > MichaelList_HP_cmp;
         typedef cc::MichaelList< cds::gc::DHP, key_val, traits_MichaelList_cmp > MichaelList_DHP_cmp;
         typedef cc::MichaelList< rcu_gpi, key_val, traits_MichaelList_cmp > MichaelList_RCU_GPI_cmp;
         typedef cc::MichaelList< rcu_gpb, key_val, traits_MichaelList_cmp > MichaelList_RCU_GPB_cmp;
@@ -39,7 +39,7 @@ namespace set {
         {
             typedef cc::michael_list::stat<> stat;
         };
-        typedef cc::MichaelList< cds::gc::HP,  key_val, traits_MichaelList_cmp_stat > MichaelList_HP_cmp_stat;
+        typedef cc::MichaelList< cds::gc::HP<>,  key_val, traits_MichaelList_cmp_stat > MichaelList_HP_cmp_stat;
         typedef cc::MichaelList< cds::gc::DHP, key_val, traits_MichaelList_cmp_stat > MichaelList_DHP_cmp_stat;
         typedef cc::MichaelList< rcu_gpi, key_val, traits_MichaelList_cmp_stat > MichaelList_RCU_GPI_cmp_stat;
         typedef cc::MichaelList< rcu_gpb, key_val, traits_MichaelList_cmp_stat > MichaelList_RCU_GPB_cmp_stat;
@@ -52,7 +52,7 @@ namespace set {
         {
             typedef co::v::sequential_consistent memory_model;
         };
-        typedef cc::MichaelList< cds::gc::HP,  key_val, traits_MichaelList_cmp_seqcst > MichaelList_HP_cmp_seqcst;
+        typedef cc::MichaelList< cds::gc::HP<>,  key_val, traits_MichaelList_cmp_seqcst > MichaelList_HP_cmp_seqcst;
         typedef cc::MichaelList< cds::gc::DHP, key_val, traits_MichaelList_cmp_seqcst > MichaelList_DHP_cmp_seqcst;
         typedef cc::MichaelList< rcu_gpi, key_val, traits_MichaelList_cmp_seqcst > MichaelList_RCU_GPI_cmp_seqcst;
         typedef cc::MichaelList< rcu_gpb, key_val, traits_MichaelList_cmp_seqcst > MichaelList_RCU_GPB_cmp_seqcst;
@@ -66,7 +66,7 @@ namespace set {
                 co::less< less >
             >::type
         {};
-        typedef cc::MichaelList< cds::gc::HP,  key_val, traits_MichaelList_less > MichaelList_HP_less;
+        typedef cc::MichaelList< cds::gc::HP<>,  key_val, traits_MichaelList_less > MichaelList_HP_less;
         typedef cc::MichaelList< cds::gc::DHP, key_val, traits_MichaelList_less > MichaelList_DHP_less;
         typedef cc::MichaelList< rcu_gpi, key_val, traits_MichaelList_less > MichaelList_RCU_GPI_less;
         typedef cc::MichaelList< rcu_gpb, key_val, traits_MichaelList_less > MichaelList_RCU_GPB_less;
@@ -79,7 +79,7 @@ namespace set {
         {
             typedef cc::michael_list::stat<> stat;
         };
-        typedef cc::MichaelList< cds::gc::HP,  key_val, traits_MichaelList_less_stat > MichaelList_HP_less_stat;
+        typedef cc::MichaelList< cds::gc::HP<>,  key_val, traits_MichaelList_less_stat > MichaelList_HP_less_stat;
         typedef cc::MichaelList< cds::gc::DHP, key_val, traits_MichaelList_less_stat > MichaelList_DHP_less_stat;
         typedef cc::MichaelList< rcu_gpi, key_val, traits_MichaelList_less_stat > MichaelList_RCU_GPI_less_stat;
         typedef cc::MichaelList< rcu_gpb, key_val, traits_MichaelList_less_stat > MichaelList_RCU_GPB_less_stat;
@@ -94,7 +94,7 @@ namespace set {
                 ,co::memory_model< co::v::sequential_consistent >
             >::type
         {};
-        typedef cc::MichaelList< cds::gc::HP,  key_val, traits_MichaelList_less_seqcst > MichaelList_HP_less_seqcst;
+        typedef cc::MichaelList< cds::gc::HP<>,  key_val, traits_MichaelList_less_seqcst > MichaelList_HP_less_seqcst;
         typedef cc::MichaelList< cds::gc::DHP, key_val, traits_MichaelList_less_seqcst > MichaelList_DHP_less_seqcst;
         typedef cc::MichaelList< rcu_gpi, key_val, traits_MichaelList_less_seqcst > MichaelList_RCU_GPI_less_seqcst;
         typedef cc::MichaelList< rcu_gpb, key_val, traits_MichaelList_less_seqcst > MichaelList_RCU_GPB_less_seqcst;

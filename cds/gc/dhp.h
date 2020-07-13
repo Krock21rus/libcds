@@ -652,7 +652,7 @@ namespace cds { namespace gc {
             - [2003] Maged M.Michael "Hazard Pointers: Safe memory reclamation for lock-free objects"
             - [2004] Andrei Alexandrescy, Maged Michael "Lock-free Data Structures with Hazard Pointers"
 
-        %DHP is an adaptive variant of classic \p cds::gc::HP, see @ref cds_garbage_collectors_comparison "Compare HP implementation"
+        %DHP is an adaptive variant of classic \p cds::gc::HP<>, see @ref cds_garbage_collectors_comparison "Compare HP implementation"
 
         @note Internally, %DHP depends on free-list implementation. There are
         DCAS-based free-list \p cds::intrusive::TaggedFreeList and more complicated CAS-based free-list

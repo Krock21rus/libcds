@@ -11,7 +11,7 @@
 
 namespace cds_test {
 
-    static inline property_stream& operator <<( property_stream& o, cds::gc::HP::stat const& s )
+    static inline property_stream& operator <<( property_stream& o, cds::gc::HP<>::stat const& s )
     {
 #ifdef CDS_ENABLE_HPSTAT
 #   define CDS_HPSTAT_OUT( stat, fld ) std::make_pair( "hp_" + property_stream::stat_prefix() + "." #fld, stat.fld )
@@ -31,7 +31,7 @@ namespace cds_test {
 
 } // namespace cds_test
 
-static inline std::ostream& operator <<( std::ostream& o, cds::gc::HP::stat const& s )
+static inline std::ostream& operator <<( std::ostream& o, cds::gc::HP<>::stat const& s )
 {
 #ifdef CDS_ENABLE_HPSTAT
 #   define CDS_HPSTAT_OUT( stat, fld ) "\t" << #fld << "=" << stat.fld << "\n"

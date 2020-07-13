@@ -43,7 +43,7 @@ namespace {
         typedef cds_test::intrusive_stack_push_pop base_class;
     protected:
         typedef base_class::value_type<> value_type;
-        typedef base_class::value_type< cds::intrusive::treiber_stack::node< cds::gc::HP >> hp_value_type;
+        typedef base_class::value_type< cds::intrusive::treiber_stack::node< cds::gc::HP<> >> hp_value_type;
         typedef base_class::value_type< cds::intrusive::treiber_stack::node< cds::gc::DHP >> dhp_value_type;
 
         template <typename Stack>
@@ -90,7 +90,7 @@ namespace {
         }
     };
 
-    // TreiberStack<cds::gc::HP>
+    // TreiberStack<cds::gc::HP<>>
 #define CDSSTRESS_Stack_F( test_fixture, stack_impl ) \
     TEST_F( test_fixture, stack_impl ) \
     { \
@@ -114,7 +114,7 @@ namespace {
 
 #undef CDSSTRESS_Stack_F
 
-    // TreiberStack<cds::gc::HP> + elimination enabled
+    // TreiberStack<cds::gc::HP<>> + elimination enabled
 #define CDSSTRESS_Stack_F( test_fixture, stack_impl ) \
     TEST_F( test_fixture, stack_impl ) \
     { \

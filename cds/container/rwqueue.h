@@ -247,7 +247,7 @@ namespace cds { namespace container {
             \p Func is a functor called to create node.
             The functor \p f takes one argument - a reference to a new node of type \ref value_type :
             \code
-            cds::container::RWQueue< cds::gc::HP, Foo > myQueue;
+            cds::container::RWQueue< cds::gc::HP<>, Foo > myQueue;
             Bar bar;
             myQueue.enqueue_with( [&bar]( Foo& dest ) { dest = bar; } );
             \endcode
@@ -310,7 +310,7 @@ namespace cds { namespace container {
             \p Func is a functor called to copy dequeued value.
             The functor takes one argument - a reference to removed node:
             \code
-            cds:container::RWQueue< cds::gc::HP, Foo > myQueue;
+            cds:container::RWQueue< cds::gc::HP<>, Foo > myQueue;
             Bar bar;
             myQueue.dequeue_with( [&bar]( Foo& src ) { bar = std::move( src );});
             \endcode

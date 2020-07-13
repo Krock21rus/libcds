@@ -104,7 +104,7 @@ namespace cds { namespace container {
 
             Example: declare %TreiberStack with item counting and internal statistics using \p %make_traits
             \code
-            typedef cds::container::TreiberStack< cds::gc::HP, Foo,
+            typedef cds::container::TreiberStack< cds::gc::HP<>, Foo,
                 typename cds::container::treiber_stack::make_traits<
                     cds::opt::item_counter< cds::atomicity::item_counter >,
                     cds::opt::stat< cds::intrusive::treiber_stack::stat<> >
@@ -178,7 +178,7 @@ namespace cds { namespace container {
         intrusive::TreiberStack.
 
         Template arguments:
-        - \p GC - garbage collector type: \p gc::HP, gc::DHP
+        - \p GC - garbage collector type: \p gc::HP<>, gc::DHP
         - \p T - type stored in the stack.
         - \p Traits - stack traits, default is \p treiber_stack::traits. You can use \p treiber_stack::make_traits
             metafunction to make your traits or just derive your traits from \p %treiber_stack::traits:
@@ -187,10 +187,10 @@ namespace cds { namespace container {
                 typedef cds::intrusive::treiber_stack::stat<> stat;
                 typedef cds::atomicity::item_counter  item_counter;
             };
-            typedef cds::container::TreiberStack< cds::gc::HP, Foo, myTraits > myStack;
+            typedef cds::container::TreiberStack< cds::gc::HP<>, Foo, myTraits > myStack;
 
             // Equivalent make_traits example:
-            typedef cds::intrusive::TreiberStack< cds::gc::HP, Foo,
+            typedef cds::intrusive::TreiberStack< cds::gc::HP<>, Foo,
                 typename cds::intrusive::treiber_stack::make_traits<
                     cds::opt::item_counter< cds::atomicity::item_counter >,
                     cds::opt::stat< cds::intrusive::treiber_stack::stat<> >

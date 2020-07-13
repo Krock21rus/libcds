@@ -11,7 +11,7 @@
 namespace {
 
     namespace cc = cds::container;
-    typedef cds::gc::HP gc_type;
+    typedef cds::gc::HP<> gc_type;
 
     class MichaelMap_HP: public cds_test::container_map_hp
     {

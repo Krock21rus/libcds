@@ -8,7 +8,7 @@
 
 namespace {
     namespace cc = cds::container;
-    typedef cds::gc::HP gc_type;
+    typedef cds::gc::HP<> gc_type;
 
     class IterableKVList_HP : public cds_test::kv_iterable_list_hp
     {

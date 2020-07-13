@@ -72,14 +72,14 @@ namespace cds { namespace intrusive {
         The set supports @ref cds_intrusive_FeldmanHashSet_iterators "bidirectional thread-safe iterators".
 
         Template parameters:
-        - \p GC - safe memory reclamation schema. Can be \p gc::HP, \p gc::DHP or one of \ref cds_urcu_type "RCU type"
+        - \p GC - safe memory reclamation schema. Can be \p gc::HP<>, \p gc::DHP or one of \ref cds_urcu_type "RCU type"
         - \p T - a value type to be stored in the set
         - \p Traits - type traits, the structure based on \p feldman_hashset::traits or result of \p feldman_hashset::make_traits metafunction.
             \p Traits is the mandatory argument because it has one mandatory type - an @ref feldman_hashset::traits::hash_accessor "accessor"
             to hash value of \p T. The set algorithm does not calculate that hash value.
 
         There are several specializations of \p %FeldmanHashSet for each \p GC. You should include:
-        - <tt><cds/intrusive/feldman_hashset_hp.h></tt> for \p gc::HP garbage collector
+        - <tt><cds/intrusive/feldman_hashset_hp.h></tt> for \p gc::HP<> garbage collector
         - <tt><cds/intrusive/feldman_hashset_dhp.h></tt> for \p gc::DHP garbage collector
         - <tt><cds/intrusive/feldman_hashset_rcu.h></tt> for \ref cds_intrusive_FeldmanHashSet_rcu "RCU type". RCU specialization
             has a slightly different interface.

@@ -83,7 +83,7 @@ namespace map {
             typedef cds::atomicity::cache_friendly_item_counter item_counter;
         };
 
-        typedef FeldmanHashMap< cds::gc::HP,  Key, Value, traits_FeldmanHashMap_stdhash >    FeldmanHashMap_hp_stdhash;
+        typedef FeldmanHashMap< cds::gc::HP<>,  Key, Value, traits_FeldmanHashMap_stdhash >    FeldmanHashMap_hp_stdhash;
         typedef FeldmanHashMap< cds::gc::DHP, Key, Value, traits_FeldmanHashMap_stdhash >    FeldmanHashMap_dhp_stdhash;
         typedef FeldmanHashMap< rcu_gpi, Key, Value, traits_FeldmanHashMap_stdhash >    FeldmanHashMap_rcu_gpi_stdhash;
         typedef FeldmanHashMap< rcu_gpb, Key, Value, traits_FeldmanHashMap_stdhash >    FeldmanHashMap_rcu_gpb_stdhash;
@@ -98,7 +98,7 @@ namespace map {
             typedef std::less<size_t>   less;
         };
 
-        typedef FeldmanHashMap< cds::gc::HP,  Key, Value, traits_FeldmanHashMap_stdhash_stat >    FeldmanHashMap_hp_stdhash_stat;
+        typedef FeldmanHashMap< cds::gc::HP<>,  Key, Value, traits_FeldmanHashMap_stdhash_stat >    FeldmanHashMap_hp_stdhash_stat;
         typedef FeldmanHashMap< cds::gc::DHP, Key, Value, traits_FeldmanHashMap_stdhash_stat >    FeldmanHashMap_dhp_stdhash_stat;
         typedef FeldmanHashMap< rcu_gpi, Key, Value, traits_FeldmanHashMap_stdhash_stat >    FeldmanHashMap_rcu_gpi_stdhash_stat;
         typedef FeldmanHashMap< rcu_gpb, Key, Value, traits_FeldmanHashMap_stdhash_stat >    FeldmanHashMap_rcu_gpb_stdhash_stat;
@@ -115,7 +115,7 @@ namespace map {
             typedef ::cds_test::city64::less less;
             typedef cds::atomicity::cache_friendly_item_counter item_counter;
         };
-        typedef FeldmanHashMap< cds::gc::HP,  Key, Value, traits_FeldmanHashMap_city64 >    FeldmanHashMap_hp_city64;
+        typedef FeldmanHashMap< cds::gc::HP<>,  Key, Value, traits_FeldmanHashMap_city64 >    FeldmanHashMap_hp_city64;
         typedef FeldmanHashMap< cds::gc::DHP, Key, Value, traits_FeldmanHashMap_city64 >    FeldmanHashMap_dhp_city64;
         typedef FeldmanHashMap< rcu_gpi, Key, Value, traits_FeldmanHashMap_city64 >    FeldmanHashMap_rcu_gpi_city64;
         typedef FeldmanHashMap< rcu_gpb, Key, Value, traits_FeldmanHashMap_city64 >    FeldmanHashMap_rcu_gpb_city64;
@@ -128,7 +128,7 @@ namespace map {
         {
             typedef cc::feldman_hashmap::stat<> stat;
         };
-        typedef FeldmanHashMap< cds::gc::HP,  Key, Value, traits_FeldmanHashMap_city64_stat >    FeldmanHashMap_hp_city64_stat;
+        typedef FeldmanHashMap< cds::gc::HP<>,  Key, Value, traits_FeldmanHashMap_city64_stat >    FeldmanHashMap_hp_city64_stat;
         typedef FeldmanHashMap< cds::gc::DHP, Key, Value, traits_FeldmanHashMap_city64_stat >    FeldmanHashMap_dhp_city64_stat;
         typedef FeldmanHashMap< rcu_gpi, Key, Value, traits_FeldmanHashMap_city64_stat >    FeldmanHashMap_rcu_gpi_city64_stat;
         typedef FeldmanHashMap< rcu_gpb, Key, Value, traits_FeldmanHashMap_city64_stat >    FeldmanHashMap_rcu_gpb_city64_stat;
@@ -143,7 +143,7 @@ namespace map {
             typedef ::cds_test::city128::less less;
             typedef cds::atomicity::cache_friendly_item_counter item_counter;
         };
-        typedef FeldmanHashMap< cds::gc::HP,  Key, Value, traits_FeldmanHashMap_city128 >    FeldmanHashMap_hp_city128;
+        typedef FeldmanHashMap< cds::gc::HP<>,  Key, Value, traits_FeldmanHashMap_city128 >    FeldmanHashMap_hp_city128;
         typedef FeldmanHashMap< cds::gc::DHP, Key, Value, traits_FeldmanHashMap_city128 >    FeldmanHashMap_dhp_city128;
         typedef FeldmanHashMap< rcu_gpi, Key, Value, traits_FeldmanHashMap_city128 >    FeldmanHashMap_rcu_gpi_city128;
         typedef FeldmanHashMap< rcu_gpb, Key, Value, traits_FeldmanHashMap_city128 >    FeldmanHashMap_rcu_gpb_city128;
@@ -156,7 +156,7 @@ namespace map {
         {
             typedef cc::feldman_hashmap::stat<> stat;
         };
-        typedef FeldmanHashMap< cds::gc::HP,  Key, Value, traits_FeldmanHashMap_city128_stat >    FeldmanHashMap_hp_city128_stat;
+        typedef FeldmanHashMap< cds::gc::HP<>,  Key, Value, traits_FeldmanHashMap_city128_stat >    FeldmanHashMap_hp_city128_stat;
         typedef FeldmanHashMap< cds::gc::DHP, Key, Value, traits_FeldmanHashMap_city128_stat >    FeldmanHashMap_dhp_city128_stat;
         typedef FeldmanHashMap< rcu_gpi, Key, Value, traits_FeldmanHashMap_city128_stat >    FeldmanHashMap_rcu_gpi_city128_stat;
         typedef FeldmanHashMap< rcu_gpb, Key, Value, traits_FeldmanHashMap_city128_stat >    FeldmanHashMap_rcu_gpb_city128_stat;
@@ -174,7 +174,7 @@ namespace map {
             typedef cds::atomicity::cache_friendly_item_counter item_counter;
         };
 
-        typedef FeldmanHashMap< cds::gc::HP, Key, Value,  traits_FeldmanHashMap_fixed >    FeldmanHashMap_hp_fixed;
+        typedef FeldmanHashMap< cds::gc::HP<>, Key, Value,  traits_FeldmanHashMap_fixed >    FeldmanHashMap_hp_fixed;
         typedef FeldmanHashMap< cds::gc::DHP, Key, Value, traits_FeldmanHashMap_fixed >   FeldmanHashMap_dhp_fixed;
         typedef FeldmanHashMap< rcu_gpi, Key, Value,      traits_FeldmanHashMap_fixed >    FeldmanHashMap_rcu_gpi_fixed;
         typedef FeldmanHashMap< rcu_gpb, Key, Value,      traits_FeldmanHashMap_fixed >    FeldmanHashMap_rcu_gpb_fixed;
@@ -187,7 +187,7 @@ namespace map {
         {
             typedef cc::feldman_hashmap::stat<> stat;
         };
-        typedef FeldmanHashMap< cds::gc::HP, Key, Value,    traits_FeldmanHashMap_fixed_stat >  FeldmanHashMap_hp_fixed_stat;
+        typedef FeldmanHashMap< cds::gc::HP<>, Key, Value,    traits_FeldmanHashMap_fixed_stat >  FeldmanHashMap_hp_fixed_stat;
         typedef FeldmanHashMap< cds::gc::DHP, Key, Value,   traits_FeldmanHashMap_fixed_stat >  FeldmanHashMap_dhp_fixed_stat;
         typedef FeldmanHashMap< rcu_gpi, Key, Value,        traits_FeldmanHashMap_fixed_stat >  FeldmanHashMap_rcu_gpi_fixed_stat;
         typedef FeldmanHashMap< rcu_gpb, Key, Value,        traits_FeldmanHashMap_fixed_stat >  FeldmanHashMap_rcu_gpb_fixed_stat;

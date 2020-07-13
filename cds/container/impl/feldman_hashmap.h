@@ -73,13 +73,13 @@ namespace cds { namespace container {
         The map supports @ref cds_container_FeldmanHashMap_iterators "bidirectional thread-safe iterators".
 
         Template parameters:
-        - \p GC - safe memory reclamation schema. Can be \p gc::HP, \p gc::DHP or one of \ref cds_urcu_type "RCU type"
+        - \p GC - safe memory reclamation schema. Can be \p gc::HP<>, \p gc::DHP or one of \ref cds_urcu_type "RCU type"
         - \p Key - a key type to be stored in the map
         - \p T - a value type to be stored in the map
         - \p Traits - type traits, the structure based on \p feldman_hashmap::traits or result of \p feldman_hashmap::make_traits metafunction.
 
         There are several specializations of \p %FeldmanHashMap for each \p GC. You should include:
-        - <tt><cds/container/feldman_hashmap_hp.h></tt> for \p gc::HP garbage collector
+        - <tt><cds/container/feldman_hashmap_hp.h></tt> for \p gc::HP<> garbage collector
         - <tt><cds/container/feldman_hashmap_dhp.h></tt> for \p gc::DHP garbage collector
         - <tt><cds/container/feldman_hashmap_rcu.h></tt> for \ref cds_container_FeldmanHashMap_rcu "RCU type". RCU specialization
             has a slightly different interface.
@@ -554,7 +554,7 @@ namespace cds { namespace container {
 
             Usage:
             \code
-            typedef cds::container::FeldmanHashMap< cds::gc::HP, int, foo, my_traits > map_type;
+            typedef cds::container::FeldmanHashMap< cds::gc::HP<>, int, foo, my_traits > map_type;
             map_type theMap;
             // ...
             {
@@ -620,7 +620,7 @@ namespace cds { namespace container {
 
             Usage:
             \code
-            typedef cds::container::FeldmanHashMap< cds::gc::HP, int, foo, my_traits >  map_type;
+            typedef cds::container::FeldmanHashMap< cds::gc::HP<>, int, foo, my_traits >  map_type;
             map_type theMap;
             // ...
             {

@@ -173,7 +173,7 @@ namespace cds { namespace container {
         quasi factor. It means that the consumer dequeues any item from the current first segment.
 
         Template parameters:
-        - \p GC - a garbage collector, possible types are cds::gc::HP, cds::gc::DHP
+        - \p GC - a garbage collector, possible types are cds::gc::HP<>, cds::gc::DHP
         - \p T - the type of values stored in the queue
         - \p Traits - queue type traits, default is \p segmented_queue::traits.
             \p segmented_queue::make_traits metafunction can be used to construct your
@@ -271,7 +271,7 @@ namespace cds { namespace container {
             \p Func is a functor called to create node.
             The functor \p f takes one argument - a reference to a new node of type \ref value_type :
             \code
-            cds::container::SegmentedQueue< cds::gc::HP, Foo > myQueue;
+            cds::container::SegmentedQueue< cds::gc::HP<>, Foo > myQueue;
             Bar bar;
             myQueue.enqueue_with( [&bar]( Foo& dest ) { dest = bar; } );
             \endcode
@@ -336,7 +336,7 @@ namespace cds { namespace container {
             \p Func is a functor called to copy dequeued value.
             The functor takes one argument - a reference to removed node:
             \code
-            cds:container::MSQueue< cds::gc::HP, Foo > myQueue;
+            cds:container::MSQueue< cds::gc::HP<>, Foo > myQueue;
             Bar bar;
             myQueue.dequeue_with( [&bar]( Foo& src ) { bar = std::move( src );});
             \endcode

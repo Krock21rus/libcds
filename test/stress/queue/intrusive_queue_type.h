@@ -92,18 +92,18 @@ namespace queue {
         // MSQueue, MoirQueue
         struct traits_MSQueue_HP : public cds::intrusive::msqueue::traits
         {
-            typedef cds::intrusive::msqueue::base_hook< cds::opt::gc< cds::gc::HP > > hook;
+            typedef cds::intrusive::msqueue::base_hook< cds::opt::gc< cds::gc::HP<> > > hook;
         };
-        typedef cds::intrusive::MSQueue< cds::gc::HP, T, traits_MSQueue_HP > MSQueue_HP;
-        typedef cds::intrusive::MoirQueue< cds::gc::HP, T, traits_MSQueue_HP > MoirQueue_HP;
+        typedef cds::intrusive::MSQueue< cds::gc::HP<>, T, traits_MSQueue_HP > MSQueue_HP;
+        typedef cds::intrusive::MoirQueue< cds::gc::HP<>, T, traits_MSQueue_HP > MoirQueue_HP;
 
         struct traits_MSQueue_HP_seqcst : public cds::intrusive::msqueue::traits
         {
-            typedef cds::intrusive::msqueue::base_hook< cds::opt::gc< cds::gc::HP > > hook;
+            typedef cds::intrusive::msqueue::base_hook< cds::opt::gc< cds::gc::HP<> > > hook;
             typedef cds::opt::v::sequential_consistent memory_model;
         };
-        typedef cds::intrusive::MSQueue< cds::gc::HP, T, traits_MSQueue_HP_seqcst > MSQueue_HP_seqcst;
-        typedef cds::intrusive::MoirQueue< cds::gc::HP, T, traits_MSQueue_HP_seqcst > MoirQueue_HP_seqcst;
+        typedef cds::intrusive::MSQueue< cds::gc::HP<>, T, traits_MSQueue_HP_seqcst > MSQueue_HP_seqcst;
+        typedef cds::intrusive::MoirQueue< cds::gc::HP<>, T, traits_MSQueue_HP_seqcst > MoirQueue_HP_seqcst;
 
         struct traits_MSQueue_DHP : public cds::intrusive::msqueue::traits
         {
@@ -123,11 +123,11 @@ namespace queue {
         // MSQueue + item counter
         struct traits_MSQueue_HP_ic : public cds::intrusive::msqueue::traits
         {
-            typedef cds::intrusive::msqueue::base_hook< cds::opt::gc< cds::gc::HP > > hook;
+            typedef cds::intrusive::msqueue::base_hook< cds::opt::gc< cds::gc::HP<> > > hook;
             typedef cds::atomicity::item_counter item_counter;
         };
-        typedef cds::intrusive::MSQueue< cds::gc::HP, T, traits_MSQueue_HP_ic > MSQueue_HP_ic;
-        typedef cds::intrusive::MoirQueue< cds::gc::HP, T, traits_MSQueue_HP_ic > MoirQueue_HP_ic;
+        typedef cds::intrusive::MSQueue< cds::gc::HP<>, T, traits_MSQueue_HP_ic > MSQueue_HP_ic;
+        typedef cds::intrusive::MoirQueue< cds::gc::HP<>, T, traits_MSQueue_HP_ic > MoirQueue_HP_ic;
 
         struct traits_MSQueue_DHP_ic : public cds::intrusive::msqueue::traits
         {
@@ -140,11 +140,11 @@ namespace queue {
         // MSQueue + stat
         struct traits_MSQueue_HP_stat : public cds::intrusive::msqueue::traits
         {
-            typedef cds::intrusive::msqueue::base_hook< cds::opt::gc< cds::gc::HP > > hook;
+            typedef cds::intrusive::msqueue::base_hook< cds::opt::gc< cds::gc::HP<> > > hook;
             typedef cds::intrusive::msqueue::stat<> stat;
         };
-        typedef cds::intrusive::MSQueue< cds::gc::HP, T, traits_MSQueue_HP_stat > MSQueue_HP_stat;
-        typedef cds::intrusive::MoirQueue< cds::gc::HP, T, traits_MSQueue_HP_stat > MoirQueue_HP_stat;
+        typedef cds::intrusive::MSQueue< cds::gc::HP<>, T, traits_MSQueue_HP_stat > MSQueue_HP_stat;
+        typedef cds::intrusive::MoirQueue< cds::gc::HP<>, T, traits_MSQueue_HP_stat > MoirQueue_HP_stat;
 
         struct traits_MSQueue_DHP_stat : public cds::intrusive::msqueue::traits
         {
@@ -158,17 +158,17 @@ namespace queue {
         // OptimisticQueue
         struct traits_OptimisticQueue_HP : public cds::intrusive::optimistic_queue::traits
         {
-            typedef cds::intrusive::optimistic_queue::base_hook< cds::opt::gc< cds::gc::HP > > hook;
+            typedef cds::intrusive::optimistic_queue::base_hook< cds::opt::gc< cds::gc::HP<> > > hook;
         };
-        typedef cds::intrusive::OptimisticQueue< cds::gc::HP, T, traits_OptimisticQueue_HP > OptimisticQueue_HP;
+        typedef cds::intrusive::OptimisticQueue< cds::gc::HP<>, T, traits_OptimisticQueue_HP > OptimisticQueue_HP;
 
         struct traits_OptimisticQueue_HP_seqcst : public
             cds::intrusive::optimistic_queue::make_traits <
-                cds::intrusive::opt::hook< cds::intrusive::optimistic_queue::base_hook< cds::opt::gc< cds::gc::HP > > >
+                cds::intrusive::opt::hook< cds::intrusive::optimistic_queue::base_hook< cds::opt::gc< cds::gc::HP<> > > >
                 , cds::opt::memory_model< cds::opt::v::sequential_consistent >
             >::type
         {};
-        typedef cds::intrusive::OptimisticQueue< cds::gc::HP, T, traits_OptimisticQueue_HP_seqcst > OptimisticQueue_HP_seqcst;
+        typedef cds::intrusive::OptimisticQueue< cds::gc::HP<>, T, traits_OptimisticQueue_HP_seqcst > OptimisticQueue_HP_seqcst;
 
         struct traits_OptimisticQueue_DHP : public cds::intrusive::optimistic_queue::traits
         {
@@ -187,11 +187,11 @@ namespace queue {
         // OptimisticQueue + item counter
         struct traits_OptimisticQueue_HP_ic: public
             cds::intrusive::optimistic_queue::make_traits <
-                cds::intrusive::opt::hook< cds::intrusive::optimistic_queue::base_hook< cds::opt::gc< cds::gc::HP > > >
+                cds::intrusive::opt::hook< cds::intrusive::optimistic_queue::base_hook< cds::opt::gc< cds::gc::HP<> > > >
                 , cds::opt::item_counter< cds::atomicity::item_counter >
             >::type
         {};
-        typedef cds::intrusive::OptimisticQueue< cds::gc::HP, T, traits_OptimisticQueue_HP_ic > OptimisticQueue_HP_ic;
+        typedef cds::intrusive::OptimisticQueue< cds::gc::HP<>, T, traits_OptimisticQueue_HP_ic > OptimisticQueue_HP_ic;
 
         struct traits_OptimisticQueue_DHP_ic: public
             cds::intrusive::optimistic_queue::make_traits <
@@ -204,11 +204,11 @@ namespace queue {
         // OptimisticQueue + stat
         struct traits_OptimisticQueue_HP_stat: public
             cds::intrusive::optimistic_queue::make_traits <
-                cds::intrusive::opt::hook< cds::intrusive::optimistic_queue::base_hook< cds::opt::gc< cds::gc::HP > > >
+                cds::intrusive::opt::hook< cds::intrusive::optimistic_queue::base_hook< cds::opt::gc< cds::gc::HP<> > > >
                 , cds::opt::stat< cds::intrusive::optimistic_queue::stat<> >
             >::type
         {};
-        typedef cds::intrusive::OptimisticQueue< cds::gc::HP, T, traits_OptimisticQueue_HP_stat > OptimisticQueue_HP_stat;
+        typedef cds::intrusive::OptimisticQueue< cds::gc::HP<>, T, traits_OptimisticQueue_HP_stat > OptimisticQueue_HP_stat;
 
         struct traits_OptimisticQueue_DHP_stat: public
             cds::intrusive::optimistic_queue::make_traits <
@@ -266,18 +266,18 @@ namespace queue {
         // BasketQueue
         struct traits_BasketQueue_HP : public
             cds::intrusive::basket_queue::make_traits <
-                cds::intrusive::opt::hook< cds::intrusive::basket_queue::base_hook< cds::opt::gc< cds::gc::HP > > >
+                cds::intrusive::opt::hook< cds::intrusive::basket_queue::base_hook< cds::opt::gc< cds::gc::HP<> > > >
             > ::type
         {};
-        typedef cds::intrusive::BasketQueue< cds::gc::HP, T, traits_BasketQueue_HP > BasketQueue_HP;
+        typedef cds::intrusive::BasketQueue< cds::gc::HP<>, T, traits_BasketQueue_HP > BasketQueue_HP;
 
         struct traits_BasketQueue_HP_seqcst: public
             cds::intrusive::basket_queue::make_traits <
-                cds::intrusive::opt::hook< cds::intrusive::basket_queue::base_hook< cds::opt::gc< cds::gc::HP > > >
+                cds::intrusive::opt::hook< cds::intrusive::basket_queue::base_hook< cds::opt::gc< cds::gc::HP<> > > >
                 , cds::opt::memory_model< cds::opt::v::sequential_consistent >
             > ::type
         {};
-        typedef cds::intrusive::BasketQueue<cds::gc::HP, T, traits_BasketQueue_HP_seqcst > BasketQueue_HP_seqcst;
+        typedef cds::intrusive::BasketQueue<cds::gc::HP<>, T, traits_BasketQueue_HP_seqcst > BasketQueue_HP_seqcst;
 
         struct traits_BasketQueue_DHP : public
             cds::intrusive::basket_queue::make_traits <
@@ -297,11 +297,11 @@ namespace queue {
         // BasketQueue + item counter
         struct traits_BasketQueue_HP_ic : public
             cds::intrusive::basket_queue::make_traits <
-                cds::intrusive::opt::hook< cds::intrusive::basket_queue::base_hook< cds::opt::gc< cds::gc::HP > > >
+                cds::intrusive::opt::hook< cds::intrusive::basket_queue::base_hook< cds::opt::gc< cds::gc::HP<> > > >
                 ,cds::opt::item_counter< cds::atomicity::item_counter >
             > ::type
         {};
-        typedef cds::intrusive::BasketQueue< cds::gc::HP, T, traits_BasketQueue_HP_ic > BasketQueue_HP_ic;
+        typedef cds::intrusive::BasketQueue< cds::gc::HP<>, T, traits_BasketQueue_HP_ic > BasketQueue_HP_ic;
 
         struct traits_BasketQueue_DHP_ic : public
             cds::intrusive::basket_queue::make_traits <
@@ -314,11 +314,11 @@ namespace queue {
         // BasketQueue + stat
         struct traits_BasketQueue_HP_stat : public
             cds::intrusive::basket_queue::make_traits <
-                cds::intrusive::opt::hook< cds::intrusive::basket_queue::base_hook< cds::opt::gc< cds::gc::HP > > >
+                cds::intrusive::opt::hook< cds::intrusive::basket_queue::base_hook< cds::opt::gc< cds::gc::HP<> > > >
                 , cds::opt::stat< cds::intrusive::basket_queue::stat<> >
             > ::type
         {};
-        typedef cds::intrusive::BasketQueue< cds::gc::HP, T, traits_BasketQueue_HP_stat > BasketQueue_HP_stat;
+        typedef cds::intrusive::BasketQueue< cds::gc::HP<>, T, traits_BasketQueue_HP_stat > BasketQueue_HP_stat;
 
         struct traits_BasketQueue_DHP_stat : public
             cds::intrusive::basket_queue::make_traits <
@@ -430,12 +430,12 @@ namespace queue {
             >::type
         {};
 
-        typedef cds::intrusive::SegmentedQueue< cds::gc::HP, T >  SegmentedQueue_HP_spin;
-        typedef cds::intrusive::SegmentedQueue< cds::gc::HP, T, traits_SegmentedQueue_spin_padding >  SegmentedQueue_HP_spin_padding;
-        typedef cds::intrusive::SegmentedQueue< cds::gc::HP, T, traits_SegmentedQueue_spin_stat >  SegmentedQueue_HP_spin_stat;
-        typedef cds::intrusive::SegmentedQueue< cds::gc::HP, T, traits_SegmentedQueue_mutex >  SegmentedQueue_HP_mutex;
-        typedef cds::intrusive::SegmentedQueue< cds::gc::HP, T, traits_SegmentedQueue_mutex_padding >  SegmentedQueue_HP_mutex_padding;
-        typedef cds::intrusive::SegmentedQueue< cds::gc::HP, T, traits_SegmentedQueue_mutex_stat >  SegmentedQueue_HP_mutex_stat;
+        typedef cds::intrusive::SegmentedQueue< cds::gc::HP<>, T >  SegmentedQueue_HP_spin;
+        typedef cds::intrusive::SegmentedQueue< cds::gc::HP<>, T, traits_SegmentedQueue_spin_padding >  SegmentedQueue_HP_spin_padding;
+        typedef cds::intrusive::SegmentedQueue< cds::gc::HP<>, T, traits_SegmentedQueue_spin_stat >  SegmentedQueue_HP_spin_stat;
+        typedef cds::intrusive::SegmentedQueue< cds::gc::HP<>, T, traits_SegmentedQueue_mutex >  SegmentedQueue_HP_mutex;
+        typedef cds::intrusive::SegmentedQueue< cds::gc::HP<>, T, traits_SegmentedQueue_mutex_padding >  SegmentedQueue_HP_mutex_padding;
+        typedef cds::intrusive::SegmentedQueue< cds::gc::HP<>, T, traits_SegmentedQueue_mutex_stat >  SegmentedQueue_HP_mutex_stat;
 
         typedef cds::intrusive::SegmentedQueue< cds::gc::DHP, T >  SegmentedQueue_DHP_spin;
         typedef cds::intrusive::SegmentedQueue< cds::gc::DHP, T, traits_SegmentedQueue_spin_padding >  SegmentedQueue_DHP_spin_padding;

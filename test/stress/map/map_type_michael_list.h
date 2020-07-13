@@ -28,7 +28,7 @@ namespace map {
                 co::compare< compare >
             >::type
         {};
-        typedef cc::MichaelKVList< cds::gc::HP,  Key, Value, traits_MichaelList_cmp > MichaelList_HP_cmp;
+        typedef cc::MichaelKVList< cds::gc::HP<>,  Key, Value, traits_MichaelList_cmp > MichaelList_HP_cmp;
         typedef cc::MichaelKVList< cds::gc::DHP, Key, Value, traits_MichaelList_cmp > MichaelList_DHP_cmp;
         typedef cc::MichaelKVList< cds::gc::nogc, Key, Value, traits_MichaelList_cmp > MichaelList_NOGC_cmp;
         typedef cc::MichaelKVList< rcu_gpi, Key, Value, traits_MichaelList_cmp > MichaelList_RCU_GPI_cmp;
@@ -42,7 +42,7 @@ namespace map {
         {
             typedef cc::michael_list::stat<> stat;
         };
-        typedef cc::MichaelKVList< cds::gc::HP,  Key, Value, traits_MichaelList_cmp_stat > MichaelList_HP_cmp_stat;
+        typedef cc::MichaelKVList< cds::gc::HP<>,  Key, Value, traits_MichaelList_cmp_stat > MichaelList_HP_cmp_stat;
         typedef cc::MichaelKVList< cds::gc::DHP, Key, Value, traits_MichaelList_cmp_stat > MichaelList_DHP_cmp_stat;
         typedef cc::MichaelKVList< cds::gc::nogc, Key, Value, traits_MichaelList_cmp_stat > MichaelList_NOGC_cmp_stat;
         typedef cc::MichaelKVList< rcu_gpi, Key, Value, traits_MichaelList_cmp_stat > MichaelList_RCU_GPI_cmp_stat;
@@ -58,7 +58,7 @@ namespace map {
                 ,co::memory_model< co::v::sequential_consistent >
             >::type
         {};
-        typedef cc::MichaelKVList< cds::gc::HP,  Key, Value, traits_MichaelList_cmp_seqcst > MichaelList_HP_cmp_seqcst;
+        typedef cc::MichaelKVList< cds::gc::HP<>,  Key, Value, traits_MichaelList_cmp_seqcst > MichaelList_HP_cmp_seqcst;
         typedef cc::MichaelKVList< cds::gc::DHP, Key, Value, traits_MichaelList_cmp_seqcst > MichaelList_DHP_cmp_seqcst;
         typedef cc::MichaelKVList< cds::gc::nogc, Key, Value, traits_MichaelList_cmp_seqcst > MichaelList_NOGC_cmp_seqcst;
         typedef cc::MichaelKVList< rcu_gpi, Key, Value, traits_MichaelList_cmp_seqcst > MichaelList_RCU_GPI_cmp_seqcst;
@@ -73,7 +73,7 @@ namespace map {
                 co::less< less >
             >::type
         {};
-        typedef cc::MichaelKVList< cds::gc::HP,  Key, Value, traits_MichaelList_less > MichaelList_HP_less;
+        typedef cc::MichaelKVList< cds::gc::HP<>,  Key, Value, traits_MichaelList_less > MichaelList_HP_less;
         typedef cc::MichaelKVList< cds::gc::DHP, Key, Value, traits_MichaelList_less > MichaelList_DHP_less;
         typedef cc::MichaelKVList< cds::gc::nogc, Key, Value, traits_MichaelList_less > MichaelList_NOGC_less;
         typedef cc::MichaelKVList< rcu_gpi, Key, Value, traits_MichaelList_less > MichaelList_RCU_GPI_less;
@@ -87,7 +87,7 @@ namespace map {
         {
             typedef cc::michael_list::stat<> stat;
         };
-        typedef cc::MichaelKVList< cds::gc::HP, Key, Value, traits_MichaelList_less_stat > MichaelList_HP_less_stat;
+        typedef cc::MichaelKVList< cds::gc::HP<>, Key, Value, traits_MichaelList_less_stat > MichaelList_HP_less_stat;
         typedef cc::MichaelKVList< cds::gc::DHP, Key, Value, traits_MichaelList_less_stat > MichaelList_DHP_less_stat;
         typedef cc::MichaelKVList< cds::gc::nogc, Key, Value, traits_MichaelList_less_stat > MichaelList_NOGC_less_stat;
         typedef cc::MichaelKVList< rcu_gpi, Key, Value, traits_MichaelList_less_stat > MichaelList_RCU_GPI_less_stat;
@@ -103,7 +103,7 @@ namespace map {
                 ,co::memory_model< co::v::sequential_consistent >
             >::type
         {};
-        typedef cc::MichaelKVList< cds::gc::HP,  Key, Value, traits_MichaelList_less_seqcst > MichaelList_HP_less_seqcst;
+        typedef cc::MichaelKVList< cds::gc::HP<>,  Key, Value, traits_MichaelList_less_seqcst > MichaelList_HP_less_seqcst;
         typedef cc::MichaelKVList< cds::gc::DHP, Key, Value, traits_MichaelList_less_seqcst > MichaelList_DHP_less_seqcst;
         typedef cc::MichaelKVList< cds::gc::nogc, Key, Value, traits_MichaelList_less_seqcst > MichaelList_NOGC_less_seqcst;
         typedef cc::MichaelKVList< rcu_gpi, Key, Value, traits_MichaelList_less_seqcst > MichaelList_RCU_GPI_less_seqcst;

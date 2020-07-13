@@ -39,8 +39,8 @@ namespace cds_test {
     {
 #ifdef CDS_ENABLE_HPSTAT
         {
-            cds::gc::HP::stat st;
-            cds::gc::HP::statistics( st );
+            cds::gc::HP<>::stat st;
+            cds::gc::HP<>::statistics( st );
             propout() << st;
         }
         {

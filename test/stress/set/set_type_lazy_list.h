@@ -26,7 +26,7 @@ namespace set {
                 co::compare< compare >
             >::type
         {};
-        typedef cc::LazyList< cds::gc::HP,  key_val, traits_LazyList_cmp > LazyList_HP_cmp;
+        typedef cc::LazyList< cds::gc::HP<>,  key_val, traits_LazyList_cmp > LazyList_HP_cmp;
         typedef cc::LazyList< cds::gc::DHP, key_val, traits_LazyList_cmp > LazyList_DHP_cmp;
         typedef cc::LazyList< rcu_gpi, key_val, traits_LazyList_cmp > LazyList_RCU_GPI_cmp;
         typedef cc::LazyList< rcu_gpb, key_val, traits_LazyList_cmp > LazyList_RCU_GPB_cmp;
@@ -39,7 +39,7 @@ namespace set {
         {
             typedef cc::lazy_list::stat<> stat;
         };
-        typedef cc::LazyList< cds::gc::HP,  key_val, traits_LazyList_cmp_stat > LazyList_HP_cmp_stat;
+        typedef cc::LazyList< cds::gc::HP<>,  key_val, traits_LazyList_cmp_stat > LazyList_HP_cmp_stat;
         typedef cc::LazyList< cds::gc::DHP, key_val, traits_LazyList_cmp_stat > LazyList_DHP_cmp_stat;
         typedef cc::LazyList< rcu_gpi, key_val, traits_LazyList_cmp_stat > LazyList_RCU_GPI_cmp_stat;
         typedef cc::LazyList< rcu_gpb, key_val, traits_LazyList_cmp_stat > LazyList_RCU_GPB_cmp_stat;
@@ -54,7 +54,7 @@ namespace set {
                 ,co::memory_model< co::v::sequential_consistent >
             >::type
         {};
-        typedef cc::LazyList< cds::gc::HP, key_val,  traits_LazyList_cmp_seqcst > LazyList_HP_cmp_seqcst;
+        typedef cc::LazyList< cds::gc::HP<>, key_val,  traits_LazyList_cmp_seqcst > LazyList_HP_cmp_seqcst;
         typedef cc::LazyList< cds::gc::DHP, key_val, traits_LazyList_cmp_seqcst > LazyList_DHP_cmp_seqcst;
         typedef cc::LazyList< rcu_gpi, key_val, traits_LazyList_cmp_seqcst > LazyList_RCU_GPI_cmp_seqcst;
         typedef cc::LazyList< rcu_gpb, key_val, traits_LazyList_cmp_seqcst > LazyList_RCU_GPB_cmp_seqcst;
@@ -68,7 +68,7 @@ namespace set {
                 co::less< less >
             >::type
         {};
-        typedef cc::LazyList< cds::gc::HP,  key_val, traits_LazyList_less > LazyList_HP_less;
+        typedef cc::LazyList< cds::gc::HP<>,  key_val, traits_LazyList_less > LazyList_HP_less;
         typedef cc::LazyList< cds::gc::DHP, key_val, traits_LazyList_less > LazyList_DHP_less;
         typedef cc::LazyList< rcu_gpi, key_val, traits_LazyList_less > LazyList_RCU_GPI_less;
         typedef cc::LazyList< rcu_gpb, key_val, traits_LazyList_less > LazyList_RCU_GPB_less;
@@ -81,7 +81,7 @@ namespace set {
         {
             typedef cc::lazy_list::stat<> stat;
         };
-        typedef cc::LazyList< cds::gc::HP, key_val, traits_LazyList_less_stat > LazyList_HP_less_stat;
+        typedef cc::LazyList< cds::gc::HP<>, key_val, traits_LazyList_less_stat > LazyList_HP_less_stat;
         typedef cc::LazyList< cds::gc::DHP, key_val, traits_LazyList_less_stat > LazyList_DHP_less_stat;
         typedef cc::LazyList< rcu_gpi, key_val, traits_LazyList_less_stat > LazyList_RCU_GPI_less_stat;
         typedef cc::LazyList< rcu_gpb, key_val, traits_LazyList_less_stat > LazyList_RCU_GPB_less_stat;
@@ -96,7 +96,7 @@ namespace set {
                 ,co::memory_model< co::v::sequential_consistent >
             >::type
         {};
-        typedef cc::LazyList< cds::gc::HP, key_val,  traits_LazyList_less_seqcst > LazyList_HP_less_seqcst;
+        typedef cc::LazyList< cds::gc::HP<>, key_val,  traits_LazyList_less_seqcst > LazyList_HP_less_seqcst;
         typedef cc::LazyList< cds::gc::DHP, key_val, traits_LazyList_less_seqcst > LazyList_DHP_less_seqcst;
         typedef cc::LazyList< rcu_gpi, key_val, traits_LazyList_less_seqcst > LazyList_RCU_GPI_less_seqcst;
         typedef cc::LazyList< rcu_gpb, key_val, traits_LazyList_less_seqcst > LazyList_RCU_GPB_less_seqcst;

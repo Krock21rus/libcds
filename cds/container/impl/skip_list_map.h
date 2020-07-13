@@ -45,12 +45,12 @@ namespace cds { namespace container {
         Like STL map class, \p %SkipListMap stores the key-value pair as <tt>std:pair< K const, T></tt>.
 
         @warning The skip-list requires up to 67 hazard pointers that may be critical for some GCs for which
-            the guard count is limited (like \p gc::HP). Those GCs should be explicitly initialized with
-            hazard pointer enough: \code cds::gc::HP myhp( 67 ) \endcode. Otherwise an run-time exception may be raised
+            the guard count is limited (like \p gc::HP<>). Those GCs should be explicitly initialized with
+            hazard pointer enough: \code cds::gc::HP<> myhp( 67 ) \endcode. Otherwise an run-time exception may be raised
             when you try to create skip-list object.
 
         @note There are several specializations of \p %SkipListMap for each \p GC. You should include:
-        - <tt><cds/container/skip_list_map_hp.h></tt> for \p gc::HP garbage collector
+        - <tt><cds/container/skip_list_map_hp.h></tt> for \p gc::HP<> garbage collector
         - <tt><cds/container/skip_list_map_dhp.h></tt> for \p gc::DHP garbage collector
         - <tt><cds/container/skip_list_map_rcu.h></tt> for \ref cds_nonintrusive_SkipListMap_rcu "RCU type"
         - <tt><cds/container/skip_list_map_nogc.h></tt> for \ref cds_nonintrusive_SkipListMap_nogc "non-deletable SkipListMap"
@@ -136,7 +136,7 @@ namespace cds { namespace container {
             - it is ordered
             - it has no post-increment operator
             - to protect the value, the iterator contains a GC-specific guard + another guard is required locally for increment operator.
-              For some GC (like as \p gc::HP), a guard is a limited resource per thread, so an exception (or assertion) "no free guard"
+              For some GC (like as \p gc::HP<>), a guard is a limited resource per thread, so an exception (or assertion) "no free guard"
               may be thrown if the limit of guard count per thread is exceeded.
             - The iterator cannot be moved across thread boundary because it contains thread-private GC's guard.
             - Iterator ensures thread-safety even if you delete the item the iterator points to. However, in case of concurrent
@@ -425,7 +425,7 @@ namespace cds { namespace container {
 
             Usage:
             \code
-            typedef cds::container::SkipListMap< cds::gc::HP, int, foo, my_traits >  skip_list;
+            typedef cds::container::SkipListMap< cds::gc::HP<>, int, foo, my_traits >  skip_list;
             skip_list theList;
             // ...
             {
@@ -472,7 +472,7 @@ namespace cds { namespace container {
 
             Usage:
             \code
-            typedef cds::continer::SkipListMap< cds::gc::HP, int, foo, my_traits >  skip_list;
+            typedef cds::continer::SkipListMap< cds::gc::HP<>, int, foo, my_traits >  skip_list;
             skip_list theList;
             // ...
             {
@@ -501,7 +501,7 @@ namespace cds { namespace container {
 
             Usage:
             \code
-            typedef cds::container::SkipListMap< cds::gc::HP, int, foo, my_traits >  skip_list;
+            typedef cds::container::SkipListMap< cds::gc::HP<>, int, foo, my_traits >  skip_list;
             skip_list theList;
             // ...
             {
@@ -610,7 +610,7 @@ namespace cds { namespace container {
 
             Usage:
             \code
-            typedef cds::container::SkipListMap< cds::gc::HP, int, foo, my_traits >  skip_list;
+            typedef cds::container::SkipListMap< cds::gc::HP<>, int, foo, my_traits >  skip_list;
             skip_list theList;
             // ...
             {

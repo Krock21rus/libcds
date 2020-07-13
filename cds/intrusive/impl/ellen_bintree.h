@@ -45,12 +45,12 @@ namespace cds { namespace intrusive {
 
         @note Do not include <tt><cds/intrusive/impl/ellen_bintree.h></tt> header file explicitly.
         There are header file for each GC type:
-        - <tt><cds/intrusive/ellen_bintree_hp.h></tt> - for Hazard Pointer GC \p cds::gc::HP
+        - <tt><cds/intrusive/ellen_bintree_hp.h></tt> - for Hazard Pointer GC \p cds::gc::HP<>
         - <tt><cds/intrusive/ellen_bintree_dhp.h></tt> - for Dynamic Hazard Pointer GC \p cds::gc::DHP
         - <tt><cds/intrusive/ellen_bintree_rcu.h></tt> - for RCU (see \ref cds_intrusive_EllenBinTree_rcu "RCU-based EllenBinTree")
 
         <b>Template arguments</b> :
-        - \p GC - garbage collector, possible types are cds::gc::HP, cds::gc::DHP.
+        - \p GC - garbage collector, possible types are cds::gc::HP<>, cds::gc::DHP.
         - \p Key - key type, a subset of \p T
         - \p T - type to be stored in tree's leaf nodes. The type must be based on \p ellen_bintree::node
             (for \p ellen_bintree::base_hook) or it must have a member of type \p ellen_bintree::node

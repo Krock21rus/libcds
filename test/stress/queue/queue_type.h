@@ -158,9 +158,9 @@ namespace fc_details{
     struct Types {
 
         // MSQueue
-        typedef cds::container::MSQueue<cds::gc::HP,  Value > MSQueue_HP;
+        typedef cds::container::MSQueue<cds::gc::HP<>,  Value > MSQueue_HP;
         typedef cds::container::MSQueue<cds::gc::DHP, Value > MSQueue_DHP;
-        typedef cds::container::MoirQueue<cds::gc::HP, Value > MoirQueue_HP;
+        typedef cds::container::MoirQueue<cds::gc::HP<>, Value > MoirQueue_HP;
         typedef cds::container::MoirQueue<cds::gc::DHP, Value > MoirQueue_DHP;
 
         struct traits_MSQueue_seqcst : public
@@ -168,9 +168,9 @@ namespace fc_details{
                 cds::opt::memory_model < cds::opt::v::sequential_consistent >
             > ::type
         {};
-        typedef cds::container::MSQueue< cds::gc::HP,  Value, traits_MSQueue_seqcst > MSQueue_HP_seqcst;
+        typedef cds::container::MSQueue< cds::gc::HP<>,  Value, traits_MSQueue_seqcst > MSQueue_HP_seqcst;
         typedef cds::container::MSQueue< cds::gc::DHP, Value, traits_MSQueue_seqcst > MSQueue_DHP_seqcst;
-        typedef cds::container::MoirQueue< cds::gc::HP, Value, traits_MSQueue_seqcst > MoirQueue_HP_seqcst;
+        typedef cds::container::MoirQueue< cds::gc::HP<>, Value, traits_MSQueue_seqcst > MoirQueue_HP_seqcst;
         typedef cds::container::MoirQueue< cds::gc::DHP, Value, traits_MSQueue_seqcst > MoirQueue_DHP_seqcst;
 
         // MSQueue + item counter
@@ -179,9 +179,9 @@ namespace fc_details{
                 cds::opt::item_counter < cds::atomicity::item_counter >
             >::type
         {};
-        typedef cds::container::MSQueue< cds::gc::HP,  Value, traits_MSQueue_ic > MSQueue_HP_ic;
+        typedef cds::container::MSQueue< cds::gc::HP<>,  Value, traits_MSQueue_ic > MSQueue_HP_ic;
         typedef cds::container::MSQueue< cds::gc::DHP, Value, traits_MSQueue_ic > MSQueue_DHP_ic;
-        typedef cds::container::MoirQueue< cds::gc::HP, Value, traits_MSQueue_ic > MoirQueue_HP_ic;
+        typedef cds::container::MoirQueue< cds::gc::HP<>, Value, traits_MSQueue_ic > MoirQueue_HP_ic;
         typedef cds::container::MoirQueue< cds::gc::DHP, Value, traits_MSQueue_ic > MoirQueue_DHP_ic;
 
         // MSQueue + stat
@@ -190,28 +190,28 @@ namespace fc_details{
                 cds::opt::stat< cds::container::msqueue::stat<> >
             >::type
         {};
-        typedef cds::container::MSQueue< cds::gc::HP,  Value, traits_MSQueue_stat > MSQueue_HP_stat;
+        typedef cds::container::MSQueue< cds::gc::HP<>,  Value, traits_MSQueue_stat > MSQueue_HP_stat;
         typedef cds::container::MSQueue< cds::gc::DHP, Value, traits_MSQueue_stat > MSQueue_DHP_stat;
-        typedef cds::container::MoirQueue< cds::gc::HP, Value, traits_MSQueue_stat > MoirQueue_HP_stat;
+        typedef cds::container::MoirQueue< cds::gc::HP<>, Value, traits_MSQueue_stat > MoirQueue_HP_stat;
         typedef cds::container::MoirQueue< cds::gc::DHP, Value, traits_MSQueue_stat > MoirQueue_DHP_stat;
 
 
         // OptimisticQueue
-        typedef cds::container::OptimisticQueue< cds::gc::HP, Value > OptimisticQueue_HP;
+        typedef cds::container::OptimisticQueue< cds::gc::HP<>, Value > OptimisticQueue_HP;
         typedef cds::container::OptimisticQueue< cds::gc::DHP, Value > OptimisticQueue_DHP;
 
         struct traits_OptimisticQueue_seqcst : public cds::container::optimistic_queue::traits
         {
             typedef cds::opt::v::sequential_consistent memory_model;
         };
-        typedef cds::container::OptimisticQueue< cds::gc::HP,  Value, traits_OptimisticQueue_seqcst > OptimisticQueue_HP_seqcst;
+        typedef cds::container::OptimisticQueue< cds::gc::HP<>,  Value, traits_OptimisticQueue_seqcst > OptimisticQueue_HP_seqcst;
         typedef cds::container::OptimisticQueue< cds::gc::DHP, Value, traits_OptimisticQueue_seqcst > OptimisticQueue_DHP_seqcst;
 
         struct traits_OptimisticQueue_ic : public cds::container::optimistic_queue::traits
         {
             typedef cds::atomicity::item_counter item_counter;
         };
-        typedef cds::container::OptimisticQueue< cds::gc::HP,  Value, traits_OptimisticQueue_ic > OptimisticQueue_HP_ic;
+        typedef cds::container::OptimisticQueue< cds::gc::HP<>,  Value, traits_OptimisticQueue_ic > OptimisticQueue_HP_ic;
         typedef cds::container::OptimisticQueue< cds::gc::DHP, Value, traits_OptimisticQueue_ic > OptimisticQueue_DHP_ic;
 
         struct traits_OptimisticQueue_stat : public
@@ -219,7 +219,7 @@ namespace fc_details{
                 cds::opt::stat < cds::intrusive::optimistic_queue::stat<> >
             > ::type
         {};
-        typedef cds::container::OptimisticQueue< cds::gc::HP,  Value, traits_OptimisticQueue_stat > OptimisticQueue_HP_stat;
+        typedef cds::container::OptimisticQueue< cds::gc::HP<>,  Value, traits_OptimisticQueue_stat > OptimisticQueue_HP_stat;
         typedef cds::container::OptimisticQueue< cds::gc::DHP, Value, traits_OptimisticQueue_stat > OptimisticQueue_DHP_stat;
 
 
@@ -357,28 +357,28 @@ namespace fc_details{
 
         // BasketQueue
 
-        typedef cds::container::BasketQueue< cds::gc::HP , Value > BasketQueue_HP;
+        typedef cds::container::BasketQueue< cds::gc::HP<> , Value > BasketQueue_HP;
         typedef cds::container::BasketQueue< cds::gc::DHP, Value > BasketQueue_DHP;
 
         struct traits_BasketQueue_seqcst : public cds::container::basket_queue::traits
         {
             typedef cds::opt::v::sequential_consistent mamory_model;
         };
-        typedef cds::container::BasketQueue< cds::gc::HP,  Value, traits_BasketQueue_seqcst > BasketQueue_HP_seqcst;
+        typedef cds::container::BasketQueue< cds::gc::HP<>,  Value, traits_BasketQueue_seqcst > BasketQueue_HP_seqcst;
         typedef cds::container::BasketQueue< cds::gc::DHP, Value, traits_BasketQueue_seqcst > BasketQueue_DHP_seqcst;
 
         struct traits_BasketQueue_ic : public cds::container::basket_queue::traits
         {
             typedef cds::atomicity::item_counter item_counter;
         };
-        typedef cds::container::BasketQueue< cds::gc::HP,  Value, traits_BasketQueue_ic >BasketQueue_HP_ic;
+        typedef cds::container::BasketQueue< cds::gc::HP<>,  Value, traits_BasketQueue_ic >BasketQueue_HP_ic;
         typedef cds::container::BasketQueue< cds::gc::DHP, Value, traits_BasketQueue_ic >BasketQueue_DHP_ic;
 
         struct traits_BasketQueue_stat : public cds::container::basket_queue::traits
         {
             typedef cds::container::basket_queue::stat<> stat;
         };
-        typedef cds::container::BasketQueue< cds::gc::HP,  Value, traits_BasketQueue_stat > BasketQueue_HP_stat;
+        typedef cds::container::BasketQueue< cds::gc::HP<>,  Value, traits_BasketQueue_stat > BasketQueue_HP_stat;
         typedef cds::container::BasketQueue< cds::gc::DHP, Value, traits_BasketQueue_stat > BasketQueue_DHP_stat;
 
 
@@ -544,12 +544,12 @@ namespace fc_details{
             >::type
         {};
 
-        typedef cds::container::SegmentedQueue< cds::gc::HP, Value >  SegmentedQueue_HP_spin;
-        typedef cds::container::SegmentedQueue< cds::gc::HP, Value, traits_SegmentedQueue_spin_padding >  SegmentedQueue_HP_spin_padding;
-        typedef cds::container::SegmentedQueue< cds::gc::HP, Value, traits_SegmentedQueue_spin_stat >  SegmentedQueue_HP_spin_stat;
-        typedef cds::container::SegmentedQueue< cds::gc::HP, Value, traits_SegmentedQueue_mutex >  SegmentedQueue_HP_mutex;
-        typedef cds::container::SegmentedQueue< cds::gc::HP, Value, traits_SegmentedQueue_mutex_padding >  SegmentedQueue_HP_mutex_padding;
-        typedef cds::container::SegmentedQueue< cds::gc::HP, Value, traits_SegmentedQueue_mutex_stat >  SegmentedQueue_HP_mutex_stat;
+        typedef cds::container::SegmentedQueue< cds::gc::HP<>, Value >  SegmentedQueue_HP_spin;
+        typedef cds::container::SegmentedQueue< cds::gc::HP<>, Value, traits_SegmentedQueue_spin_padding >  SegmentedQueue_HP_spin_padding;
+        typedef cds::container::SegmentedQueue< cds::gc::HP<>, Value, traits_SegmentedQueue_spin_stat >  SegmentedQueue_HP_spin_stat;
+        typedef cds::container::SegmentedQueue< cds::gc::HP<>, Value, traits_SegmentedQueue_mutex >  SegmentedQueue_HP_mutex;
+        typedef cds::container::SegmentedQueue< cds::gc::HP<>, Value, traits_SegmentedQueue_mutex_padding >  SegmentedQueue_HP_mutex_padding;
+        typedef cds::container::SegmentedQueue< cds::gc::HP<>, Value, traits_SegmentedQueue_mutex_stat >  SegmentedQueue_HP_mutex_stat;
 
         typedef cds::container::SegmentedQueue< cds::gc::DHP, Value >  SegmentedQueue_DHP_spin;
         typedef cds::container::SegmentedQueue< cds::gc::DHP, Value, traits_SegmentedQueue_spin_padding >  SegmentedQueue_DHP_spin_padding;

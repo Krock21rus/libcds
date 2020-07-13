@@ -115,14 +115,14 @@ namespace cds { namespace intrusive {
         For \p %MichaelList and \p %LazyList, \p Foo declaration should be based on ordered-list node:
         - \p %MichaelList:
         \code
-        struct Foo: public cds::intrusive::split_list::node< cds::intrusive::michael_list::node< cds::gc::HP > >
+        struct Foo: public cds::intrusive::split_list::node< cds::intrusive::michael_list::node< cds::gc::HP<> > >
         {
             // ... field declarations
         };
         \endcode
         - \p %LazyList:
         \code
-        struct Foo: public cds::intrusive::split_list::node< cds::intrusive::lazy_list::node< cds::gc::HP > >
+        struct Foo: public cds::intrusive::split_list::node< cds::intrusive::lazy_list::node< cds::gc::HP<> > >
         {
             // ... field declarations
         };
@@ -141,7 +141,7 @@ namespace cds { namespace intrusive {
 
         First, you should choose ordered list type to use in your split-list set:
         \code
-        // For gc::HP-based MichaelList implementation
+        // For gc::HP<>-based MichaelList implementation
         #include <cds/intrusive/michael_list_hp.h>
 
         // cds::intrusive::SplitListSet declaration
@@ -150,8 +150,8 @@ namespace cds { namespace intrusive {
         // Type of set items
             //  Note you should declare your struct based on cds::intrusive::split_list::node
             //  which is a wrapper for ordered-list node struct.
-            //  In our case, the node type for HP-based MichaelList is cds::intrusive::michael_list::node< cds::gc::HP >
-        struct Foo: public cds::intrusive::split_list::node< cds::intrusive::michael_list::node< cds::gc::HP > >
+            //  In our case, the node type for HP-based MichaelList is cds::intrusive::michael_list::node< cds::gc::HP<> >
+        struct Foo: public cds::intrusive::split_list::node< cds::intrusive::michael_list::node< cds::gc::HP<> > >
         {
             std::string     key_    ;   // key field
             unsigned        val_    ;   // value field
@@ -168,10 +168,10 @@ namespace cds { namespace intrusive {
         };
 
         // Declare base ordered-list type for split-list
-        typedef cds::intrusive::MichaelList< cds::gc::HP, Foo,
+        typedef cds::intrusive::MichaelList< cds::gc::HP<>, Foo,
             typename cds::intrusive::michael_list::make_traits<
                 // hook option
-                cds::intrusive::opt::hook< cds::intrusive::michael_list::base_hook< cds::opt::gc< cds::gc::HP > > >
+                cds::intrusive::opt::hook< cds::intrusive::michael_list::base_hook< cds::opt::gc< cds::gc::HP<> > > >
                 // item comparator option
                 ,cds::opt::compare< FooCmp >
             >::type
@@ -196,7 +196,7 @@ namespace cds { namespace intrusive {
 
         // Split-list set typedef
         typedef cds::intrusive::SplitListSet<
-            cds::gc::HP
+            cds::gc::HP<>
             ,Foo_list
             ,typename cds::intrusive::split_list::make_traits<
                 cds::opt::hash< FooHash >

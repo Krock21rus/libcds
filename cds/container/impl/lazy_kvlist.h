@@ -28,7 +28,7 @@ namespace cds { namespace container {
         - \p Value - value type to be stored in the list
         - \p Traits - type traits, default is \p lazy_list::traits
             It is possible to declare option-based list with cds::container::lazy_list::make_traits metafunction istead of \p Traits template
-            argument. For example, the following traits-based declaration of \p gc::HP lazy list
+            argument. For example, the following traits-based declaration of \p gc::HP<> lazy list
             \code
             #include <cds/container/lazy_kvlist_hp.h>
             // Declare comparator for the item
@@ -46,7 +46,7 @@ namespace cds { namespace container {
             };
 
             // Declare traits-based list
-            typedef cds::container::LazyKVList< cds::gc::HP, int, int, my_traits >     traits_based_list;
+            typedef cds::container::LazyKVList< cds::gc::HP<>, int, int, my_traits >     traits_based_list;
             \endcode
             is equal to the following option-based list
             \code
@@ -55,7 +55,7 @@ namespace cds { namespace container {
             // my_compare is the same
 
             // Declare option-based list
-            typedef cds::container::LazyKVList< cds::gc::HP, int, int,
+            typedef cds::container::LazyKVList< cds::gc::HP<>, int, int,
                 typename cds::container::lazy_list::make_traits<
                     cds::container::opt::compare< my_compare >     // item comparator option
                 >::type
@@ -65,7 +65,7 @@ namespace cds { namespace container {
         \par Usage
         There are different specializations of this template for each garbage collecting schema used.
         You should include appropriate .h-file depending on GC you are using:
-        - for \p gc::HP: <tt> <cds/container/lazy_kvlist_hp.h> </tt>
+        - for \p gc::HP<>: <tt> <cds/container/lazy_kvlist_hp.h> </tt>
         - for \p gc::DHP: <tt> <cds/container/lazy_kvlist_dhp.h> </tt>
         - for \ref cds_urcu_desc "RCU": <tt> <cds/container/lazy_kvlist_rcu.h> </tt>
         - for \p gc::nogc: <tt> <cds/container/lazy_kvlist_nogc.h> </tt>
@@ -280,7 +280,7 @@ namespace cds { namespace container {
             The forward iterator for lazy list has some features:
             - it has no post-increment operator
             - to protect the value, the iterator contains a GC-specific guard + another guard is required locally for increment operator.
-              For some GC (\p gc::HP), a guard is limited resource per thread, so an exception (or assertion) "no free guard"
+              For some GC (\p gc::HP<>), a guard is limited resource per thread, so an exception (or assertion) "no free guard"
               may be thrown if a limit of guard count per thread is exceeded.
             - The iterator cannot be moved across thread boundary since it contains GC's guard that is thread-private GC data.
             - Iterator ensures thread-safety even if you delete the item that iterator points to. However, in case of concurrent
@@ -565,7 +565,7 @@ namespace cds { namespace container {
 
             Usage:
             \code
-            typedef cds::container::LazyKVList< cds::gc::HP, int, foo, my_traits >  ord_list;
+            typedef cds::container::LazyKVList< cds::gc::HP<>, int, foo, my_traits >  ord_list;
             ord_list theList;
             // ...
             {
@@ -688,7 +688,7 @@ namespace cds { namespace container {
 
             Usage:
             \code
-            typedef cds::container::LazyKVList< cds::gc::HP, int, foo, my_traits >  ord_list;
+            typedef cds::container::LazyKVList< cds::gc::HP<>, int, foo, my_traits >  ord_list;
             ord_list theList;
             // ...
             {

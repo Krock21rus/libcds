@@ -42,11 +42,11 @@ int main( int argc, char **argv )
         cds_test::config const& general_cfg = cds_test::stress_fixture::get_config( "General" );
 
         // Init SMR
-        cds::gc::HP hzpGC(
+        cds::gc::HP<> hzpGC(
             general_cfg.get_size_t( "hazard_pointer_count", 16 ),
             general_cfg.get_size_t( "hp_max_thread_count", 0 ),
             general_cfg.get_size_t( "hp_retired_ptr_count", 0 ),
-            general_cfg.get( "hp_scan_strategy", "inplace" ) == "inplace" ? cds::gc::HP::scan_type::inplace : cds::gc::HP::scan_type::classic
+            general_cfg.get( "hp_scan_strategy", "inplace" ) == "inplace" ? cds::gc::HP<>::scan_type::inplace : cds::gc::HP<>::scan_type::classic
         );
 
         cds::gc::DHP dhpGC(
@@ -81,7 +81,7 @@ int main( int argc, char **argv )
 
 #ifdef CDS_ENABLE_HPSTAT
     {
-        cds::gc::HP::stat const& st = cds::gc::HP::postmortem_statistics();
+        cds::gc::HP<>::stat const& st = cds::gc::HP<>::postmortem_statistics();
         EXPECT_EQ( st.guard_allocated, st.guard_freed );
         EXPECT_EQ( st.retired_count, st.free_count );
         std::cout << st;

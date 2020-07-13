@@ -60,7 +60,7 @@ namespace map {
 
         struct ellen_bintree_props {
             struct hp_gc {
-                typedef cc::ellen_bintree::map_node<cds::gc::HP, Key, Value>        leaf_node;
+                typedef cc::ellen_bintree::map_node<cds::gc::HP<>, Key, Value>        leaf_node;
                 typedef cc::ellen_bintree::internal_node< Key, leaf_node >          internal_node;
                 typedef cc::ellen_bintree::update_desc< leaf_node, internal_node >  update_desc;
             };
@@ -102,7 +102,7 @@ namespace map {
         struct traits_EllenBinTreeMap_hp : traits_EllenBinTreeMap {
             typedef cds::memory::pool_allocator< typename ellen_bintree_props::hp_gc::update_desc, ellen_bintree_pool::update_desc_pool_accessor > update_desc_allocator;
         };
-        typedef EllenBinTreeMap< cds::gc::HP, Key, Value, traits_EllenBinTreeMap_hp > EllenBinTreeMap_hp;
+        typedef EllenBinTreeMap< cds::gc::HP<>, Key, Value, traits_EllenBinTreeMap_hp > EllenBinTreeMap_hp;
 
         struct traits_EllenBinTreeMap_dhp : traits_EllenBinTreeMap {
             typedef cds::memory::pool_allocator< typename ellen_bintree_props::dhp_gc::update_desc, ellen_bintree_pool::update_desc_pool_accessor > update_desc_allocator;
@@ -138,7 +138,7 @@ namespace map {
         struct traits_EllenBinTreeMap_hp_yield : traits_EllenBinTreeMap_yield {
             typedef cds::memory::pool_allocator< typename ellen_bintree_props::hp_gc::update_desc, ellen_bintree_pool::update_desc_pool_accessor > update_desc_allocator;
         };
-        typedef EllenBinTreeMap< cds::gc::HP, Key, Value, traits_EllenBinTreeMap_hp_yield > EllenBinTreeMap_hp_yield;
+        typedef EllenBinTreeMap< cds::gc::HP<>, Key, Value, traits_EllenBinTreeMap_hp_yield > EllenBinTreeMap_hp_yield;
 
         struct traits_EllenBinTreeMap_dhp_yield : traits_EllenBinTreeMap_yield {
             typedef cds::memory::pool_allocator< typename ellen_bintree_props::dhp_gc::update_desc, ellen_bintree_pool::update_desc_pool_accessor > update_desc_allocator;
@@ -166,13 +166,13 @@ namespace map {
         {
             typedef cds::memory::pool_allocator< typename ellen_bintree_props::hp_gc::update_desc, ellen_bintree_pool::update_desc_pool_accessor > update_desc_allocator;
         };
-        typedef EllenBinTreeMap< cds::gc::HP, Key, Value, traits_EllenBinTreeMap_stat_hp > EllenBinTreeMap_hp_stat;
+        typedef EllenBinTreeMap< cds::gc::HP<>, Key, Value, traits_EllenBinTreeMap_stat_hp > EllenBinTreeMap_hp_stat;
 
         struct traits_EllenBinTreeMap_stat_dhp : public traits_EllenBinTreeMap_stat
         {
             typedef cds::memory::pool_allocator< typename ellen_bintree_props::dhp_gc::update_desc, ellen_bintree_pool::update_desc_pool_accessor > update_desc_allocator;
         };
-        typedef EllenBinTreeMap< cds::gc::HP, Key, Value, traits_EllenBinTreeMap_stat_dhp > EllenBinTreeMap_dhp_stat;
+        typedef EllenBinTreeMap< cds::gc::HP<>, Key, Value, traits_EllenBinTreeMap_stat_dhp > EllenBinTreeMap_dhp_stat;
 
         struct traits_EllenBinTreeMap_stat_gpi : public traits_EllenBinTreeMap_stat
         {

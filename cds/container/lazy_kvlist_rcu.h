@@ -30,7 +30,7 @@ namespace cds { namespace container {
         - \p Value - value type to be stored in the list
         - \p Traits - type traits, default is \p lazy_list::traits
             It is possible to declare option-based list with \p lazy_list::make_traits metafunction istead of \p Traits template
-            argument. For example, the following traits-based declaration of \p gc::HP lazy list
+            argument. For example, the following traits-based declaration of \p gc::HP<> lazy list
             \code
             #include <cds/urcu/general_threaded.h>
             #include <cds/container/lazy_kvlist_rcu.h>

@@ -140,7 +140,7 @@ namespace cds { namespace container {
             typedef cds::container::VyukovMPMCCycleQueue< Foo, myTraits > myQueue;
 
             // Equivalent make_traits example:
-            typedef cds::container::VyukovMPMCCycleQueue< cds::gc::HP, Foo,
+            typedef cds::container::VyukovMPMCCycleQueue< cds::gc::HP<>, Foo,
                 typename cds::container::vyukov_queue::make_traits<
                     cds::opt::item_counter< cds::atomicity::item_counter >
                 >::type

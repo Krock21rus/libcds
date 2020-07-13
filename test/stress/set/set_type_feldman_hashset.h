@@ -164,7 +164,7 @@ namespace set {
             typedef cds::atomicity::cache_friendly_item_counter item_counter;
         };
 
-        typedef FeldmanHashSet< cds::gc::HP,  key_val<std::hash<key_type>>, default_traits >    FeldmanHashSet_hp_stdhash;
+        typedef FeldmanHashSet< cds::gc::HP<>,  key_val<std::hash<key_type>>, default_traits >    FeldmanHashSet_hp_stdhash;
         typedef FeldmanHashSet< cds::gc::DHP, key_val<std::hash<key_type>>, default_traits >    FeldmanHashSet_dhp_stdhash;
         typedef FeldmanHashSet< rcu_gpi, key_val<std::hash<key_type>>, default_traits >    FeldmanHashSet_rcu_gpi_stdhash;
         typedef FeldmanHashSet< rcu_gpb, key_val<std::hash<key_type>>, default_traits >    FeldmanHashSet_rcu_gpb_stdhash;
@@ -179,7 +179,7 @@ namespace set {
             >::type
         {};
 
-        typedef FeldmanHashSet< cds::gc::HP,  key_val<std::hash<key_type>>, traits_FeldmanHashSet_stat >    FeldmanHashSet_hp_stdhash_stat;
+        typedef FeldmanHashSet< cds::gc::HP<>,  key_val<std::hash<key_type>>, traits_FeldmanHashSet_stat >    FeldmanHashSet_hp_stdhash_stat;
         typedef FeldmanHashSet< cds::gc::DHP, key_val<std::hash<key_type>>, traits_FeldmanHashSet_stat >    FeldmanHashSet_dhp_stdhash_stat;
         typedef FeldmanHashSet< rcu_gpi, key_val<std::hash<key_type>>, traits_FeldmanHashSet_stat >    FeldmanHashSet_rcu_gpi_stdhash_stat;
         typedef FeldmanHashSet< rcu_gpb, key_val<std::hash<key_type>>, traits_FeldmanHashSet_stat >    FeldmanHashSet_rcu_gpb_stdhash_stat;
@@ -194,7 +194,7 @@ namespace set {
         {
             typedef ::cds_test::city64::less less;
         };
-        typedef FeldmanHashSet< cds::gc::HP,  key_val<::cds_test::city64>, traits_FeldmanHashSet_city64 >    FeldmanHashSet_hp_city64;
+        typedef FeldmanHashSet< cds::gc::HP<>,  key_val<::cds_test::city64>, traits_FeldmanHashSet_city64 >    FeldmanHashSet_hp_city64;
         typedef FeldmanHashSet< cds::gc::DHP, key_val<::cds_test::city64>, traits_FeldmanHashSet_city64 >    FeldmanHashSet_dhp_city64;
         typedef FeldmanHashSet< rcu_gpi, key_val<::cds_test::city64>, traits_FeldmanHashSet_city64 >    FeldmanHashSet_rcu_gpi_city64;
         typedef FeldmanHashSet< rcu_gpb, key_val<::cds_test::city64>, traits_FeldmanHashSet_city64 >    FeldmanHashSet_rcu_gpb_city64;
@@ -207,7 +207,7 @@ namespace set {
         {
             typedef cc::feldman_hashset::stat<> stat;
         };
-        typedef FeldmanHashSet< cds::gc::HP,  key_val<::cds_test::city64>, traits_FeldmanHashSet_city64_stat >    FeldmanHashSet_hp_city64_stat;
+        typedef FeldmanHashSet< cds::gc::HP<>,  key_val<::cds_test::city64>, traits_FeldmanHashSet_city64_stat >    FeldmanHashSet_hp_city64_stat;
         typedef FeldmanHashSet< cds::gc::DHP, key_val<::cds_test::city64>, traits_FeldmanHashSet_city64_stat >    FeldmanHashSet_dhp_city64_stat;
         typedef FeldmanHashSet< rcu_gpi, key_val<::cds_test::city64>, traits_FeldmanHashSet_city64_stat >    FeldmanHashSet_rcu_gpi_city64_stat;
         typedef FeldmanHashSet< rcu_gpb, key_val<::cds_test::city64>, traits_FeldmanHashSet_city64_stat >    FeldmanHashSet_rcu_gpb_city64_stat;
@@ -220,7 +220,7 @@ namespace set {
         {
             typedef ::cds_test::city128::less less;
         };
-        typedef FeldmanHashSet< cds::gc::HP,  key_val<::cds_test::city128>, traits_FeldmanHashSet_city128 >    FeldmanHashSet_hp_city128;
+        typedef FeldmanHashSet< cds::gc::HP<>,  key_val<::cds_test::city128>, traits_FeldmanHashSet_city128 >    FeldmanHashSet_hp_city128;
         typedef FeldmanHashSet< cds::gc::DHP, key_val<::cds_test::city128>, traits_FeldmanHashSet_city128 >    FeldmanHashSet_dhp_city128;
         typedef FeldmanHashSet< rcu_gpi, key_val<::cds_test::city128>, traits_FeldmanHashSet_city128 >    FeldmanHashSet_rcu_gpi_city128;
         typedef FeldmanHashSet< rcu_gpb, key_val<::cds_test::city128>, traits_FeldmanHashSet_city128 >    FeldmanHashSet_rcu_gpb_city128;
@@ -233,7 +233,7 @@ namespace set {
         {
             typedef cc::feldman_hashset::stat<> stat;
         };
-        typedef FeldmanHashSet< cds::gc::HP,  key_val<::cds_test::city128>, traits_FeldmanHashSet_city128_stat >    FeldmanHashSet_hp_city128_stat;
+        typedef FeldmanHashSet< cds::gc::HP<>,  key_val<::cds_test::city128>, traits_FeldmanHashSet_city128_stat >    FeldmanHashSet_hp_city128_stat;
         typedef FeldmanHashSet< cds::gc::DHP, key_val<::cds_test::city128>, traits_FeldmanHashSet_city128_stat >    FeldmanHashSet_dhp_city128_stat;
         typedef FeldmanHashSet< rcu_gpi, key_val<::cds_test::city128>, traits_FeldmanHashSet_city128_stat >    FeldmanHashSet_rcu_gpi_city128_stat;
         typedef FeldmanHashSet< rcu_gpb, key_val<::cds_test::city128>, traits_FeldmanHashSet_city128_stat >    FeldmanHashSet_rcu_gpb_city128_stat;
@@ -308,7 +308,7 @@ namespace set {
             };
         };
 
-        typedef FeldmanHashSet< cds::gc::HP, typename fixed_sized_key::key_val, typename fixed_sized_key::traits >  FeldmanHashSet_hp_fixed;
+        typedef FeldmanHashSet< cds::gc::HP<>, typename fixed_sized_key::key_val, typename fixed_sized_key::traits >  FeldmanHashSet_hp_fixed;
         typedef FeldmanHashSet< cds::gc::DHP, typename fixed_sized_key::key_val, typename fixed_sized_key::traits > FeldmanHashSet_dhp_fixed;
         typedef FeldmanHashSet< rcu_gpi, typename fixed_sized_key::key_val, typename fixed_sized_key::traits >    FeldmanHashSet_rcu_gpi_fixed;
         typedef FeldmanHashSet< rcu_gpb, typename fixed_sized_key::key_val, typename fixed_sized_key::traits >    FeldmanHashSet_rcu_gpb_fixed;
@@ -317,7 +317,7 @@ namespace set {
         typedef FeldmanHashSet< rcu_shb, typename fixed_sized_key::key_val, typename fixed_sized_key::traits >    FeldmanHashSet_rcu_shb_fixed;
 #endif
 
-        typedef FeldmanHashSet< cds::gc::HP, typename fixed_sized_key::key_val, typename fixed_sized_key::traits_stat >    FeldmanHashSet_hp_fixed_stat;
+        typedef FeldmanHashSet< cds::gc::HP<>, typename fixed_sized_key::key_val, typename fixed_sized_key::traits_stat >    FeldmanHashSet_hp_fixed_stat;
         typedef FeldmanHashSet< cds::gc::DHP, typename fixed_sized_key::key_val, typename fixed_sized_key::traits_stat >    FeldmanHashSet_dhp_fixed_stat;
         typedef FeldmanHashSet< rcu_gpi, typename fixed_sized_key::key_val, typename fixed_sized_key::traits_stat >    FeldmanHashSet_rcu_gpi_fixed_stat;
         typedef FeldmanHashSet< rcu_gpb, typename fixed_sized_key::key_val, typename fixed_sized_key::traits_stat >    FeldmanHashSet_rcu_gpb_fixed_stat;

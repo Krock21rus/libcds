@@ -10,7 +10,7 @@
 
 namespace {
     namespace cc = cds::container;
-    typedef cds::gc::HP gc_type;
+    typedef cds::gc::HP<> gc_type;
 
     class MichaelLazySet_HP : public cds_test::container_set_hp
     {

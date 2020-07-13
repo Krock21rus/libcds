@@ -28,7 +28,7 @@ namespace cds { namespace container {
         It is non-intrusive version of \p cds::intrusive::MoirQueue.
 
         Template arguments:
-        - \p GC - garbage collector type: \p gc::HP, \p gc::DHP
+        - \p GC - garbage collector type: \p gc::HP<>, \p gc::DHP
         - \p T - a type stored in the queue.
         - \p Traits - queue traits, default is \p msqueue::traits. You can use \p msqueue::make_traits
             metafunction to make your traits or just derive your traits from \p %msqueue::traits:
@@ -37,10 +37,10 @@ namespace cds { namespace container {
                 typedef cds::intrusive::msqueue::stat<> stat;
                 typedef cds::atomicity::item_counter    item_counter;
             };
-            typedef cds::container::MoirQueue< cds::gc::HP, Foo, myTraits > myQueue;
+            typedef cds::container::MoirQueue< cds::gc::HP<>, Foo, myTraits > myQueue;
 
             // Equivalent make_traits example:
-            typedef cds::container::MoirQueue< cds::gc::HP, Foo,
+            typedef cds::container::MoirQueue< cds::gc::HP<>, Foo,
                 typename cds::container::msqueue::make_traits<
                     cds::opt::stat< cds::container::msqueue::stat<> >,
                     cds::opt::item_counter< cds::atomicity::item_counter >
@@ -159,7 +159,7 @@ namespace cds { namespace container {
             The functor should initialize creating node
             and it takes one argument - a reference to a new node of type \ref value_type :
             \code
-            cds:container::MoirQueue< cds::gc::HP, Foo > myQueue;
+            cds:container::MoirQueue< cds::gc::HP<>, Foo > myQueue;
             Bar bar;
             myQueue.enqueue_with( [&bar]( Foo& dest ) { dest = bar; } );
             \endcode
@@ -229,7 +229,7 @@ namespace cds { namespace container {
             \p Func is a functor called to copy dequeued value.
             The functor takes one argument - a reference to removed node:
             \code
-            cds:container::MoirQueue< cds::gc::HP, Foo > myQueue;
+            cds:container::MoirQueue< cds::gc::HP<>, Foo > myQueue;
             Bar bar;
             myQueue.dequeue_with( [&bar]( Foo& src ) { bar = std::move( src );});
             \endcode

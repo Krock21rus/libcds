@@ -8,7 +8,7 @@
 
 namespace {
     namespace cc = cds::container;
-    typedef cds::gc::HP gc_type;
+    typedef cds::gc::HP<> gc_type;
 
     class MichaelKVList_HP : public cds_test::kv_list_hp
     {

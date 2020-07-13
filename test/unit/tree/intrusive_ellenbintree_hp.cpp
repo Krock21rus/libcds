@@ -10,7 +10,7 @@
 
 namespace {
     namespace ci = cds::intrusive;
-    typedef cds::gc::HP gc_type;
+    typedef cds::gc::HP<> gc_type;
 
     class IntrusiveEllenBinTree_HP : public cds_test::intrusive_tree_hp
     {

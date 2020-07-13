@@ -88,7 +88,7 @@ namespace cds { namespace container {
                     };
 
                     // IP4 address - statistics map
-                    typedef cds::container::FeldmanHashMap< cds::gc::HP, ip4_address, statistics, ip4_map_traits > ip4_map;
+                    typedef cds::container::FeldmanHashMap< cds::gc::HP<>, ip4_address, statistics, ip4_map_traits > ip4_map;
                 @endcode
 
                 variable-size key requires a hash functor: URL map
@@ -107,7 +107,7 @@ namespace cds { namespace container {
                     };
 
                     // URL statistics map
-                    typedef cds::container::FeldmanHashMap< cds::gc::HP, std::string, statistics, url_map_traits > url_map;
+                    typedef cds::container::FeldmanHashMap< cds::gc::HP<>, std::string, statistics, url_map_traits > url_map;
                 @endcode
             */
             typedef opt::none hash;

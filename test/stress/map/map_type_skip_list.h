@@ -64,7 +64,7 @@ namespace map {
                 ,co::item_counter< cds::atomicity::cache_friendly_item_counter >
             >::type
         {};
-        typedef SkipListMap< cds::gc::HP, Key, Value, traits_SkipListMap_less_turbo32 > SkipListMap_hp_less_turbo32;
+        typedef SkipListMap< cds::gc::HP<>, Key, Value, traits_SkipListMap_less_turbo32 > SkipListMap_hp_less_turbo32;
         typedef SkipListMap< cds::gc::DHP, Key, Value, traits_SkipListMap_less_turbo32 > SkipListMap_dhp_less_turbo32;
         typedef SkipListMap< cds::gc::nogc, Key, Value, traits_SkipListMap_less_turbo32 > SkipListMap_nogc_less_turbo32;
         typedef SkipListMap< rcu_gpi, Key, Value, traits_SkipListMap_less_turbo32 > SkipListMap_rcu_gpi_less_turbo32;
@@ -80,7 +80,7 @@ namespace map {
             , co::item_counter< cds::atomicity::cache_friendly_item_counter >
         >::type
         {};
-        typedef SkipListMap< cds::gc::HP, Key, Value, traits_SkipListMap_less_turbo24 > SkipListMap_hp_less_turbo24;
+        typedef SkipListMap< cds::gc::HP<>, Key, Value, traits_SkipListMap_less_turbo24 > SkipListMap_hp_less_turbo24;
         typedef SkipListMap< cds::gc::DHP, Key, Value, traits_SkipListMap_less_turbo24 > SkipListMap_dhp_less_turbo24;
         typedef SkipListMap< cds::gc::nogc, Key, Value, traits_SkipListMap_less_turbo24 > SkipListMap_nogc_less_turbo24;
         typedef SkipListMap< rcu_gpi, Key, Value, traits_SkipListMap_less_turbo24 > SkipListMap_rcu_gpi_less_turbo24;
@@ -96,7 +96,7 @@ namespace map {
             , co::item_counter< cds::atomicity::cache_friendly_item_counter >
         >::type
         {};
-        typedef SkipListMap< cds::gc::HP, Key, Value, traits_SkipListMap_less_turbo16 > SkipListMap_hp_less_turbo16;
+        typedef SkipListMap< cds::gc::HP<>, Key, Value, traits_SkipListMap_less_turbo16 > SkipListMap_hp_less_turbo16;
         typedef SkipListMap< cds::gc::DHP, Key, Value, traits_SkipListMap_less_turbo16 > SkipListMap_dhp_less_turbo16;
         typedef SkipListMap< cds::gc::nogc, Key, Value, traits_SkipListMap_less_turbo16 > SkipListMap_nogc_less_turbo16;
         typedef SkipListMap< rcu_gpi, Key, Value, traits_SkipListMap_less_turbo16 > SkipListMap_rcu_gpi_less_turbo16;
@@ -113,7 +113,7 @@ namespace map {
                 ,co::item_counter< cds::atomicity::cache_friendly_item_counter >
             >::type
         {};
-        typedef SkipListMap< cds::gc::HP, Key, Value, traits_SkipListMap_less_turbo32_seqcst > SkipListMap_hp_less_turbo32_seqcst;
+        typedef SkipListMap< cds::gc::HP<>, Key, Value, traits_SkipListMap_less_turbo32_seqcst > SkipListMap_hp_less_turbo32_seqcst;
         typedef SkipListMap< cds::gc::DHP, Key, Value, traits_SkipListMap_less_turbo32_seqcst > SkipListMap_dhp_less_turbo32_seqcst;
         typedef SkipListMap< cds::gc::nogc, Key, Value, traits_SkipListMap_less_turbo32_seqcst > SkipListMap_nogc_less_turbo32_seqcst;
         typedef SkipListMap< rcu_gpi, Key, Value, traits_SkipListMap_less_turbo32_seqcst > SkipListMap_rcu_gpi_less_turbo32_seqcst;
@@ -130,7 +130,7 @@ namespace map {
                 ,co::item_counter< cds::atomicity::cache_friendly_item_counter >
             >::type
         {};
-        typedef SkipListMap< cds::gc::HP, Key, Value, traits_SkipListMap_less_turbo32_stat > SkipListMap_hp_less_turbo32_stat;
+        typedef SkipListMap< cds::gc::HP<>, Key, Value, traits_SkipListMap_less_turbo32_stat > SkipListMap_hp_less_turbo32_stat;
         typedef SkipListMap< cds::gc::DHP, Key, Value, traits_SkipListMap_less_turbo32_stat > SkipListMap_dhp_less_turbo32_stat;
         typedef SkipListMap< cds::gc::nogc, Key, Value, traits_SkipListMap_less_turbo32_stat > SkipListMap_nogc_less_turbo32_stat;
         typedef SkipListMap< rcu_gpi, Key, Value, traits_SkipListMap_less_turbo32_stat > SkipListMap_rcu_gpi_less_turbo32_stat;
@@ -147,7 +147,7 @@ namespace map {
             , co::item_counter< cds::atomicity::cache_friendly_item_counter >
         >::type
         {};
-        typedef SkipListMap< cds::gc::HP, Key, Value, traits_SkipListMap_less_turbo24_stat > SkipListMap_hp_less_turbo24_stat;
+        typedef SkipListMap< cds::gc::HP<>, Key, Value, traits_SkipListMap_less_turbo24_stat > SkipListMap_hp_less_turbo24_stat;
         typedef SkipListMap< cds::gc::DHP, Key, Value, traits_SkipListMap_less_turbo24_stat > SkipListMap_dhp_less_turbo24_stat;
         typedef SkipListMap< cds::gc::nogc, Key, Value, traits_SkipListMap_less_turbo24_stat > SkipListMap_nogc_less_turbo24_stat;
         typedef SkipListMap< rcu_gpi, Key, Value, traits_SkipListMap_less_turbo24_stat > SkipListMap_rcu_gpi_less_turbo24_stat;
@@ -164,7 +164,7 @@ namespace map {
             , co::item_counter< cds::atomicity::cache_friendly_item_counter >
         >::type
         {};
-        typedef SkipListMap< cds::gc::HP, Key, Value, traits_SkipListMap_less_turbo16_stat > SkipListMap_hp_less_turbo16_stat;
+        typedef SkipListMap< cds::gc::HP<>, Key, Value, traits_SkipListMap_less_turbo16_stat > SkipListMap_hp_less_turbo16_stat;
         typedef SkipListMap< cds::gc::DHP, Key, Value, traits_SkipListMap_less_turbo16_stat > SkipListMap_dhp_less_turbo16_stat;
         typedef SkipListMap< cds::gc::nogc, Key, Value, traits_SkipListMap_less_turbo16_stat > SkipListMap_nogc_less_turbo16_stat;
         typedef SkipListMap< rcu_gpi, Key, Value, traits_SkipListMap_less_turbo16_stat > SkipListMap_rcu_gpi_less_turbo16_stat;
@@ -180,7 +180,7 @@ namespace map {
                 ,co::item_counter< cds::atomicity::cache_friendly_item_counter >
             >::type
         {};
-        typedef SkipListMap< cds::gc::HP, Key, Value, traits_SkipListMap_cmp_turbo32 > SkipListMap_hp_cmp_turbo32;
+        typedef SkipListMap< cds::gc::HP<>, Key, Value, traits_SkipListMap_cmp_turbo32 > SkipListMap_hp_cmp_turbo32;
         typedef SkipListMap< cds::gc::DHP, Key, Value, traits_SkipListMap_cmp_turbo32 > SkipListMap_dhp_cmp_turbo32;
         typedef SkipListMap< cds::gc::nogc, Key, Value, traits_SkipListMap_cmp_turbo32 > SkipListMap_nogc_cmp_turbo32;
         typedef SkipListMap< rcu_gpi, Key, Value, traits_SkipListMap_cmp_turbo32 > SkipListMap_rcu_gpi_cmp_turbo32;
@@ -197,7 +197,7 @@ namespace map {
                 ,co::item_counter< cds::atomicity::cache_friendly_item_counter >
             >::type
         {};
-        typedef SkipListMap< cds::gc::HP, Key, Value, traits_SkipListMap_cmp_turbo32_stat > SkipListMap_hp_cmp_turbo32_stat;
+        typedef SkipListMap< cds::gc::HP<>, Key, Value, traits_SkipListMap_cmp_turbo32_stat > SkipListMap_hp_cmp_turbo32_stat;
         typedef SkipListMap< cds::gc::DHP, Key, Value, traits_SkipListMap_cmp_turbo32_stat > SkipListMap_dhp_cmp_turbo32_stat;
         typedef SkipListMap< cds::gc::nogc, Key, Value, traits_SkipListMap_cmp_turbo32_stat > SkipListMap_nogc_cmp_turbo32_stat;
         typedef SkipListMap< rcu_gpi, Key, Value, traits_SkipListMap_cmp_turbo32_stat > SkipListMap_rcu_gpi_cmp_turbo32_stat;
@@ -213,7 +213,7 @@ namespace map {
                 ,co::item_counter< cds::atomicity::cache_friendly_item_counter >
             >::type
         {};
-        typedef SkipListMap< cds::gc::HP, Key, Value, traits_SkipListMap_less_xorshift32 > SkipListMap_hp_less_xorshift32;
+        typedef SkipListMap< cds::gc::HP<>, Key, Value, traits_SkipListMap_less_xorshift32 > SkipListMap_hp_less_xorshift32;
         typedef SkipListMap< cds::gc::DHP, Key, Value, traits_SkipListMap_less_xorshift32 > SkipListMap_dhp_less_xorshift32;
         typedef SkipListMap< cds::gc::nogc, Key, Value, traits_SkipListMap_less_xorshift32 > SkipListMap_nogc_less_xorshift32;
         typedef SkipListMap< rcu_gpi, Key, Value, traits_SkipListMap_less_xorshift32 > SkipListMap_rcu_gpi_less_xorshift32;
@@ -229,7 +229,7 @@ namespace map {
             , co::item_counter< cds::atomicity::cache_friendly_item_counter >
         >::type
         {};
-        typedef SkipListMap< cds::gc::HP, Key, Value, traits_SkipListMap_less_xorshift24 > SkipListMap_hp_less_xorshift24;
+        typedef SkipListMap< cds::gc::HP<>, Key, Value, traits_SkipListMap_less_xorshift24 > SkipListMap_hp_less_xorshift24;
         typedef SkipListMap< cds::gc::DHP, Key, Value, traits_SkipListMap_less_xorshift24 > SkipListMap_dhp_less_xorshift24;
         typedef SkipListMap< cds::gc::nogc, Key, Value, traits_SkipListMap_less_xorshift24 > SkipListMap_nogc_less_xorshift24;
         typedef SkipListMap< rcu_gpi, Key, Value, traits_SkipListMap_less_xorshift24 > SkipListMap_rcu_gpi_less_xorshift24;
@@ -245,7 +245,7 @@ namespace map {
             , co::item_counter< cds::atomicity::cache_friendly_item_counter >
         >::type
         {};
-        typedef SkipListMap< cds::gc::HP, Key, Value, traits_SkipListMap_less_xorshift16 > SkipListMap_hp_less_xorshift16;
+        typedef SkipListMap< cds::gc::HP<>, Key, Value, traits_SkipListMap_less_xorshift16 > SkipListMap_hp_less_xorshift16;
         typedef SkipListMap< cds::gc::DHP, Key, Value, traits_SkipListMap_less_xorshift16 > SkipListMap_dhp_less_xorshift16;
         typedef SkipListMap< cds::gc::nogc, Key, Value, traits_SkipListMap_less_xorshift16 > SkipListMap_nogc_less_xorshift16;
         typedef SkipListMap< rcu_gpi, Key, Value, traits_SkipListMap_less_xorshift16 > SkipListMap_rcu_gpi_less_xorshift16;
@@ -262,7 +262,7 @@ namespace map {
                 ,co::item_counter< cds::atomicity::cache_friendly_item_counter >
             >::type
         {};
-        typedef SkipListMap< cds::gc::HP, Key, Value, traits_SkipListMap_less_xorshift32_stat > SkipListMap_hp_less_xorshift32_stat;
+        typedef SkipListMap< cds::gc::HP<>, Key, Value, traits_SkipListMap_less_xorshift32_stat > SkipListMap_hp_less_xorshift32_stat;
         typedef SkipListMap< cds::gc::DHP, Key, Value, traits_SkipListMap_less_xorshift32_stat > SkipListMap_dhp_less_xorshift32_stat;
         typedef SkipListMap< cds::gc::nogc, Key, Value, traits_SkipListMap_less_xorshift32_stat > SkipListMap_nogc_less_xorshift32_stat;
         typedef SkipListMap< rcu_gpi, Key, Value, traits_SkipListMap_less_xorshift32_stat > SkipListMap_rcu_gpi_less_xorshift32_stat;
@@ -279,7 +279,7 @@ namespace map {
             , co::item_counter< cds::atomicity::cache_friendly_item_counter >
         >::type
         {};
-        typedef SkipListMap< cds::gc::HP, Key, Value, traits_SkipListMap_less_xorshift24_stat > SkipListMap_hp_less_xorshift24_stat;
+        typedef SkipListMap< cds::gc::HP<>, Key, Value, traits_SkipListMap_less_xorshift24_stat > SkipListMap_hp_less_xorshift24_stat;
         typedef SkipListMap< cds::gc::DHP, Key, Value, traits_SkipListMap_less_xorshift24_stat > SkipListMap_dhp_less_xorshift24_stat;
         typedef SkipListMap< cds::gc::nogc, Key, Value, traits_SkipListMap_less_xorshift24_stat > SkipListMap_nogc_less_xorshift24_stat;
         typedef SkipListMap< rcu_gpi, Key, Value, traits_SkipListMap_less_xorshift24_stat > SkipListMap_rcu_gpi_less_xorshift24_stat;
@@ -296,7 +296,7 @@ namespace map {
             , co::item_counter< cds::atomicity::cache_friendly_item_counter >
         >::type
         {};
-        typedef SkipListMap< cds::gc::HP, Key, Value, traits_SkipListMap_less_xorshift16_stat > SkipListMap_hp_less_xorshift16_stat;
+        typedef SkipListMap< cds::gc::HP<>, Key, Value, traits_SkipListMap_less_xorshift16_stat > SkipListMap_hp_less_xorshift16_stat;
         typedef SkipListMap< cds::gc::DHP, Key, Value, traits_SkipListMap_less_xorshift16_stat > SkipListMap_dhp_less_xorshift16_stat;
         typedef SkipListMap< cds::gc::nogc, Key, Value, traits_SkipListMap_less_xorshift16_stat > SkipListMap_nogc_less_xorshift16_stat;
         typedef SkipListMap< rcu_gpi, Key, Value, traits_SkipListMap_less_xorshift16_stat > SkipListMap_rcu_gpi_less_xorshift16_stat;
@@ -312,7 +312,7 @@ namespace map {
                 ,co::item_counter< cds::atomicity::cache_friendly_item_counter >
             >::type
         {};
-        typedef SkipListMap< cds::gc::HP, Key, Value, traits_SkipListMap_cmp_xorshift32 > SkipListMap_hp_cmp_xorshift32;
+        typedef SkipListMap< cds::gc::HP<>, Key, Value, traits_SkipListMap_cmp_xorshift32 > SkipListMap_hp_cmp_xorshift32;
         typedef SkipListMap< cds::gc::DHP, Key, Value, traits_SkipListMap_cmp_xorshift32 > SkipListMap_dhp_cmp_xorshift32;
         typedef SkipListMap< cds::gc::nogc, Key, Value, traits_SkipListMap_cmp_xorshift32 > SkipListMap_nogc_cmp_xorshift32;
         typedef SkipListMap< rcu_gpi, Key, Value, traits_SkipListMap_cmp_xorshift32 > SkipListMap_rcu_gpi_cmp_xorshift32;
@@ -329,7 +329,7 @@ namespace map {
                 ,co::item_counter< cds::atomicity::cache_friendly_item_counter >
             >::type
         {};
-        typedef SkipListMap< cds::gc::HP, Key, Value, traits_SkipListMap_cmp_xorshift32_stat > SkipListMap_hp_cmp_xorshift32_stat;
+        typedef SkipListMap< cds::gc::HP<>, Key, Value, traits_SkipListMap_cmp_xorshift32_stat > SkipListMap_hp_cmp_xorshift32_stat;
         typedef SkipListMap< cds::gc::DHP, Key, Value, traits_SkipListMap_cmp_xorshift32_stat > SkipListMap_dhp_cmp_xorshift32_stat;
         typedef SkipListMap< cds::gc::nogc, Key, Value, traits_SkipListMap_cmp_xorshift32_stat > SkipListMap_nogc_cmp_xorshift32_stat;
         typedef SkipListMap< rcu_gpi, Key, Value, traits_SkipListMap_cmp_xorshift32_stat > SkipListMap_rcu_gpi_cmp_xorshift32_stat;

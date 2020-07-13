@@ -72,7 +72,7 @@ namespace set {
             };
 
             struct hp_gc {
-                typedef cc::ellen_bintree::node<cds::gc::HP, key_val>               leaf_node;
+                typedef cc::ellen_bintree::node<cds::gc::HP<>, key_val>               leaf_node;
                 typedef cc::ellen_bintree::internal_node< key_type, leaf_node >     internal_node;
                 typedef cc::ellen_bintree::update_desc< leaf_node, internal_node >  update_desc;
             };
@@ -119,7 +119,7 @@ namespace set {
         {
             typedef cds::memory::pool_allocator< typename ellen_bintree_props::hp_gc::update_desc, ellen_bintree_pool::update_desc_pool_accessor > update_desc_allocator;
         };
-        typedef EllenBinTreeSet< cds::gc::HP, key_type, key_val, traits_EllenBinTreeSet_hp > EllenBinTreeSet_hp;
+        typedef EllenBinTreeSet< cds::gc::HP<>, key_type, key_val, traits_EllenBinTreeSet_hp > EllenBinTreeSet_hp;
 
         struct traits_EllenBinTreeSet_dhp : public traits_EllenBinTreeSet
         {
@@ -163,7 +163,7 @@ namespace set {
         {
             typedef cds::memory::pool_allocator< typename ellen_bintree_props::hp_gc::update_desc, ellen_bintree_pool::update_desc_pool_accessor > update_desc_allocator;
         };
-        typedef EllenBinTreeSet< cds::gc::HP, key_type, key_val, traits_EllenBinTreeSet_yield_hp > EllenBinTreeSet_yield_hp;
+        typedef EllenBinTreeSet< cds::gc::HP<>, key_type, key_val, traits_EllenBinTreeSet_yield_hp > EllenBinTreeSet_yield_hp;
 
         struct traits_EllenBinTreeSet_yield_dhp : public traits_EllenBinTreeSet_yield
         {
@@ -192,7 +192,7 @@ namespace set {
         {
             typedef cds::memory::pool_allocator< typename ellen_bintree_props::hp_gc::update_desc, ellen_bintree_pool::update_desc_pool_accessor > update_desc_allocator;
         };
-        typedef EllenBinTreeSet< cds::gc::HP, key_type, key_val, traits_EllenBinTreeSet_stat_hp > EllenBinTreeSet_hp_stat;
+        typedef EllenBinTreeSet< cds::gc::HP<>, key_type, key_val, traits_EllenBinTreeSet_stat_hp > EllenBinTreeSet_hp_stat;
 
         struct traits_EllenBinTreeSet_stat_dhp : public traits_EllenBinTreeSet_stat
         {

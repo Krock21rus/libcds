@@ -77,7 +77,7 @@ namespace istack {
         using base_hook = cds::intrusive::treiber_stack::base_hook < cds::opt::gc< GC > >;
 
     // TreiberStack
-        typedef cds::intrusive::TreiberStack< cds::gc::HP, T > Treiber_HP;
+        typedef cds::intrusive::TreiberStack< cds::gc::HP<>, T > Treiber_HP;
         struct traits_Treiber_DHP: public
             cds::intrusive::treiber_stack::make_traits <
                 cds::intrusive::opt::hook< base_hook<cds::gc::DHP> >
@@ -91,7 +91,7 @@ namespace istack {
                 , cds::opt::memory_model<cds::opt::v::sequential_consistent>
             > ::type
         {};
-        typedef cds::intrusive::TreiberStack< cds::gc::HP,  T, traits_Treiber_seqcst<cds::gc::HP>  > Treiber_HP_seqcst;
+        typedef cds::intrusive::TreiberStack< cds::gc::HP<>,  T, traits_Treiber_seqcst<cds::gc::HP<>>  > Treiber_HP_seqcst;
         typedef cds::intrusive::TreiberStack< cds::gc::DHP, T, traits_Treiber_seqcst<cds::gc::DHP> > Treiber_DHP_seqcst;
 
         template <class GC> struct traits_Treiber_stat: public
@@ -100,7 +100,7 @@ namespace istack {
                 , cds::opt::stat<cds::intrusive::treiber_stack::stat<> >
             > ::type
         {};
-        typedef cds::intrusive::TreiberStack< cds::gc::HP,  T, traits_Treiber_stat<cds::gc::HP>  > Treiber_HP_stat;
+        typedef cds::intrusive::TreiberStack< cds::gc::HP<>,  T, traits_Treiber_stat<cds::gc::HP<>>  > Treiber_HP_stat;
         typedef cds::intrusive::TreiberStack< cds::gc::DHP, T, traits_Treiber_stat<cds::gc::DHP> > Treiber_DHP_stat;
 
         template <class GC> struct traits_Treiber_yield: public
@@ -110,7 +110,7 @@ namespace istack {
                 , cds::opt::memory_model<cds::opt::v::relaxed_ordering>
             > ::type
         {};
-        typedef cds::intrusive::TreiberStack< cds::gc::HP,  T, traits_Treiber_yield<cds::gc::HP>  > Treiber_HP_yield;
+        typedef cds::intrusive::TreiberStack< cds::gc::HP<>,  T, traits_Treiber_yield<cds::gc::HP<>>  > Treiber_HP_yield;
         typedef cds::intrusive::TreiberStack< cds::gc::DHP, T, traits_Treiber_yield<cds::gc::DHP> > Treiber_DHP_yield;
 
         template <class GC> struct traits_Treiber_pause: public
@@ -119,7 +119,7 @@ namespace istack {
                 , cds::opt::back_off<cds::backoff::pause>
             > ::type
         {};
-        typedef cds::intrusive::TreiberStack< cds::gc::HP,  T, traits_Treiber_pause<cds::gc::HP>  > Treiber_HP_pause;
+        typedef cds::intrusive::TreiberStack< cds::gc::HP<>,  T, traits_Treiber_pause<cds::gc::HP<>>  > Treiber_HP_pause;
         typedef cds::intrusive::TreiberStack< cds::gc::DHP, T, traits_Treiber_pause<cds::gc::DHP> > Treiber_DHP_pause;
 
         template <class GC> struct traits_Treiber_exp: public
@@ -130,7 +130,7 @@ namespace istack {
                 >
             > ::type
         {};
-        typedef cds::intrusive::TreiberStack< cds::gc::HP,  T, traits_Treiber_exp<cds::gc::HP>  > Treiber_HP_exp;
+        typedef cds::intrusive::TreiberStack< cds::gc::HP<>,  T, traits_Treiber_exp<cds::gc::HP<>>  > Treiber_HP_exp;
         typedef cds::intrusive::TreiberStack< cds::gc::DHP, T, traits_Treiber_exp<cds::gc::DHP> > Treiber_DHP_exp;
 
 
@@ -141,7 +141,7 @@ namespace istack {
                 , cds::opt::enable_elimination<true>
             > ::type
         {};
-        typedef cds::intrusive::TreiberStack< cds::gc::HP,  T, traits_Elimination_on<cds::gc::HP>  > Elimination_HP;
+        typedef cds::intrusive::TreiberStack< cds::gc::HP<>,  T, traits_Elimination_on<cds::gc::HP<>>  > Elimination_HP;
         typedef cds::intrusive::TreiberStack< cds::gc::DHP, T, traits_Elimination_on<cds::gc::DHP> > Elimination_DHP;
 
         template <class GC> struct traits_Elimination_seqcst : public
@@ -151,7 +151,7 @@ namespace istack {
                 , cds::opt::memory_model< cds::opt::v::sequential_consistent >
             > ::type
         {};
-        typedef cds::intrusive::TreiberStack< cds::gc::HP,  T, traits_Elimination_seqcst<cds::gc::HP>  > Elimination_HP_seqcst;
+        typedef cds::intrusive::TreiberStack< cds::gc::HP<>,  T, traits_Elimination_seqcst<cds::gc::HP<>>  > Elimination_HP_seqcst;
         typedef cds::intrusive::TreiberStack< cds::gc::DHP, T, traits_Elimination_seqcst<cds::gc::DHP> > Elimination_DHP_seqcst;
 
         template <class GC> struct traits_Elimination_2ms: public
@@ -161,7 +161,7 @@ namespace istack {
                 , cds::opt::elimination_backoff< cds::backoff::delay_of<2> >
             > ::type
         {};
-        typedef cds::intrusive::TreiberStack< cds::gc::HP,  T, traits_Elimination_2ms<cds::gc::HP>  > Elimination_HP_2ms;
+        typedef cds::intrusive::TreiberStack< cds::gc::HP<>,  T, traits_Elimination_2ms<cds::gc::HP<>>  > Elimination_HP_2ms;
         typedef cds::intrusive::TreiberStack< cds::gc::DHP, T, traits_Elimination_2ms<cds::gc::DHP> > Elimination_DHP_2ms;
 
         template <class GC> struct traits_Elimination_2ms_stat: public
@@ -172,7 +172,7 @@ namespace istack {
                 , cds::opt::stat<cds::intrusive::treiber_stack::stat<> >
             > ::type
         {};
-        typedef cds::intrusive::TreiberStack< cds::gc::HP,  T, traits_Elimination_2ms_stat<cds::gc::HP>  > Elimination_HP_2ms_stat;
+        typedef cds::intrusive::TreiberStack< cds::gc::HP<>,  T, traits_Elimination_2ms_stat<cds::gc::HP<>>  > Elimination_HP_2ms_stat;
         typedef cds::intrusive::TreiberStack< cds::gc::DHP, T, traits_Elimination_2ms_stat<cds::gc::DHP> > Elimination_DHP_2ms_stat;
 
         template <class GC> struct traits_Elimination_5ms: public
@@ -182,7 +182,7 @@ namespace istack {
                 , cds::opt::elimination_backoff< cds::backoff::delay_of<5> >
             > ::type
         {};
-        typedef cds::intrusive::TreiberStack< cds::gc::HP,  T, traits_Elimination_5ms<cds::gc::HP>  > Elimination_HP_5ms;
+        typedef cds::intrusive::TreiberStack< cds::gc::HP<>,  T, traits_Elimination_5ms<cds::gc::HP<>>  > Elimination_HP_5ms;
         typedef cds::intrusive::TreiberStack< cds::gc::DHP, T, traits_Elimination_5ms<cds::gc::DHP> > Elimination_DHP_5ms;
 
         template <class GC> struct traits_Elimination_5ms_stat: public
@@ -193,7 +193,7 @@ namespace istack {
                 , cds::opt::stat<cds::intrusive::treiber_stack::stat<> >
             > ::type
         {};
-        typedef cds::intrusive::TreiberStack< cds::gc::HP,  T, traits_Elimination_5ms_stat<cds::gc::HP>  > Elimination_HP_5ms_stat;
+        typedef cds::intrusive::TreiberStack< cds::gc::HP<>,  T, traits_Elimination_5ms_stat<cds::gc::HP<>>  > Elimination_HP_5ms_stat;
         typedef cds::intrusive::TreiberStack< cds::gc::DHP, T, traits_Elimination_5ms_stat<cds::gc::DHP> > Elimination_DHP_5ms_stat;
 
         template <class GC> struct traits_Elimination_10ms: public
@@ -203,7 +203,7 @@ namespace istack {
                 , cds::opt::elimination_backoff< cds::backoff::delay_of<10> >
             > ::type
         {};
-        typedef cds::intrusive::TreiberStack< cds::gc::HP,  T, traits_Elimination_10ms<cds::gc::HP>  > Elimination_HP_10ms;
+        typedef cds::intrusive::TreiberStack< cds::gc::HP<>,  T, traits_Elimination_10ms<cds::gc::HP<>>  > Elimination_HP_10ms;
         typedef cds::intrusive::TreiberStack< cds::gc::DHP, T, traits_Elimination_10ms<cds::gc::DHP> > Elimination_DHP_10ms;
 
         template <class GC> struct traits_Elimination_10ms_stat: public
@@ -214,7 +214,7 @@ namespace istack {
                 , cds::opt::stat<cds::intrusive::treiber_stack::stat<> >
             > ::type
         {};
-        typedef cds::intrusive::TreiberStack< cds::gc::HP,  T, traits_Elimination_10ms_stat<cds::gc::HP>  > Elimination_HP_10ms_stat;
+        typedef cds::intrusive::TreiberStack< cds::gc::HP<>,  T, traits_Elimination_10ms_stat<cds::gc::HP<>>  > Elimination_HP_10ms_stat;
         typedef cds::intrusive::TreiberStack< cds::gc::DHP, T, traits_Elimination_10ms_stat<cds::gc::DHP> > Elimination_DHP_10ms_stat;
 
         template <class GC> struct traits_Elimination_dyn: public
@@ -224,7 +224,7 @@ namespace istack {
                 , cds::opt::buffer< cds::opt::v::initialized_dynamic_buffer<int> >
             > ::type
         {};
-        typedef cds::intrusive::TreiberStack< cds::gc::HP,  T, traits_Elimination_dyn<cds::gc::HP>  > Elimination_HP_dyn;
+        typedef cds::intrusive::TreiberStack< cds::gc::HP<>,  T, traits_Elimination_dyn<cds::gc::HP<>>  > Elimination_HP_dyn;
         typedef cds::intrusive::TreiberStack< cds::gc::DHP, T, traits_Elimination_dyn<cds::gc::DHP> > Elimination_DHP_dyn;
 
         template <class GC> struct traits_Elimination_stat: public
@@ -234,7 +234,7 @@ namespace istack {
                 , cds::opt::stat<cds::intrusive::treiber_stack::stat<> >
             > ::type
         {};
-        typedef cds::intrusive::TreiberStack< cds::gc::HP,  T, traits_Elimination_stat<cds::gc::HP>  > Elimination_HP_stat;
+        typedef cds::intrusive::TreiberStack< cds::gc::HP<>,  T, traits_Elimination_stat<cds::gc::HP<>>  > Elimination_HP_stat;
         typedef cds::intrusive::TreiberStack< cds::gc::DHP, T, traits_Elimination_stat<cds::gc::DHP> > Elimination_DHP_stat;
 
         template <class GC> struct traits_Elimination_dyn_stat: public
@@ -245,7 +245,7 @@ namespace istack {
                 , cds::opt::stat<cds::intrusive::treiber_stack::stat<> >
             > ::type
         {};
-        typedef cds::intrusive::TreiberStack< cds::gc::HP,  T, traits_Elimination_dyn_stat<cds::gc::HP>  > Elimination_HP_dyn_stat;
+        typedef cds::intrusive::TreiberStack< cds::gc::HP<>,  T, traits_Elimination_dyn_stat<cds::gc::HP<>>  > Elimination_HP_dyn_stat;
         typedef cds::intrusive::TreiberStack< cds::gc::DHP, T, traits_Elimination_dyn_stat<cds::gc::DHP> > Elimination_DHP_dyn_stat;
 
         template <class GC> struct traits_Elimination_yield: public
@@ -256,7 +256,7 @@ namespace istack {
                 , cds::opt::memory_model<cds::opt::v::relaxed_ordering>
             > ::type
         {};
-        typedef cds::intrusive::TreiberStack< cds::gc::HP,  T, traits_Elimination_yield<cds::gc::HP>  > Elimination_HP_yield;
+        typedef cds::intrusive::TreiberStack< cds::gc::HP<>,  T, traits_Elimination_yield<cds::gc::HP<>>  > Elimination_HP_yield;
         typedef cds::intrusive::TreiberStack< cds::gc::DHP, T, traits_Elimination_yield<cds::gc::DHP> > Elimination_DHP_yield;
 
         template <class GC> struct traits_Elimination_pause: public
@@ -266,7 +266,7 @@ namespace istack {
                 , cds::opt::back_off<cds::backoff::pause>
             > ::type
         {};
-        typedef cds::intrusive::TreiberStack< cds::gc::HP,  T, traits_Elimination_pause<cds::gc::HP>  > Elimination_HP_pause;
+        typedef cds::intrusive::TreiberStack< cds::gc::HP<>,  T, traits_Elimination_pause<cds::gc::HP<>>  > Elimination_HP_pause;
         typedef cds::intrusive::TreiberStack< cds::gc::DHP, T, traits_Elimination_pause<cds::gc::DHP> > Elimination_DHP_pause;
 
         template <class GC> struct traits_Elimination_exp: public
@@ -278,7 +278,7 @@ namespace istack {
                 >
             > ::type
         {};
-        typedef cds::intrusive::TreiberStack< cds::gc::HP,  T, traits_Elimination_exp<cds::gc::HP>  > Elimination_HP_exp;
+        typedef cds::intrusive::TreiberStack< cds::gc::HP<>,  T, traits_Elimination_exp<cds::gc::HP<>>  > Elimination_HP_exp;
         typedef cds::intrusive::TreiberStack< cds::gc::DHP, T, traits_Elimination_exp<cds::gc::DHP> > Elimination_DHP_exp;
 
     // FCStack

@@ -22,7 +22,7 @@ namespace cds { namespace container {
         See intrusive::SplitListSet for a brief description of the split-list algorithm.
 
         Template parameters:
-        - \p GC - Garbage collector used like \p cds::gc::HP or \p cds::gc::DHP
+        - \p GC - Garbage collector used like \p cds::gc::HP<> or \p cds::gc::DHP
         - \p Key - key type of an item stored in the map. It should be copy-constructible
         - \p Value - value type stored in the map
         - \p Traits - map traits, default is \p split_list::traits. Instead of declaring \p %split_list::traits -based
@@ -37,7 +37,7 @@ namespace cds { namespace container {
         \par Usage
 
         You should decide what garbage collector you want, and what ordered list you want to use. Split-ordered list
-        is original data structure based on an ordered list. Suppose, you want construct split-list map based on \p gc::HP GC
+        is original data structure based on an ordered list. Suppose, you want construct split-list map based on \p gc::HP<> GC
         and \p MichaelList as ordered list implementation. Your map should map \p int key to \p std::string value.
         So, you beginning your code with the following:
         \code

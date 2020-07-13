@@ -10,7 +10,7 @@
 
 namespace {
     namespace cc = cds::container;
-    typedef cds::gc::HP gc_type;
+    typedef cds::gc::HP<> gc_type;
 
 
     class SegmentedQueue_HP : public cds_test::segmented_queue
@@ -48,7 +48,7 @@ namespace {
             typedef cds::atomicity::item_counter item_counter;
             typedef cds::opt::v::random_shuffle_permutation<> permutation_generator;
         };
-        typedef cds::container::SegmentedQueue< cds::gc::HP, int, traits > test_queue;
+        typedef cds::container::SegmentedQueue< cds::gc::HP<>, int, traits > test_queue;
 
         test_queue q( c_QuasiFactor );
         ASSERT_EQ( q.quasi_factor(), cds::beans::ceil2( c_QuasiFactor ));
@@ -62,7 +62,7 @@ namespace {
             typedef cds::atomicity::item_counter item_counter;
             typedef cds::opt::v::random_shuffle_permutation<> permutation_generator;
         };
-        typedef cds::container::SegmentedQueue< cds::gc::HP, int, traits > test_queue;
+        typedef cds::container::SegmentedQueue< cds::gc::HP<>, int, traits > test_queue;
 
         test_queue q( c_QuasiFactor );
         ASSERT_EQ( q.quasi_factor(), cds::beans::ceil2( c_QuasiFactor ));
@@ -78,7 +78,7 @@ namespace {
                 , cds::opt::stat < cds::container::segmented_queue::stat<> >
             > ::type
         {};
-        typedef cds::container::SegmentedQueue< cds::gc::HP, int, traits > test_queue;
+        typedef cds::container::SegmentedQueue< cds::gc::HP<>, int, traits > test_queue;
 
         test_queue q( c_QuasiFactor );
         ASSERT_EQ( q.quasi_factor(), cds::beans::ceil2( c_QuasiFactor ));

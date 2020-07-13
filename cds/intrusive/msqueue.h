@@ -199,9 +199,9 @@ namespace cds { namespace intrusive {
 
             Example: declare \p %MSQueue with item counting and internal statistics
             \code
-            typedef cds::intrusive::MSQueue< cds::gc::HP, Foo,
+            typedef cds::intrusive::MSQueue< cds::gc::HP<>, Foo,
                 typename cds::intrusive::msqueue::make_traits<
-                    cds::intrusive::opt:hook< cds::intrusive::msqueue::base_hook< cds::opt::gc<cds:gc::HP> >>,
+                    cds::intrusive::opt:hook< cds::intrusive::msqueue::base_hook< cds::opt::gc<cds:gc::HP<>> >>,
                     cds::opt::item_counte< cds::atomicity::item_counter >,
                     cds::opt::stat< cds::intrusive::msqueue::stat<> >
                 >::type
@@ -227,7 +227,7 @@ namespace cds { namespace intrusive {
         - [1998] Maged Michael, Michael Scott "Simple, fast, and practical non-blocking and blocking concurrent queue algorithms"
 
         Template arguments:
-        - \p GC - garbage collector type: \p gc::HP, \p gc::DHP
+        - \p GC - garbage collector type: \p gc::HP<>, \p gc::DHP
         - \p T - type of value to be stored in the queue. A value of type \p T must be derived from \p msqueue::node for \p msqueue::base_hook,
             or it should have a member of type \p %msqueue::node for \p msqueue::member_hook,
             or it should be convertible to \p %msqueue::node for \p msqueue::traits_hook.
@@ -238,10 +238,10 @@ namespace cds { namespace intrusive {
                 typedef cds::intrusive::msqueue::stat<> stat;
                 typedef cds::atomicity::item_counter    item_counter;
             };
-            typedef cds::intrusive::MSQueue< cds::gc::HP, Foo, myTraits > myQueue;
+            typedef cds::intrusive::MSQueue< cds::gc::HP<>, Foo, myTraits > myQueue;
 
             // Equivalent make_traits example:
-            typedef cds::intrusive::MSQueue< cds::gc::HP, Foo,
+            typedef cds::intrusive::MSQueue< cds::gc::HP<>, Foo,
                 typename cds::intrusive::msqueue::make_traits<
                     cds::opt::stat< cds::intrusive::msqueue::stat<> >,
                     cds::opt::item_counter< cds::atomicity::item_counter >
@@ -259,7 +259,7 @@ namespace cds { namespace intrusive {
         #include <cds/gc/hp.h>
 
         namespace ci = cds::inrtusive;
-        typedef cds::gc::HP hp_gc;
+        typedef cds::gc::HP<> hp_gc;
 
         // MSQueue with Hazard Pointer garbage collector, base hook + item disposer:
         struct Foo: public ci::msqueue::node< hp_gc >

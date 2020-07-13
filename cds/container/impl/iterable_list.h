@@ -37,7 +37,7 @@ namespace cds { namespace container {
         \p IterableKVList is a key-value version of iterable non-intrusive list that is closer to the C++ std library approach.
 
         It is possible to declare option-based list with cds::container::iterable_list::make_traits metafunction istead of \p Traits template
-        argument. For example, the following traits-based declaration of gc::HP iterable list
+        argument. For example, the following traits-based declaration of gc::HP<> iterable list
         \code
         #include <cds/container/iterable_list_hp.h>
         // Declare comparator for the item
@@ -55,7 +55,7 @@ namespace cds { namespace container {
         };
 
         // Declare traits-based list
-        typedef cds::container::IterableList< cds::gc::HP, int, my_traits >     traits_based_list;
+        typedef cds::container::IterableList< cds::gc::HP<>, int, my_traits >     traits_based_list;
         \endcode
 
         is equivalent for the following option-based list
@@ -65,7 +65,7 @@ namespace cds { namespace container {
         // my_compare is the same
 
         // Declare option-based list
-        typedef cds::container::IterableList< cds::gc::HP, int,
+        typedef cds::container::IterableList< cds::gc::HP<>, int,
             typename cds::container::iterable_list::make_traits<
                 cds::container::opt::compare< my_compare >     // item comparator option
             >::type
@@ -75,7 +75,7 @@ namespace cds { namespace container {
         \par Usage
         There are different specializations of this template for each garbage collecting schema used.
         You should include appropriate .h-file depending on GC you are using:
-        - for gc::HP: \code #include <cds/container/iterable_list_hp.h> \endcode
+        - for gc::HP<>: \code #include <cds/container/iterable_list_hp.h> \endcode
         - for gc::DHP: \code #include <cds/container/iterable_list_dhp.h> \endcode
         - for \ref cds_urcu_desc "RCU": \code #include <cds/container/iterable_list_rcu.h> \endcode
     */
@@ -202,7 +202,7 @@ namespace cds { namespace container {
             The forward iterator for iterable list has some features:
             - it has no post-increment operator
             - to protect the value, the iterator contains a GC-specific guard.
-              For some GC (like as \p gc::HP), a guard is a limited resource per thread, so an exception (or assertion) "no free guard"
+              For some GC (like as \p gc::HP<>), a guard is a limited resource per thread, so an exception (or assertion) "no free guard"
               may be thrown if the limit of guard count per thread is exceeded.
             - The iterator cannot be moved across thread boundary since it contains thread-private GC's guard.
             - Iterator is thread-safe: even if an element the iterator points to is removed, the iterator stays valid because
@@ -524,7 +524,7 @@ namespace cds { namespace container {
 
             Usage:
             \code
-            typedef cds::container::IterableList< cds::gc::HP, foo, my_traits >  ord_list;
+            typedef cds::container::IterableList< cds::gc::HP<>, foo, my_traits >  ord_list;
             ord_list theList;
             // ...
             {
@@ -669,7 +669,7 @@ namespace cds { namespace container {
 
             Usage:
             \code
-            typedef cds::container::MichaelList< cds::gc::HP, foo, my_traits >  ord_list;
+            typedef cds::container::MichaelList< cds::gc::HP<>, foo, my_traits >  ord_list;
             ord_list theList;
             // ...
             {

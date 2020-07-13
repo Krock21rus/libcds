@@ -53,7 +53,7 @@
    SMR is the main part of lock-free data structs. The SMR solves the problem of safe
    memory reclamation that is one of the main problem for lock-free programming.
    The library contains the implementations of several light-weight \ref cds_garbage_collector "memory reclamation schemes":
-   - M.Michael's Hazard Pointer - see \p cds::gc::HP, \p cds::gc::DHP for more explanation
+   - M.Michael's Hazard Pointer - see \p cds::gc::HP<>, \p cds::gc::DHP for more explanation
    - User-space Read-Copy Update (RCU) - see \p cds::urcu namespace
    - there is an empty \p cds::gc::nogc "GC" for append-only containers that do not support item reclamation.
 
@@ -65,10 +65,10 @@
 
    The main part of lock-free programming is SMR, so-called garbage collector,  for safe memory reclamation.
    The library provides several types of SMR schemes. One of widely used and well-tested is Hazard Pointer
-   memory reclamation schema discovered by M. Micheal and implemented in the library as \p cds::gc::HP class.
+   memory reclamation schema discovered by M. Micheal and implemented in the library as \p cds::gc::HP<> class.
    Usually, the application is based on only one type of GC.
 
-   In the next example we mean that you use Hazard Pointer \p cds::gc::HP - based containers.
+   In the next example we mean that you use Hazard Pointer \p cds::gc::HP<> - based containers.
 
     First, in your code you should initialize \p cds library and Hazard Pointer in \p main() function:
     \code
@@ -82,7 +82,7 @@
 
         {
             // Initialize Hazard Pointer singleton
-            cds::gc::HP hpGC;
+            cds::gc::HP<> hpGC;
 
             // If main thread uses lock-free containers
             // the main thread should be attached to libcds infrastructure

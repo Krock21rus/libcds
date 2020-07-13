@@ -32,7 +32,7 @@ namespace cds {
     Example:
     \code
     struct tag1;
-    cds::intrusive::treiber_stack::node< cds::gc::HP, tag<tag1> >
+    cds::intrusive::treiber_stack::node< cds::gc::HP<>, tag<tag1> >
     \endcode
     If no tag is specified the default \p cds::opt::none will be used.
 
@@ -182,7 +182,7 @@ namespace cds {
         }
     };
 
-    typedef cds::intrusive::TreiberStack< cds::gc::HP, my_type, cds::opt::disposer< destroyer > > stack;
+    typedef cds::intrusive::TreiberStack< cds::gc::HP<>, my_type, cds::opt::disposer< destroyer > > stack;
     stack s;
 
     // ....
@@ -217,8 +217,8 @@ namespace cds {
         }
     };
 
-    typedef cds::intrusive::TreiberStack< cds::gc::HP, my_type, cds::opt::disposer< destroyer > > stack;
-    typedef cds::intrusive::MSQueue< cds::gc::HP, my_type, cds::opt::disposer< destroyer > > queue;
+    typedef cds::intrusive::TreiberStack< cds::gc::HP<>, my_type, cds::opt::disposer< destroyer > > stack;
+    typedef cds::intrusive::MSQueue< cds::gc::HP<>, my_type, cds::opt::disposer< destroyer > > queue;
     stack s;
     queue q;
 

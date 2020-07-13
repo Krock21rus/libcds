@@ -34,7 +34,7 @@ namespace cds { namespace intrusive {
         #include <cds/gc/hp.h>
 
         namespace ci = cds::inrtusive;
-        typedef cds::gc::HP hp_gc;
+        typedef cds::gc::HP<> hp_gc;
 
         // MoirQueue with Hazard Pointer garbage collector, base hook + item disposer:
         struct Foo: public ci::msqueue::node< hp_gc >

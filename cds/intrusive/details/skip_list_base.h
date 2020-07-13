@@ -648,7 +648,7 @@ namespace cds { namespace intrusive {
         /**
             \p Options are:
             - \p opt::hook - hook used. Possible values are: \p skip_list::base_hook, \p skip_list::member_hook, \p skip_list::traits_hook.
-                If the option is not specified, <tt>skip_list::base_hook<></tt> and \p gc::HP is used.
+                If the option is not specified, <tt>skip_list::base_hook<></tt> and \p gc::HP<> is used.
             - \p opt::compare - key comparison functor. No default functor is provided.
                 If the option is not specified, the \p opt::less is used.
             - \p opt::less - specifies binary predicate used for key comparison. Default is \p std::less<T>.
