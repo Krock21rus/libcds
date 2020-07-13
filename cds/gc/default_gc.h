@@ -11,7 +11,7 @@
 namespace cds { namespace gc {
 
     /// Default garbage collector
-    typedef HP     default_gc;
+    typedef HP<>     default_gc;
 
 }} // namespace cds::gc
 
