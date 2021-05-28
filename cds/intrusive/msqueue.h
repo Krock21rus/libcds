@@ -494,7 +494,7 @@ namespace cds { namespace intrusive {
                 }
 
                 node_type * tmp = nullptr;
-                if ( t->m_pNext.compare_exchange_strong( tmp, pNew, memory_model::memory_order_release, atomics::memory_order_relaxed ))
+                if ( t->m_pNext.compare_exchange_strong( pNext, pNew, memory_model::memory_order_release, atomics::memory_order_relaxed ))
                     break;
 
                 m_Stat.onEnqueueRace();
