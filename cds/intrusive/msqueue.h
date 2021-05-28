@@ -388,9 +388,9 @@ namespace cds { namespace intrusive {
                 node_type * t = m_pTail.load(memory_model::memory_order_acquire);
                 if ( h == t ) {
                     // It is needed to help enqueue
-                    m_pTail.compare_exchange_strong( t, pNext, memory_model::memory_order_release, atomics::memory_order_relaxed );
-                    m_Stat.onBadTail();
-                    continue;
+                    //m_pTail.compare_exchange_strong( t, pNext, memory_model::memory_order_release, atomics::memory_order_relaxed );
+                    //m_Stat.onBadTail();
+                    //continue;
                 }
 
                 if ( m_pHead.compare_exchange_strong( h, pNext, memory_model::memory_order_acquire, atomics::memory_order_relaxed ))
