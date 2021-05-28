@@ -386,13 +386,11 @@ namespace cds { namespace intrusive {
                 }
 
                 node_type * t = m_pTail.load(memory_model::memory_order_acquire);
-                //std::cerr << "DEBUGGY_1\n";
                 if ( h == t ) {
                     // It is needed to help enqueue
-                    std::cerr << "DEBUGGY_2\n";
-                    //m_pTail.compare_exchange_strong( t, pNext, memory_model::memory_order_release, atomics::memory_order_relaxed );
-                    //m_Stat.onBadTail();
-                    //continue;
+                    m_pTail.compare_exchange_strong( t, pNext, memory_model::memory_order_release, atomics::memory_order_relaxed );
+                    m_Stat.onBadTail();
+                    continue;
                 }
 
                 if ( m_pHead.compare_exchange_strong( h, pNext, memory_model::memory_order_acquire, atomics::memory_order_relaxed ))
@@ -489,9 +487,10 @@ namespace cds { namespace intrusive {
                 node_type * pNext = t->m_pNext.load(memory_model::memory_order_acquire);
                 if ( pNext != nullptr ) {
                     // Tail is misplaced, advance it
-                    m_pTail.compare_exchange_weak( t, pNext, memory_model::memory_order_release, atomics::memory_order_relaxed );
-                    m_Stat.onBadTail();
-                    continue;
+                    std::cerr << "DEBUGGY\n";
+                    //m_pTail.compare_exchange_weak( t, pNext, memory_model::memory_order_release, atomics::memory_order_relaxed );
+                    //m_Stat.onBadTail();
+                    //continue;
                 }
 
                 node_type * tmp = nullptr;
