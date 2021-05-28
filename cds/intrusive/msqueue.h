@@ -386,7 +386,7 @@ namespace cds { namespace intrusive {
                 }
 
                 node_type * t = m_pTail.load(memory_model::memory_order_acquire);
-                std::cerr << "DEBUGGY_1\n";
+                //std::cerr << "DEBUGGY_1\n";
                 if ( h == t ) {
                     // It is needed to help enqueue
                     std::cerr << "DEBUGGY_2\n";
